@@ -12,7 +12,6 @@ func cart_to_iso(vec: Vector2) -> Vector2:
 	return Vector2(vec.x, vec.y / 2)
 
 func interact():
-	print("inteacted")
 	emit_signal("fish_interact")
 
 func move(dt):
@@ -20,7 +19,7 @@ func move(dt):
 	var direction = cart_to_iso(input)
 	choose_anim(input)
 
-	velocity = direction * 5000 * dt
+	velocity = direction * 5000 * speed * dt
 
 	move_and_slide()
 
