@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhir1xuucrf47"]
+
+[ext_resource type="Texture2D" uid="uid://b83bybvsw3e3i" path="res://img/splash_placeholder.png" id="1_26xan"]
+[ext_resource type="Script" path="res://src/scenes/splash-screen/silliSplash.gd" id="1_r8hcj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8hcj"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_r8hcj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_26xan")
+
+[node name="Start" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -812.0
+offset_top = 111.0
+offset_right = -234.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_r8hcj")
+text = "Start Game"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -812.0
+offset_top = 315.0
+offset_right = -234.0
+offset_bottom = 446.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_r8hcj")
+text = "Quit
+"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+
+[node name="dwukropek3" type="Label" parent="."]
+offset_left = -832.0
+offset_top = -532.0
+offset_right = -663.0
+offset_bottom = -259.0
+theme_override_font_sizes/font_size = 300
+text = ":3"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -819.0
+offset_top = -150.0
+offset_right = 1491.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 70
+text = "Your PC ran Barberfish Barbershop.
+Thank you for downloading our game, have fun."
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
