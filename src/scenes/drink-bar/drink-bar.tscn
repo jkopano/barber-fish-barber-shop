@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqrwowtfsjhpb"]
+[gd_scene load_steps=11 format=3 uid="uid://bqrwowtfsjhpb"]
 
 [ext_resource type="Texture2D" uid="uid://cq8apivxewawa" path="res://img/background.png" id="1_cmvb0"]
 [ext_resource type="Texture2D" uid="uid://7c8x10khncfx" path="res://img/shark.png" id="2_7xenl"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cxoqqtpq7783" path="res://src/scenes/drink-indicator/drink-indicator.tscn" id="3_tu65y"]
 [ext_resource type="Texture2D" uid="uid://d1lqy68qqlu4t" path="res://img/drink2.png" id="6_rmt2k"]
 [ext_resource type="Texture2D" uid="uid://ygyn6stievmq" path="res://img/drink3.png" id="7_tu65y"]
-[ext_resource type="Texture2D" uid="uid://df2a5qs7xs5bb" path="res://img/game_over.png" id="9_3dv2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pu02"]
 size = Vector2(670, 600)
@@ -68,7 +67,3 @@ texture = ExtResource("7_tu65y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drink3"]
 position = Vector2(182, 462)
 shape = SubResource("RectangleShape2D_rmt2k")
-
-[node name="GameOver" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("9_3dv2k")

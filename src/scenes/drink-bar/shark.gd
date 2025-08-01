@@ -52,6 +52,5 @@ func _on_drink_dropped(drink):
 		start_moving()
 		drink.queue_free()
 	else:
-		var game_over = get_node("../GameOver")
-		game_over.visible = true
-		print("YOU DIED\nGAME OVER")	
+		var death_scene = preload("res://src/scenes/death/death.tscn")
+		get_tree().change_scene_to_packed(death_scene)	
