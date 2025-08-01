@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="great-game-yea"
-run/main_scene="uid://c5du8lbmagrww"
+run/main_scene="uid://clnuf52g18udg"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

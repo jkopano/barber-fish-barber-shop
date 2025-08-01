@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://clnuf52g18udg"]
+
+[ext_resource type="Texture2D" uid="uid://57n5ym3jmnbm" path="res://img/tooth0.png" id="1_2in81"]
+[ext_resource type="Texture2D" uid="uid://heqp14tkfmrc" path="res://img/mouth.png" id="1_04j1l"]
+[ext_resource type="Script" uid="uid://cxpam4axssoha" path="res://src/scenes/dentist/tooth.gd" id="2_04j1l"]
+[ext_resource type="Script" uid="uid://cif33ot4o5uq5" path="res://src/scenes/dentist/mouth.gd" id="2_b13w4"]
+[ext_resource type="Texture2D" uid="uid://bnk4ga5g31xym" path="res://img/placeholder.png" id="4_0iurs"]
+[ext_resource type="Script" uid="uid://roj2ko5w8gks" path="res://src/scenes/dentist/button.gd" id="5_b13w4"]
+
+[node name="main" type="Node2D"]
+
+[node name="mouth" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(596, 325)
+scale = Vector2(3.6954, 3.6954)
+texture = ExtResource("1_04j1l")
+script = ExtResource("2_b13w4")
+
+[node name="teeth" type="Node2D" parent="."]
+texture_filter = 2
+position = Vector2(200, 200)
+scale = Vector2(5, 5)
+script = ExtResource("2_04j1l")
+
+[node name="tooth0" type="Sprite2D" parent="teeth"]
+texture_filter = 1
+position = Vector2(149.653, 19.45)
+texture = ExtResource("1_2in81")
+
+[node name="tooth1" type="Sprite2D" parent="teeth"]
+texture_filter = 1
+position = Vector2(131.453, 22.25)
+scale = Vector2(1.20303, 1.20303)
+texture = ExtResource("1_2in81")
+
+[node name="tooth2" type="Sprite2D" parent="teeth"]
+texture_filter = 1
+position = Vector2(106.6, 24.6)
+scale = Vector2(1.26303, 1.26303)
+texture = ExtResource("1_2in81")
+
+[node name="tooth3" type="Sprite2D" parent="teeth"]
+texture_filter = 1
+position = Vector2(2.60004, 17.8)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("1_2in81")
+
+[node name="tooth4" type="Sprite2D" parent="teeth"]
+texture_filter = 1
+position = Vector2(25.2, 22.6)
+rotation = 3.14159
+scale = Vector2(1.203, -1.203)
+texture = ExtResource("1_2in81")
+
+[node name="tooth5" type="Sprite2D" parent="teeth"]
+texture_filter = 1
+position = Vector2(51, 26)
+rotation = 3.14159
+scale = Vector2(1.263, -1.263)
+texture = ExtResource("1_2in81")
+
+[node name="tooth6" type="Sprite2D" parent="teeth"]
+texture_filter = 1
+position = Vector2(77.6, 27.4)
+scale = Vector2(1.41093, 1.41094)
+texture = ExtResource("1_2in81")
+
+[node name="yellow" type="Button" parent="."]
+offset_left = 931.0
+offset_top = 428.0
+offset_right = 1094.0
+offset_bottom = 519.0
+text = "yellow"
+icon = ExtResource("4_0iurs")
+flat = true
+expand_icon = true
+script = ExtResource("5_b13w4")
+category = "yellow"
+
+[node name="red" type="Button" parent="."]
+offset_left = 933.0
+offset_top = 524.0
+offset_right = 1096.0
+offset_bottom = 615.0
+text = "red"
+icon = ExtResource("4_0iurs")
+flat = true
+expand_icon = true
+script = ExtResource("5_b13w4")
+category = "red"
