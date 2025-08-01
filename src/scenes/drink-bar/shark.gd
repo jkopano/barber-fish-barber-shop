@@ -16,7 +16,7 @@ func _ready():
 
 	var shark_size = Vector2(667, 595)
 	var tween = create_tween()
-	tween.tween_property(self, "position", Vector2(-250 , 0), 1.0)\
+	tween.tween_property(self, "position", Vector2(-200 , 0), 1.0)\
 	.set_trans(Tween.TRANS_EXPO)\
 	.set_ease(Tween.EASE_IN)
 	
@@ -44,14 +44,16 @@ func _ready():
 	
 	connect("area_entered", Callable(self, "_on_Shark_area_entered"))
 
-func _process(delta):
-	if moving:
-		position.x -= speed * delta
-		if position.x < -get_viewport_rect().size.x - 150:
-			queue_free()
-
 func start_moving():
-	moving = true
+	var target_x = -get_viewport_rect().size.x - 150
+	var distance = position.x - target_x
+	var duration = distance / speed
+	
+	var tween = create_tween()
+	tween.tween_property(self, "position:x", target_x, duration)\
+		.set_trans(Tween.TRANS_EXPO)\
+		.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_callback(Callable(self, "queue_free"))
 		
 func _on_drink_dropped(drink):
 	if drink == chosen_drink:
