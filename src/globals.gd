@@ -1,6 +1,7 @@
 extends Node
 
-enum need {
+enum Need {
 	HAIR,
 	DRINK,
+	TEETH
 }
