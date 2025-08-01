@@ -39,31 +39,31 @@ zoom = Vector2(0.6, 0.6)
 script = ExtResource("3_7xenl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Drink1"]
-position = Vector2(-162, 462)
+position = Vector2(341, 405)
 texture = ExtResource("3_blw56")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drink1"]
-position = Vector2(-162, 462)
+position = Vector2(341, 405)
 shape = SubResource("RectangleShape2D_rmt2k")
 
 [node name="Drink2" type="Area2D" parent="." groups=["Drinks"]]
 script = ExtResource("3_7xenl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Drink2"]
-position = Vector2(13, 462)
+position = Vector2(516, 405)
 texture = ExtResource("6_rmt2k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drink2"]
-position = Vector2(13, 462)
+position = Vector2(516, 405)
 shape = SubResource("RectangleShape2D_rmt2k")
 
 [node name="Drink3" type="Area2D" parent="." groups=["Drinks"]]
 script = ExtResource("3_7xenl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Drink3"]
-position = Vector2(182, 462)
+position = Vector2(685, 405)
 texture = ExtResource("7_tu65y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drink3"]
-position = Vector2(182, 462)
+position = Vector2(685, 405)
 shape = SubResource("RectangleShape2D_rmt2k")

@@ -12,11 +12,19 @@ func _ready():
 	randomize()
 	
 	var viewport_size = get_viewport_rect().size
-	position = Vector2(-800, 0)
+	position = Vector2(800, 0)
 
 	var shark_size = Vector2(667, 595)
 	var tween = create_tween()
-	tween.tween_property(self, "position", Vector2(0 , 0), 1.0)
+	tween.tween_property(self, "position", Vector2(-250 , 0), 1.0)\
+	.set_trans(Tween.TRANS_EXPO)\
+	.set_ease(Tween.EASE_IN)
+	
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+	tween.tween_property(self, "position", Vector2(-290,0), 0.05)
+	tween.tween_property(self, "position", Vector2(-210,0), 0.1)
+	tween.tween_property(self, "position", Vector2(-250,0), 0.05)
 	
 	var drinks = get_tree().get_nodes_in_group("Drinks")
 	if drinks.size() == 0:
@@ -38,8 +46,8 @@ func _ready():
 
 func _process(delta):
 	if moving:
-		position.x += speed * delta
-		if position.x > get_viewport_rect().size.x + 150:
+		position.x -= speed * delta
+		if position.x < -get_viewport_rect().size.x - 150:
 			queue_free()
 
 func start_moving():
@@ -54,3 +62,5 @@ func _on_drink_dropped(drink):
 	else:
 		var death_scene = preload("res://src/scenes/death/death.tscn")
 		get_tree().change_scene_to_packed(death_scene)	
+		
+	
