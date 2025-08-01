@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://diaqj76h284n0"]
+
+[ext_resource type="Script" uid="uid://bw2qtm107cat" path="res://src/scenes/shark/shark.gd" id="1_hgbx8"]
+
+[node name="Shark" type="Node2D"]
+script = ExtResource("1_hgbx8")
