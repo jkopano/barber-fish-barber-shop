@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://bqrwowtfsjhpb"]
+
+[ext_resource type="Texture2D" uid="uid://cq8apivxewawa" path="res://img/background.png" id="1_cmvb0"]
+[ext_resource type="Texture2D" uid="uid://7c8x10khncfx" path="res://img/shark.png" id="2_7xenl"]
+[ext_resource type="Script" uid="uid://cxxlhtq4fa0ao" path="res://src/scenes/drink-bar/shark.gd" id="2_blw56"]
+[ext_resource type="Script" uid="uid://b7qfsummkprsa" path="res://src/scenes/drink-bar/drink.gd" id="3_7xenl"]
+[ext_resource type="Texture2D" uid="uid://bk47f1w0vbox1" path="res://img/drink.png" id="3_blw56"]
+[ext_resource type="PackedScene" uid="uid://cxoqqtpq7783" path="res://src/scenes/drink-indicator/drink-indicator.tscn" id="3_tu65y"]
+[ext_resource type="Texture2D" uid="uid://d1lqy68qqlu4t" path="res://img/drink2.png" id="6_rmt2k"]
+[ext_resource type="Texture2D" uid="uid://ygyn6stievmq" path="res://img/drink3.png" id="7_tu65y"]
+[ext_resource type="Texture2D" uid="uid://df2a5qs7xs5bb" path="res://img/game_over.png" id="9_3dv2k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pu02"]
+size = Vector2(670, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmt2k"]
+size = Vector2(100, 100)
+
+[node name="main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_cmvb0")
+
+[node name="Shark" type="Area2D" parent="."]
+script = ExtResource("2_blw56")
+drink_indicator_scene = ExtResource("3_tu65y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shark"]
+position = Vector2(-10.5, -106.5)
+texture = ExtResource("2_7xenl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark"]
+position = Vector2(-10.5, -106.5)
+shape = SubResource("RectangleShape2D_4pu02")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+
+[node name="Drink1" type="Area2D" parent="." groups=["Drinks"]]
+script = ExtResource("3_7xenl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Drink1"]
+position = Vector2(-162, 462)
+texture = ExtResource("3_blw56")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drink1"]
+position = Vector2(-162, 462)
+shape = SubResource("RectangleShape2D_rmt2k")
+
+[node name="Drink2" type="Area2D" parent="." groups=["Drinks"]]
+script = ExtResource("3_7xenl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Drink2"]
+position = Vector2(13, 462)
+texture = ExtResource("6_rmt2k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drink2"]
+position = Vector2(13, 462)
+shape = SubResource("RectangleShape2D_rmt2k")
+
+[node name="Drink3" type="Area2D" parent="." groups=["Drinks"]]
+script = ExtResource("3_7xenl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Drink3"]
+position = Vector2(182, 462)
+texture = ExtResource("7_tu65y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drink3"]
+position = Vector2(182, 462)
+shape = SubResource("RectangleShape2D_rmt2k")
+
+[node name="GameOver" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("9_3dv2k")
