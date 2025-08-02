@@ -53,13 +53,13 @@ sources/0 = SubResource("TileSetAtlasSource_ge684")
 sources/3 = SubResource("TileSetAtlasSource_u1kat")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68jg1"]
-size = Vector2(34.17, 11.3301)
+size = Vector2(39.9936, 10.301)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6hthj"]
 size = Vector2(40.9565, 14.6676)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_it7ct"]
-size = Vector2(46.5498, 13.0296)
+size = Vector2(11.149, 31.1493)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7jp"]
 size = Vector2(86.6245, 31)
@@ -133,8 +133,8 @@ texture = ExtResource("13_68jg1")
 [node name="Area2D" type="Area2D" parent="layer2/Minigames/DrinkTable"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="layer2/Minigames/DrinkTable/Area2D"]
-position = Vector2(-72.3045, 15.247)
-rotation = -0.520108
+position = Vector2(-9.97747, 17.702)
+rotation = 0.523599
 shape = SubResource("RectangleShape2D_68jg1")
 
 [node name="DentistTable" type="Sprite2D" parent="layer2/Minigames"]
@@ -161,7 +161,7 @@ texture = ExtResource("12_68jg1")
 [node name="Area2D" type="Area2D" parent="layer2/Minigames/DentistTable"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="layer2/Minigames/DentistTable/Area2D"]
-position = Vector2(-13.8398, -0.965581)
+position = Vector2(-14.8053, -1.60929)
 rotation = -0.521853
 shape = SubResource("RectangleShape2D_6hthj")
 
@@ -193,8 +193,8 @@ texture = ExtResource("15_6hthj")
 [node name="Area2D" type="Area2D" parent="layer2/Minigames/BarberTable"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="layer2/Minigames/BarberTable/Area2D"]
-position = Vector2(70.8787, 28.1619)
-rotation = 0.523599
+position = Vector2(9.97749, 22.2079)
+rotation = 1.0472
 shape = SubResource("RectangleShape2D_it7ct")
 
 [node name="Camera2D" type="Camera2D" parent="."]
