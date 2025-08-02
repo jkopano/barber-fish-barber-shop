@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf1a3nbsopfk1"]
+
+[ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_6xtih"]
+[ext_resource type="PackedScene" uid="uid://7j0rpjjl4ayy" path="res://src/scenes/LvL1/player/player.tscn" id="2_phja3"]
+[ext_resource type="PackedScene" uid="uid://diaqj76h284n0" path="res://src/scenes/LvL1/shark/shark.tscn" id="3_7jjaw"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6xtih")
+
+[node name="Player" parent="." instance=ExtResource("2_phja3")]
+position = Vector2(202, 34)
+scale = Vector2(2, 2)
+
+[node name="Shark" parent="." instance=ExtResource("3_7jjaw")]
+position = Vector2(320, 35)
+rotation = 0.47822
+scale = Vector2(0.3, 0.3)

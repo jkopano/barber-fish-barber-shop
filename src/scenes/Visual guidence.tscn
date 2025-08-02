@@ -1,0 +1,125 @@
+[gd_scene load_steps=17 format=4 uid="uid://cmruccl8iytea"]
+
+[ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_l8dcf"]
+[ext_resource type="Texture2D" uid="uid://by6ckrxlhgyk7" path="res://sprites/levels/woodblock.png" id="2_lt0k3"]
+[ext_resource type="Texture2D" uid="uid://c6yo1c3sg6yt1" path="res://sprites/levels/shark.png" id="3_srxf5"]
+[ext_resource type="Texture2D" uid="uid://dvu4d4ttfwad0" path="res://sprites/levels/wallblock.png" id="4_s1ipx"]
+[ext_resource type="Texture2D" uid="uid://bv3fng6amef8u" path="res://sprites/levels/PlayerSprite.png" id="5_j7vuv"]
+[ext_resource type="Texture2D" uid="uid://caxtm6fpjlmn1" path="res://sprites/levels/komoda.png" id="6_eqylo"]
+[ext_resource type="Texture2D" uid="uid://d1fn85sqow3nq" path="res://sprites/levels/table.png" id="7_102sg"]
+[ext_resource type="Texture2D" uid="uid://d2l6wi2asrqhf" path="res://sprites/levels/zlew.png" id="8_ia7mj"]
+[ext_resource type="Script" uid="uid://dtf73ifrsi1ct" path="res://src/scenes/LvL1/zegar.gd" id="9_kq30s"]
+[ext_resource type="Texture2D" uid="uid://00ta1ddnetew" path="res://sprites/levels/Zegar-tarcza.png" id="10_eytpb"]
+[ext_resource type="Texture2D" uid="uid://cfq2fw538dhus" path="res://sprites/levels/Zegar-rama.png" id="11_qy0rn"]
+[ext_resource type="Texture2D" uid="uid://bfmvrw8ey6v63" path="res://sprites/levels/Zegar-kreska.png" id="12_b583i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ge684"]
+texture = ExtResource("2_lt0k3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:0/0/y_sort_origin = -16
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fc11b"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_ge684")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5v8me"]
+texture = ExtResource("4_s1ipx")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:0/0/y_sort_origin = -16
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8bn0s"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_5v8me")
+
+[node name="Tilemap" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(15.32, -7.07001)
+scale = Vector2(3.577, 3.577)
+texture = ExtResource("1_l8dcf")
+
+[node name="layer1" type="TileMapLayer" parent="."]
+position = Vector2(-49.112, 29.354)
+scale = Vector2(3.107, 3.107)
+tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wQAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAP//AAAAAAAAAAAFAP//AAAAAAAAAAAEAP//AAAAAAAAAAADAP//AAAAAAAAAAACAP//AAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAACAAIAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_fc11b")
+
+[node name="Shark" type="Sprite2D" parent="."]
+position = Vector2(227, -93)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("3_srxf5")
+
+[node name="layer2" type="TileMapLayer" parent="."]
+position = Vector2(-49.112, 29.354)
+scale = Vector2(3.107, 3.107)
+tile_map_data = PackedByteArray("AAD9//3/AAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP//AAAAAAAAAAD8//7/AAAAAAAAAAD7////AAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_fc11b")
+
+[node name="layer3" type="TileMapLayer" parent="."]
+visible = false
+position = Vector2(-64.432, 36.424)
+scale = Vector2(3.107, 3.107)
+tile_map_data = PackedByteArray("AAD6//7/AAAAAAAAAAD5////AAAAAAAAAAD5/wAAAAAAAAAAAAD6/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD7//3/AAAAAAAAAAD8//z/AAAAAAAAAAD9//z/AAAAAAAAAAD+//z/AAAAAAAAAAABAPz/AAAAAAAAAAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP7/AAAAAAAAAAD6/wIAAAAAAAAAAAD5/wEAAAAAAAAAAAD5//7/AAAAAAAAAAD6//3/AAAAAAAAAAD7//z/AAAAAAAAAAD4////AAAAAAAAAAD4/wAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_fc11b")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0, 4)
+scale = Vector2(3.107, 3.107)
+tile_map_data = PackedByteArray("AAD8//3/AAAAAAAAAAD9//3/AAAAAAAAAAD+//3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP//AAAAAAAAAAD7//7/AAAAAAAAAAD6////AAAAAAAAAAD5/wAAAAAAAAAAAAD5/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAD7/wMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_8bn0s")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+position = Vector2(-25, 45)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("5_j7vuv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(17.32, -6.07)
+scale = Vector2(3.107, 3.107)
+
+[node name="Komoda" type="Sprite2D" parent="."]
+position = Vector2(-264, -103)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("6_eqylo")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 65)
+
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(-6, -93)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("7_102sg")
+
+[node name="Zlew" type="Sprite2D" parent="."]
+position = Vector2(354, 194)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("8_ia7mj")
+
+[node name="zegar" type="Node2D" parent="."]
+position = Vector2(517, -264)
+scale = Vector2(3.107, 3.107)
+script = ExtResource("9_kq30s")
+
+[node name="Zegar-tarcza" type="Sprite2D" parent="zegar"]
+position = Vector2(-0.0926847, -0.736402)
+texture = ExtResource("10_eytpb")
+
+[node name="Zegar-rama" type="Sprite2D" parent="zegar"]
+position = Vector2(-0.0926933, -0.70228)
+texture = ExtResource("11_qy0rn")
+
+[node name="Zegar-kreska" type="Sprite2D" parent="zegar"]
+position = Vector2(-0.0926933, -0.70228)
+rotation = 6.28319
+texture = ExtResource("12_b583i")
+
+[node name="Countdown" type="Timer" parent="zegar"]

@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5du8lbmagrww"]
-
-[ext_resource type="Script" uid="uid://bd3xwvvc55vpg" path="res://src/scenes/barber/hair.gd" id="2_3basa"]
-
-[node name="main" type="Node2D"]
-
-[node name="hair" type="Node2D" parent="."]
-script = ExtResource("2_3basa")
