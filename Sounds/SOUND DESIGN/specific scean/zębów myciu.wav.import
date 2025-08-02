@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b1l7mm3ta032v"
-path="res://.godot/imported/zębów myciu.wav-2d35853987efad8a63d8a0bd2e8a1257.sample"
+path="res://.godot/imported/zębów myciu.wav-17343f13c78634d46762aa2f4fcd3f59.sample"
 
 [deps]
 
-source_file="res://Sounds/SOUND DESIGN/zębów myciu.wav"
-dest_files=["res://.godot/imported/zębów myciu.wav-2d35853987efad8a63d8a0bd2e8a1257.sample"]
+source_file="res://Sounds/SOUND DESIGN/specific scean/zębów myciu.wav"
+dest_files=["res://.godot/imported/zębów myciu.wav-17343f13c78634d46762aa2f4fcd3f59.sample"]
 
 [params]
 

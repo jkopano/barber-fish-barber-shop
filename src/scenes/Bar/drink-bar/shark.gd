@@ -6,6 +6,8 @@ var chosen_drink = null
 
 @export var drink_indicator_scene : PackedScene
 
+@onready var sfxplayer = $"../SFXplayer2"
+
 var drink_indicator_instance = null
 
 func _ready():
@@ -59,6 +61,7 @@ func _on_drink_dropped(drink):
 	if drink == chosen_drink:
 		if drink_indicator_instance:
 			drink_indicator_instance.queue_free()
+			sfxplayer.play()
 		start_moving()
 		drink.queue_free()
 	else:
