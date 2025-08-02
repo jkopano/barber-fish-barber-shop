@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://clnuf52g18udg"]
+[gd_scene load_steps=14 format=3 uid="uid://clnuf52g18udg"]
 
 [ext_resource type="Texture2D" uid="uid://57n5ym3jmnbm" path="res://place-holders/tooth0.png" id="1_2in81"]
-[ext_resource type="Texture2D" uid="uid://heqp14tkfmrc" path="res://place-holders/mouth.png" id="1_04j1l"]
 [ext_resource type="Script" uid="uid://coc0oh0fxxqil" path="res://src/scenes/dentist/categoryHolder.gd" id="1_y7h83"]
 [ext_resource type="Script" uid="uid://cxpam4axssoha" path="res://src/scenes/dentist/scripts/tooth.gd" id="2_04j1l"]
 [ext_resource type="Script" uid="uid://cif33ot4o5uq5" path="res://src/scenes/dentist/scripts/mouth.gd" id="2_b13w4"]
+[ext_resource type="Texture2D" uid="uid://bepgunullt5lt" path="res://sprites/dentist/bigshark-notooth.png" id="2_sgacy"]
+[ext_resource type="Texture2D" uid="uid://dqdprpie4txxv" path="res://sprites/dentist/dentist-background.png" id="2_y565x"]
 [ext_resource type="Script" uid="uid://roj2ko5w8gks" path="res://src/scenes/dentist/scripts/button.gd" id="5_b13w4"]
 [ext_resource type="Texture2D" uid="uid://i5ddjurq4kby" path="res://sprites/dentist/brush1-2.0.png" id="6_sgacy"]
 [ext_resource type="Texture2D" uid="uid://b1flpocwecxys" path="res://sprites/dentist/brush3-2.0.png" id="8_y565x"]
@@ -17,11 +18,16 @@
 texture_filter = 2
 script = ExtResource("1_y7h83")
 
+[node name="Dentist-background" type="Sprite2D" parent="."]
+position = Vector2(578, 325)
+scale = Vector2(3.7, 3.7)
+texture = ExtResource("2_y565x")
+
 [node name="mouth" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(596, 325)
+position = Vector2(593, 297)
 scale = Vector2(3.6954, 3.6954)
-texture = ExtResource("1_04j1l")
+texture = ExtResource("2_sgacy")
 script = ExtResource("2_b13w4")
 
 [node name="teeth" type="Node2D" parent="."]
@@ -32,46 +38,60 @@ script = ExtResource("2_04j1l")
 
 [node name="tooth0" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(150.9, 15.7)
+position = Vector2(140.571, 20.3039)
+scale = Vector2(0.90303, 0.90303)
 texture = ExtResource("1_2in81")
 
 [node name="tooth1" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(128.9, 19.9)
-scale = Vector2(1.20303, 1.20303)
+position = Vector2(121.571, 23.7039)
+scale = Vector2(0.901515, 0.901515)
 texture = ExtResource("1_2in81")
 
 [node name="tooth2" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(103.7, 22.9)
-scale = Vector2(1.26303, 1.26303)
+position = Vector2(100.371, 26.5039)
+scale = Vector2(0.996061, 0.996061)
 texture = ExtResource("1_2in81")
 
 [node name="tooth3" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(-0.299958, 18.7)
+position = Vector2(14.3708, 15.3039)
 rotation = 3.14159
-scale = Vector2(1, -1)
+scale = Vector2(0.8669, -0.8669)
+texture = ExtResource("1_2in81")
+
+[node name="tooth3" type="Sprite2D" parent="teeth/tooth3"]
+texture_filter = 1
+position = Vector2(17.303, -10.1512)
+rotation = 3.14159
+scale = Vector2(-0.867, -0.867)
 texture = ExtResource("1_2in81")
 
 [node name="tooth4" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(21.1, 22.9)
+position = Vector2(30.7708, 21.7039)
 rotation = 3.14159
-scale = Vector2(1.203, -1.203)
+scale = Vector2(0.981167, -0.981167)
 texture = ExtResource("1_2in81")
 
 [node name="tooth5" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(44.5, 25.1)
+position = Vector2(53.1708, 25.9039)
 rotation = 3.14159
-scale = Vector2(1.263, -1.263)
+scale = Vector2(0.9968, -0.9968)
 texture = ExtResource("1_2in81")
 
 [node name="tooth6" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(74.9, 24.9)
-scale = Vector2(1.41093, 1.41094)
+position = Vector2(77.3708, 29.1039)
+scale = Vector2(1.04486, 1.04486)
+texture = ExtResource("1_2in81")
+
+[node name="tooth7" type="Sprite2D" parent="teeth"]
+texture_filter = 1
+position = Vector2(156.771, 13.5039)
+scale = Vector2(0.680003, 0.680008)
 texture = ExtResource("1_2in81")
 
 [node name="yellow" type="Button" parent="."]
