@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://balwn7nail4e1"]
+[gd_scene load_steps=26 format=4 uid="uid://balwn7nail4e1"]
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
 [ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://7j0rpjjl4ayy" path="res://src/scenes/LvL1/player/player.tscn" id="4_qf6y4"]
 [ext_resource type="PackedScene" uid="uid://bg247acf34svv" path="res://src/scenes/minigame_places.tscn" id="6_vqkoe"]
 [ext_resource type="Script" uid="uid://b8vt08ts1fcdm" path="res://src/scenes/LvL1/furniture/drink_table.gd" id="8_vjw8b"]
-[ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="9_qf6y4"]
 [ext_resource type="Script" uid="uid://deigtxh12e1pc" path="res://src/scenes/LvL1/furniture/dentist_table.gd" id="10_mwhif"]
 [ext_resource type="Texture2D" uid="uid://d1fn85sqow3nq" path="res://sprites/levels/table.png" id="11_r3aaw"]
 [ext_resource type="Texture2D" uid="uid://b1b5ux3qi1cpn" path="res://sprites/levels/brush-point.png" id="12_68jg1"]
@@ -211,9 +210,6 @@ scale = Vector2(3.107, 3.107)
 tile_map_data = PackedByteArray("AAD5////AwAAAAAAAAD5/wAAAwAAAAAAAAD7//3/AwAAAAAAAAD8//z/AwAAAAAAAAD9//z/AwAAAAAAAAD+//z/AwAAAAAAAAABAPz/AwAAAAAAAAACAPz/AwAAAAAAAAADAPz/AwAAAAAAAAAEAPz/AwAAAAAAAAD5//7/AwAAAAAAAAD7//z/AwAAAAAAAAD4////AwAAAAAAAAD4/wAAAwAAAAAAAAD6//7/AwAAAAAAAAD4/wEAAwAAAAAAAAD5/wEAAwAAAAAAAAD5/wIAAwAAAAAAAAD6/wMAAwAAAAAAAAD6/wIAAwAAAAAAAAD7/wMAAwAAAAAAAAD6//3/AwAAAAAAAAAFAPz/AAAAAAAAAAAGAP3/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_fc11b")
 
-[node name="zegar" parent="." instance=ExtResource("9_qf6y4")]
-position = Vector2(517, -264)
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -225,6 +221,7 @@ shape = SubResource("RectangleShape2D_fl7jp")
 [connection signal="shark_needs_denstist" from="." to="layer2/Minigames/DentistTable" method="_on_tilemap_shark_needs_denstist"]
 [connection signal="shark_needs_drink" from="." to="layer2/Minigames/DrinkTable" method="_on_tilemap_shark_needs_drink"]
 [connection signal="fish_interact" from="layer2/Minigames/Player" to="." method="_on_player_fish_interact"]
+[connection signal="fish_interact_furniture" from="layer2/Minigames/Player" to="." method="_on_player_fish_interact_furniture"]
 [connection signal="body_entered" from="layer2/Minigames/DrinkTable/Area2D" to="layer2/Minigames/Player" method="_on_barman_area_entered"]
 [connection signal="body_entered" from="layer2/Minigames/DentistTable/Area2D" to="layer2/Minigames/Player" method="_on_denstist_area_entered"]
 [connection signal="body_entered" from="layer2/Minigames/BarberTable/Area2D" to="layer2/Minigames/Player" method="_on_barber_area_entered"]

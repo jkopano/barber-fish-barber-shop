@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var speed = 5000
 var is_interactable = false
 
+signal fish_interact_furniture(scene: PackedScene)
+
 signal fish_interact
 
 func _process(dt: float) -> void:
@@ -49,21 +51,19 @@ func choose_anim(vec: Vector2) -> void:
 
 
 func _on_area_2d_body_entered(_body:Node2D) -> void:
-	print("dupa")
 	is_interactable = true
 
 func _on_area_2d_body_exited(_body:Node2D) -> void:
-	print("dupa2")
 	is_interactable = false
 
 func _on_barber_area_entered(_body:Node2D)-> void:
 	if $"../BarberTable".to_be_picked == true:
-		print("barber")
+		fish_interact_furniture.emit(load("res://src/scenes/barber/barber-main.tscn"))
 
 func _on_barman_area_entered(_body:Node2D) -> void:
 	if $"../DrinkTable".to_be_picked == true:
-		print("barman")
+		fish_interact_furniture.emit(load("res://src/scenes/Bar/drink-bar/drink-bar.tscn"))
 
 func _on_denstist_area_entered(_body:Node2D) -> void:
 	if $"../DentistTable".to_be_picked == true:
-		print("denstist")
+		fish_interact_furniture.emit(load("res://src/scenes/dentist/dentist-main.tscn"))
