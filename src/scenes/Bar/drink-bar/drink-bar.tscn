@@ -1,69 +1,127 @@
-[gd_scene load_steps=11 format=3 uid="uid://bqrwowtfsjhpb"]
+[gd_scene load_steps=18 format=3 uid="uid://bqrwowtfsjhpb"]
 
-[ext_resource type="Texture2D" uid="uid://cq8apivxewawa" path="res://place-holders/background.png" id="1_cmvb0"]
-[ext_resource type="Texture2D" uid="uid://7c8x10khncfx" path="res://place-holders/shark.png" id="2_7xenl"]
+[ext_resource type="Texture2D" uid="uid://bs2rtejtqnxl2" path="res://sprites/bar/bar-background.png" id="1_6x5pp"]
 [ext_resource type="Script" uid="uid://cxxlhtq4fa0ao" path="res://src/scenes/Bar/drink-bar/shark.gd" id="2_blw56"]
 [ext_resource type="Script" uid="uid://b7qfsummkprsa" path="res://src/scenes/Bar/drink-bar/drink.gd" id="3_7xenl"]
-[ext_resource type="Texture2D" uid="uid://bk47f1w0vbox1" path="res://place-holders/drink.png" id="3_blw56"]
 [ext_resource type="PackedScene" uid="uid://cxoqqtpq7783" path="res://src/scenes/Bar/drink-indicator/drink-indicator.tscn" id="3_tu65y"]
-[ext_resource type="Texture2D" uid="uid://d1lqy68qqlu4t" path="res://place-holders/drink2.png" id="6_rmt2k"]
-[ext_resource type="Texture2D" uid="uid://ygyn6stievmq" path="res://place-holders/drink3.png" id="7_tu65y"]
+[ext_resource type="Texture2D" uid="uid://di6pu0c4bnclp" path="res://sprites/bar/shark-cute.png" id="4_23hjn"]
+[ext_resource type="Texture2D" uid="uid://bar1ng1lyiekb" path="res://sprites/bar/bar-frontdesk.png" id="5_3rrnj"]
+[ext_resource type="Texture2D" uid="uid://du0vvsyaxsalr" path="res://sprites/bar/drinkable-b.png" id="7_23hjn"]
+[ext_resource type="Texture2D" uid="uid://bsxtjxdb6aqq2" path="res://sprites/bar/drinkable-g.png" id="8_3rrnj"]
+[ext_resource type="Texture2D" uid="uid://ddbbd1nj58mk" path="res://sprites/bar/drinkable-p.png" id="9_771wu"]
+[ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="10_iw7jy"]
+[ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="11_xmi8b"]
+[ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="12_qfnpb"]
+[ext_resource type="AudioStream" uid="uid://dtj760f3ofavk" path="res://Sounds/SOUND DESIGN/Cały projekt/Bubbels.wav" id="13_qfnpb"]
+[ext_resource type="AudioStream" uid="uid://bochrjd8sn8v3" path="res://Sounds/SOUND DESIGN/specific scean/ClickClickGlass.wav" id="14_d8dma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pu02"]
-size = Vector2(670, 600)
+size = Vector2(760, 709)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmt2k"]
-size = Vector2(100, 100)
+size = Vector2(70, 100)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xmi8b"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(980, 1, 1)
+gravity = Vector3(0, -980, 0)
+scale_max = 3.5
+turbulence_enabled = true
+turbulence_noise_speed_random = 1.0
 
 [node name="main" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("1_cmvb0")
+position = Vector2(3.05176e-05, -1.52588e-05)
+scale = Vector2(6.01111, 6.01111)
+texture = ExtResource("1_6x5pp")
 
 [node name="Shark" type="Area2D" parent="."]
 script = ExtResource("2_blw56")
 drink_indicator_scene = ExtResource("3_tu65y")
 
 [node name="Sprite2D" type="Sprite2D" parent="Shark"]
-position = Vector2(-10.5, -106.5)
-texture = ExtResource("2_7xenl")
+texture_filter = 1
+position = Vector2(-7, -64)
+scale = Vector2(8.81034, 8.81034)
+texture = ExtResource("4_23hjn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shark"]
-position = Vector2(-10.5, -106.5)
+position = Vector2(-3, -168.5)
 shape = SubResource("RectangleShape2D_4pu02")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.6, 0.6)
+[node name="Frontdesk" type="Sprite2D" parent="."]
+position = Vector2(152.476, 323)
+scale = Vector2(5.07143, 5.07143)
+texture = ExtResource("5_3rrnj")
 
 [node name="Drink1" type="Area2D" parent="." groups=["Drinks"]]
 script = ExtResource("3_7xenl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Drink1"]
-position = Vector2(341, 405)
-texture = ExtResource("3_blw56")
+texture_filter = 1
+position = Vector2(393, 232.333)
+scale = Vector2(4.66667, 4.66667)
+texture = ExtResource("7_23hjn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drink1"]
-position = Vector2(341, 405)
+position = Vector2(392, 230.333)
 shape = SubResource("RectangleShape2D_rmt2k")
 
 [node name="Drink2" type="Area2D" parent="." groups=["Drinks"]]
 script = ExtResource("3_7xenl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Drink2"]
-position = Vector2(516, 405)
-texture = ExtResource("6_rmt2k")
+texture_filter = 1
+position = Vector2(525.5, 260)
+scale = Vector2(5, 5)
+texture = ExtResource("8_3rrnj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drink2"]
-position = Vector2(516, 405)
+position = Vector2(524.5, 263)
 shape = SubResource("RectangleShape2D_rmt2k")
 
 [node name="Drink3" type="Area2D" parent="." groups=["Drinks"]]
 script = ExtResource("3_7xenl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Drink3"]
-position = Vector2(685, 405)
-texture = ExtResource("7_tu65y")
+texture_filter = 1
+position = Vector2(656, 242.4)
+scale = Vector2(4.4, 4.4)
+texture = ExtResource("9_771wu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drink3"]
-position = Vector2(685, 405)
+position = Vector2(654, 241.4)
 shape = SubResource("RectangleShape2D_rmt2k")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+
+[node name="Bubble1" type="GPUParticles2D" parent="."]
+position = Vector2(0, 544)
+amount = 5
+texture = ExtResource("10_iw7jy")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_xmi8b")
+
+[node name="Bubble2" type="GPUParticles2D" parent="."]
+position = Vector2(0, 544)
+amount = 5
+texture = ExtResource("11_xmi8b")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_xmi8b")
+
+[node name="Bubble3" type="GPUParticles2D" parent="."]
+position = Vector2(0, 544)
+amount = 5
+texture = ExtResource("12_qfnpb")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_xmi8b")
+
+[node name="SFXplayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_qfnpb")
+autoplay = true
+
+[node name="SFXplayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_d8dma")

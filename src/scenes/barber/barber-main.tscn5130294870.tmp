@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnxiy03x62g1d"]
+
+[ext_resource type="Texture2D" uid="uid://cjh1eoyjubghc" path="res://sprites/fryzjer/fryzjer-background.png" id="1_pkkap"]
+[ext_resource type="Script" uid="uid://bd3xwvvc55vpg" path="res://src/scenes/barber/hair.gd" id="2_3basa"]
+[ext_resource type="Texture2D" uid="uid://dirca2bcyk6d3" path="res://sprites/fryzjer/rekin góra.png" id="2_emc83"]
+[ext_resource type="Script" uid="uid://e8wgnj0u03aw" path="res://src/scenes/barber/sharkMove.gd" id="3_pkkap"]
+
+[node name="main" type="Node2D"]
+
+[node name="Fryzjer-background" type="Sprite2D" parent="."]
+position = Vector2(593, 328)
+scale = Vector2(3.77778, 3.77778)
+texture = ExtResource("1_pkkap")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(231, 14)
+scale = Vector2(3.63056, 3.63056)
+texture = ExtResource("2_emc83")
+script = ExtResource("3_pkkap")
+
+[node name="hair" type="Node2D" parent="."]
+script = ExtResource("2_3basa")

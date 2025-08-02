@@ -1,17 +1,13 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=7 format=3 uid="uid://clnuf52g18udg"]
-=======
 [gd_scene load_steps=21 format=3 uid="uid://clnuf52g18udg"]
->>>>>>> Stashed changes
+[gd_scene load_steps=20 format=3 uid="uid://clnuf52g18udg"]
 
-[ext_resource type="Texture2D" uid="uid://57n5ym3jmnbm" path="res://place-holders/tooth0.png" id="1_2in81"]
-[ext_resource type="Texture2D" uid="uid://heqp14tkfmrc" path="res://place-holders/mouth.png" id="1_04j1l"]
+[ext_resource type="Script" uid="uid://coc0oh0fxxqil" path="res://src/scenes/dentist/categoryHolder.gd" id="1_y7h83"]
 [ext_resource type="Script" uid="uid://cxpam4axssoha" path="res://src/scenes/dentist/scripts/tooth.gd" id="2_04j1l"]
 [ext_resource type="Script" uid="uid://cif33ot4o5uq5" path="res://src/scenes/dentist/scripts/mouth.gd" id="2_b13w4"]
-[ext_resource type="Texture2D" uid="uid://bnk4ga5g31xym" path="res://place-holders/placeholder.png" id="4_0iurs"]
+[ext_resource type="Texture2D" uid="uid://bepgunullt5lt" path="res://sprites/dentist/bigshark-notooth.png" id="2_sgacy"]
+[ext_resource type="Texture2D" uid="uid://dqdprpie4txxv" path="res://sprites/dentist/dentist-background.png" id="2_y565x"]
 [ext_resource type="Script" uid="uid://roj2ko5w8gks" path="res://src/scenes/dentist/scripts/button.gd" id="5_b13w4"]
-<<<<<<< Updated upstream
-=======
 [ext_resource type="Texture2D" uid="uid://dh1b8psyohmr1" path="res://sprites/zeby/tooth2.png" id="6_ibnya"]
 [ext_resource type="Texture2D" uid="uid://i5ddjurq4kby" path="res://sprites/dentist/brush1-2.0.png" id="6_sgacy"]
 [ext_resource type="Texture2D" uid="uid://cn7v0bwho8apc" path="res://sprites/zeby/tooth3.png" id="7_c6v1a"]
@@ -34,15 +30,20 @@ gravity = Vector3(0, -980, 0)
 scale_max = 3.5
 turbulence_enabled = true
 turbulence_noise_speed_random = 1.0
->>>>>>> Stashed changes
-
 [node name="main" type="Node2D"]
+texture_filter = 2
+script = ExtResource("1_y7h83")
+
+[node name="Dentist-background" type="Sprite2D" parent="."]
+position = Vector2(578, 325)
+scale = Vector2(3.7, 3.7)
+texture = ExtResource("2_y565x")
 
 [node name="mouth" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(596, 325)
+position = Vector2(593, 297)
 scale = Vector2(3.6954, 3.6954)
-texture = ExtResource("1_04j1l")
+texture = ExtResource("2_sgacy")
 script = ExtResource("2_b13w4")
 
 [node name="teeth" type="Node2D" parent="."]
@@ -53,73 +54,78 @@ script = ExtResource("2_04j1l")
 
 [node name="tooth0" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(149.653, 19.45)
-texture = ExtResource("1_2in81")
+position = Vector2(143.4, 15.8)
+texture = ExtResource("6_ibnya")
 
 [node name="tooth1" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(131.453, 22.25)
-scale = Vector2(1.20303, 1.20303)
-texture = ExtResource("1_2in81")
+position = Vector2(124.8, 20)
+texture = ExtResource("6_ibnya")
 
 [node name="tooth2" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(106.6, 24.6)
-scale = Vector2(1.26303, 1.26303)
-texture = ExtResource("1_2in81")
+position = Vector2(104.4, 26.6)
+texture = ExtResource("7_c6v1a")
 
 [node name="tooth3" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(2.60004, 17.8)
+position = Vector2(12.2, 9.6)
 rotation = 3.14159
 scale = Vector2(1, -1)
-texture = ExtResource("1_2in81")
+texture = ExtResource("6_ibnya")
+
+[node name="tooth8" type="Sprite2D" parent="teeth"]
+texture_filter = 1
+position = Vector2(-2.6, 1)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("8_cj5su")
 
 [node name="tooth4" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(25.2, 22.6)
+position = Vector2(30.6, 17.6)
 rotation = 3.14159
-scale = Vector2(1.203, -1.203)
-texture = ExtResource("1_2in81")
+scale = Vector2(1.12562, -1.12562)
+texture = ExtResource("6_ibnya")
 
 [node name="tooth5" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(51, 26)
+position = Vector2(51.2, 25.8)
 rotation = 3.14159
-scale = Vector2(1.263, -1.263)
-texture = ExtResource("1_2in81")
+scale = Vector2(1, -1)
+texture = ExtResource("7_c6v1a")
 
 [node name="tooth6" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(77.6, 27.4)
-scale = Vector2(1.41093, 1.41094)
-texture = ExtResource("1_2in81")
+position = Vector2(78, 29.8)
+scale = Vector2(1.14242, 1.14242)
+texture = ExtResource("7_c6v1a")
+
+[node name="tooth7" type="Sprite2D" parent="teeth"]
+texture_filter = 1
+position = Vector2(160.4, 9.8)
+texture = ExtResource("8_cj5su")
 
 [node name="yellow" type="Button" parent="."]
-offset_left = 931.0
-offset_top = 428.0
-offset_right = 1094.0
-offset_bottom = 519.0
-text = "yellow"
-icon = ExtResource("4_0iurs")
+offset_left = 847.0
+offset_top = 556.0
+offset_right = 991.0
+offset_bottom = 701.0
+icon = ExtResource("6_sgacy")
 flat = true
 expand_icon = true
 script = ExtResource("5_b13w4")
-category = "yellow"
 
 [node name="red" type="Button" parent="."]
-offset_left = 933.0
-offset_top = 524.0
-offset_right = 1096.0
-offset_bottom = 615.0
-text = "red"
-icon = ExtResource("4_0iurs")
+offset_left = 988.0
+offset_top = 554.0
+offset_right = 1136.0
+offset_bottom = 697.0
+icon = ExtResource("8_y565x")
 flat = true
 expand_icon = true
 script = ExtResource("5_b13w4")
-<<<<<<< Updated upstream
 category = "red"
-=======
 
 [node name="green" type="Button" parent="."]
 offset_left = 681.0
@@ -169,4 +175,3 @@ process_material = SubResource("ParticleProcessMaterial_vmhag")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_2c2yr")
->>>>>>> Stashed changes

@@ -1,0 +1,270 @@
+[gd_scene load_steps=32 format=4 uid="uid://balwn7nail4e1"]
+
+[ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
+[ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
+[ext_resource type="Texture2D" uid="uid://by6ckrxlhgyk7" path="res://sprites/levels/woodblock.png" id="2_vqkoe"]
+[ext_resource type="Texture2D" uid="uid://dvu4d4ttfwad0" path="res://sprites/levels/wallblock.png" id="3_fl7jp"]
+[ext_resource type="PackedScene" uid="uid://7j0rpjjl4ayy" path="res://src/scenes/LvL1/player/player.tscn" id="4_qf6y4"]
+[ext_resource type="PackedScene" uid="uid://bg247acf34svv" path="res://src/scenes/minigame_places.tscn" id="6_vqkoe"]
+[ext_resource type="Script" uid="uid://b8vt08ts1fcdm" path="res://src/scenes/LvL1/furniture/drink_table.gd" id="8_vjw8b"]
+[ext_resource type="Script" uid="uid://deigtxh12e1pc" path="res://src/scenes/LvL1/furniture/dentist_table.gd" id="10_mwhif"]
+[ext_resource type="Texture2D" uid="uid://d1fn85sqow3nq" path="res://sprites/levels/table.png" id="11_r3aaw"]
+[ext_resource type="Texture2D" uid="uid://b1b5ux3qi1cpn" path="res://sprites/levels/brush-point.png" id="12_68jg1"]
+[ext_resource type="Script" uid="uid://dkspgxoaglgob" path="res://src/scenes/LvL1/furniture/barber_table.gd" id="12_isthh"]
+[ext_resource type="Texture2D" uid="uid://d2l6wi2asrqhf" path="res://sprites/levels/zlew.png" id="12_vjw8b"]
+[ext_resource type="Texture2D" uid="uid://bfhwalypxtmkm" path="res://sprites/fryzjer/komoda-szafka.png" id="13_6hthj"]
+[ext_resource type="Texture2D" uid="uid://m3qbvtd31lem" path="res://sprites/levels/winko-point.png" id="13_68jg1"]
+[ext_resource type="Texture2D" uid="uid://s46x68lh0u5k" path="res://sprites/levels/nozycki-point.png" id="15_6hthj"]
+[ext_resource type="Texture2D" uid="uid://cwsmpfky4csqc" path="res://sprites/fryzjer/komoda-lustro.png" id="15_it7ct"]
+[ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="17_it7ct"]
+[ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="18_xutvd"]
+[ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
+[ext_resource type="Texture2D" uid="uid://deq4lha58betb" path="res://sprites/fireworks/fireworks_base.png" id="20_b0ig0"]
+[ext_resource type="Script" uid="uid://clxyf1mwwpc2n" path="res://src/scenes/LvL1/firework.gd" id="21_pe2fm"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
+normal = Vector2(-0.469209, 0.883087)
+distance = 416.366
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_43ne2"]
+normal = Vector2(0.469849, -0.882747)
+distance = -136.536
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ge684"]
+texture = ExtResource("2_vqkoe")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:0/0/y_sort_origin = -12
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1kat"]
+texture = ExtResource("3_fl7jp")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:0/0/y_sort_origin = -18
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fc11b"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(32, 16)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_ge684")
+sources/3 = SubResource("TileSetAtlasSource_u1kat")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68jg1"]
+size = Vector2(39.9936, 10.301)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hthj"]
+size = Vector2(40.9565, 14.6676)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it7ct"]
+size = Vector2(11.149, 31.1493)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7jp"]
+size = Vector2(86.6245, 31)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pe2fm"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(570, 1, 1)
+gravity = Vector3(0, -980, 0)
+scale_max = 3.5
+turbulence_enabled = true
+turbulence_noise_speed_random = 1.0
+
+[node name="Tilemap" type="Node2D"]
+script = ExtResource("1_qf6y4")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(3.577, 3.577)
+texture = ExtResource("1_4ifww")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(405, -407)
+shape = SubResource("WorldBoundaryShape2D_u1kat")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-25, 15)
+rotation = -0.0349066
+shape = SubResource("WorldBoundaryShape2D_43ne2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(212, 285)
+polygon = PackedVector2Array(-61, -39, -13, -61, 36, -37, 85, -56, 136, -34, 236, -85, 234, -140, 281, -109, 276, -54, 97, 39)
+
+[node name="layer1" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+scale = Vector2(3.107, 3.107)
+tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wQAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAP//AAAAAAAAAAAFAP//AAAAAAAAAAAEAP//AAAAAAAAAAADAP//AAAAAAAAAAACAP//AAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAACAAIAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAD8/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD8/wMAAAAAAAAAAAAHAP//AAAAAAAAAAAIAAAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_fc11b")
+
+[node name="layer2" type="TileMapLayer" parent="."]
+clip_children = 2
+y_sort_enabled = true
+scale = Vector2(3.107, 3.107)
+tile_map_data = PackedByteArray("AAD9//3/AwAAAAAAAAD+//3/AwAAAAAAAAD///3/AwAAAAAAAAACAP3/AwAAAAAAAAADAP3/AwAAAAAAAAAEAP3/AwAAAAAAAAD8//7/AwAAAAAAAAD7////AwAAAAAAAAD6/wAAAwAAAAAAAAD6/wEAAwAAAAAAAAD6/wIAAwAAAAAAAAD6/wMAAwAAAAAAAAD8/wQAAwAAAAAAAAD7/wMAAwAAAAAAAAD7/wQAAwAAAAAAAAAFAP3/AwAAAAAAAAAGAP3/AwAAAAAAAAAHAP7/AwAAAAAAAAA=")
+tile_set = SubResource("TileSet_fc11b")
+
+[node name="Minigames" parent="layer2" instance=ExtResource("6_vqkoe")]
+clip_children = 0
+
+[node name="Player" parent="layer2/Minigames" instance=ExtResource("4_qf6y4")]
+y_sort_enabled = true
+position = Vector2(-92.0001, 52)
+scale = Vector2(3.11321, 3.11321)
+speed = 60000
+
+[node name="DrinkTable" type="Sprite2D" parent="layer2/Minigames"]
+clip_children = 2
+y_sort_enabled = true
+position = Vector2(33, -114)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("11_r3aaw")
+region_enabled = true
+region_rect = Rect2(5.48885, 7.17007, 52.231, 49.4612)
+script = ExtResource("8_vjw8b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="layer2/Minigames/DrinkTable"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer2/Minigames/DrinkTable/StaticBody2D"]
+position = Vector2(-2.25298, -1.93111)
+polygon = PackedVector2Array(13.196, 23.4953, 24.7827, 16.4145, -12.2304, -2.25298, -24.4609, 3.86225, 12.5523, 23.1735)
+
+[node name="Point" type="Sprite2D" parent="layer2/Minigames/DrinkTable"]
+top_level = true
+position = Vector2(41, -191)
+scale = Vector2(3, 3)
+texture = ExtResource("13_68jg1")
+
+[node name="Area2D" type="Area2D" parent="layer2/Minigames/DrinkTable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="layer2/Minigames/DrinkTable/Area2D"]
+position = Vector2(-9.97747, 17.702)
+rotation = 0.523599
+shape = SubResource("RectangleShape2D_68jg1")
+
+[node name="DentistTable" type="Sprite2D" parent="layer2/Minigames"]
+clip_children = 2
+y_sort_enabled = true
+position = Vector2(408, 162)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("12_vjw8b")
+region_enabled = true
+region_rect = Rect2(18.1917, 14.3241, 27.1047, 34.0293)
+script = ExtResource("10_mwhif")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="layer2/Minigames/DentistTable"]
+y_sort_enabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer2/Minigames/DentistTable/StaticBody2D"]
+polygon = PackedVector2Array(2.25298, 15.449, 12.8741, 9.97747, -1.28741, 3.54039, -12.5523, 8.3682)
+
+[node name="Point" type="Sprite2D" parent="layer2/Minigames/DentistTable"]
+position = Vector2(-2.25302, -21.5642)
+scale = Vector2(0.965562, 0.965562)
+texture = ExtResource("12_68jg1")
+
+[node name="Area2D" type="Area2D" parent="layer2/Minigames/DentistTable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="layer2/Minigames/DentistTable/Area2D"]
+position = Vector2(-14.8053, -1.60929)
+rotation = -0.521853
+shape = SubResource("RectangleShape2D_6hthj")
+
+[node name="BarberTable" type="Sprite2D" parent="layer2/Minigames"]
+y_sort_enabled = true
+position = Vector2(-218, -140)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("13_6hthj")
+region_rect = Rect2(0, 0, 64, 64)
+script = ExtResource("12_isthh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="layer2/Minigames/BarberTable"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer2/Minigames/BarberTable/StaticBody2D"]
+polygon = PackedVector2Array(-9.97747, 25.7483, 19.3112, 10.2993, 9.01191, 4.50595, -21.8861, 19.6331)
+
+[node name="Sprite2D" type="Sprite2D" parent="layer2/Minigames/BarberTable/StaticBody2D"]
+top_level = true
+position = Vector2(-218, -140)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("15_it7ct")
+
+[node name="Point" type="Sprite2D" parent="layer2/Minigames/BarberTable"]
+top_level = true
+position = Vector2(-236, -206)
+scale = Vector2(3, 3)
+texture = ExtResource("15_6hthj")
+
+[node name="Area2D" type="Area2D" parent="layer2/Minigames/BarberTable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="layer2/Minigames/BarberTable/Area2D"]
+position = Vector2(9.97749, 22.2079)
+rotation = 1.0472
+shape = SubResource("RectangleShape2D_it7ct")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(3.107, 3.107)
+
+[node name="Sharks" type="Node2D" parent="."]
+position = Vector2(228, -112)
+scale = Vector2(2, 2)
+
+[node name="layer3" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+position = Vector2(-1, 0)
+scale = Vector2(3.107, 3.107)
+tile_map_data = PackedByteArray("AAD5////AwAAAAAAAAD5/wAAAwAAAAAAAAD7//3/AwAAAAAAAAD8//z/AwAAAAAAAAD9//z/AwAAAAAAAAD+//z/AwAAAAAAAAABAPz/AwAAAAAAAAACAPz/AwAAAAAAAAADAPz/AwAAAAAAAAAEAPz/AwAAAAAAAAD5//7/AwAAAAAAAAD7//z/AwAAAAAAAAD4////AwAAAAAAAAD4/wAAAwAAAAAAAAD6//7/AwAAAAAAAAD4/wEAAwAAAAAAAAD5/wEAAwAAAAAAAAD5/wIAAwAAAAAAAAD6/wMAAwAAAAAAAAD6/wIAAwAAAAAAAAD7/wMAAwAAAAAAAAD6//3/AwAAAAAAAAAFAPz/AAAAAAAAAAAGAP3/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_fc11b")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(193, -11)
+rotation = 0.521853
+shape = SubResource("RectangleShape2D_fl7jp")
+
+[node name="Bubble1" type="GPUParticles2D" parent="."]
+position = Vector2(4, 321)
+amount = 5
+texture = ExtResource("17_it7ct")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_pe2fm")
+
+[node name="Bubble2" type="GPUParticles2D" parent="."]
+position = Vector2(0, 324)
+amount = 5
+texture = ExtResource("18_xutvd")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_pe2fm")
+
+[node name="Bubble3" type="GPUParticles2D" parent="."]
+position = Vector2(5, 321)
+amount = 5
+texture = ExtResource("19_b0ig0")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_pe2fm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-92, 9)
+scale = Vector2(6, 6)
+texture = ExtResource("20_b0ig0")
+script = ExtResource("21_pe2fm")
+
+[connection signal="shark_needs_barber" from="." to="layer2/Minigames/BarberTable" method="_on_tilemap_shark_needs_barber"]
+[connection signal="shark_needs_denstist" from="." to="layer2/Minigames/DentistTable" method="_on_tilemap_shark_needs_denstist"]
+[connection signal="shark_needs_drink" from="." to="layer2/Minigames/DrinkTable" method="_on_tilemap_shark_needs_drink"]
+[connection signal="fish_interact" from="layer2/Minigames/Player" to="." method="_on_player_fish_interact"]
+[connection signal="fish_interact_furniture" from="layer2/Minigames/Player" to="." method="_on_player_fish_interact_furniture"]
+[connection signal="body_entered" from="layer2/Minigames/DrinkTable/Area2D" to="layer2/Minigames/Player" method="_on_barman_area_entered"]
+[connection signal="body_entered" from="layer2/Minigames/DentistTable/Area2D" to="layer2/Minigames/Player" method="_on_denstist_area_entered"]
+[connection signal="body_entered" from="layer2/Minigames/BarberTable/Area2D" to="layer2/Minigames/Player" method="_on_barber_area_entered"]
+[connection signal="body_entered" from="Area2D" to="layer2/Minigames/Player" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="layer2/Minigames/Player" method="_on_area_2d_body_exited"]

@@ -36,7 +36,7 @@ sources/0 = SubResource("TileSetAtlasSource_ge684")
 sources/1 = SubResource("TileSetAtlasSource_u1kat")
 sources/2 = SubResource("TileSetAtlasSource_43ne2")
 
-[node name="Tilemap" type="Node2D"]
+[node name="Tilemap2" type="Node2D"]
 
 [node name="layer1" type="TileMapLayer" parent="."]
 scale = Vector2(3.107, 3.107)

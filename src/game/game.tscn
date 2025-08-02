@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b18m1ap057o0q"]
+
+[ext_resource type="Script" uid="uid://c1hsaccoeagd0" path="res://src/game/game.gd" id="1_kgj8g"]
+[ext_resource type="PackedScene" uid="uid://balwn7nail4e1" path="res://src/scenes/LvL1/tilemap.tscn" id="1_qnjlk"]
+[ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="2_s6lek"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_kgj8g")
+
+[node name="Tilemap" parent="." instance=ExtResource("1_qnjlk")]
+
+[node name="Clock" parent="." instance=ExtResource("2_s6lek")]
+position = Vector2(520, -265)
+
+[connection signal="swap_scene" from="Tilemap" to="." method="_on_tilemap_swap_scene"]

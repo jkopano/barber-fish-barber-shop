@@ -1,13 +1,9 @@
 extends Node2D
 
-func _process(delta: float):
+func clean(min_distance):
 	var mouse_pos = get_viewport().get_mouse_position()
 	var distance = global_position.distance_to(mouse_pos)
-
-func clean():
-	var mouse_pos = get_viewport().get_mouse_position()
-	var distance = global_position.distance_to(mouse_pos)
-	if distance <30:
+	if distance <min_distance:
 		queue_free()
 		return true
 	return false

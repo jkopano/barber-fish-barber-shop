@@ -5,14 +5,12 @@ var mask_texture
 var yellowRock = preload("res://src/scenes/dentist/yellowRock.tscn")
 var redRock = preload("res://src/scenes/dentist/redRock.tscn")
 
-var collectingCategory = "yellow"
-
 var yellowRocks = []
 var redRocks = []
 
 func spawn_entites(texture_name:String, object:Sprite2D, offset, redEntitiesToSpawn, yellowEntitiesToSpawn):
 	randomize()
-	var path = "res://img/"+texture_name+"-mask.png"
+	var path = "res://sprites/zeby/"+texture_name+"mask.png"
 	mask_texture = load(path)
 	var image = mask_texture.get_image()
 	var color_pixels := {}
@@ -57,15 +55,15 @@ func _ready():
 				file_path = file_path.substr(0, file_path.length() - 4)
 				spawn_entites(file_path, child, texture.get_size()/2, int(randf() * 3), int(randf() * 3))
 				
-func switchCollectingCategory(category):
-	collectingCategory = category
 func _process(delta: float) -> void:
+	if (redRocks.is_empty()and yellowRocks.is_empty()):
+		get_parent().greenYellowDonw = true
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if (collectingCategory == "yellow"):
+		if (get_parent().getCategory() == "yellow"):
 			for rock in yellowRocks:
-				if rock.clean():
+				if rock.clean(30):
 					yellowRocks.erase(rock)
-		elif (collectingCategory == "red"):
+		elif (get_parent().getCategory() == "red"):
 			for rock in redRocks:
-				if rock.clean():
+				if rock.clean(30):
 					redRocks.erase(rock)

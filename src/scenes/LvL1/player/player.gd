@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
-@export var speed = 10
+@export var speed = 5000
+var is_interactable = false
+
+signal fish_interact_furniture(scene: PackedScene)
 
 signal fish_interact
 
@@ -12,23 +15,18 @@ func cart_to_iso(vec: Vector2) -> Vector2:
 	return Vector2(vec.x, vec.y / 2)
 
 func interact():
-	emit_signal("fish_interact")
+	if Input.is_action_just_pressed("ACTION") and is_interactable:
+		print("lool")
+		fish_interact.emit()
 
 func move(dt):
 	var input = Input.get_vector("LEFT", "RIGHT", "UP", "DOWN")
 	var direction = cart_to_iso(input)
 	choose_anim(input)
 
-	velocity = direction * 5000 * speed * dt
+	velocity = direction * speed * dt
 
 	move_and_slide()
-
-
-
-
-
-
-
 
 
 
@@ -50,3 +48,22 @@ func choose_anim(vec: Vector2) -> void:
 		$Fish.frame = 6
 	if vec == ( Vector2.DOWN + Vector2.RIGHT ).normalized():
 		$Fish.frame = 8
+
+
+func _on_area_2d_body_entered(_body:Node2D) -> void:
+	is_interactable = true
+
+func _on_area_2d_body_exited(_body:Node2D) -> void:
+	is_interactable = false
+
+func _on_barber_area_entered(_body:Node2D)-> void:
+	if $"../BarberTable".to_be_picked == true:
+		fish_interact_furniture.emit(load("res://src/scenes/barber/barber-main.tscn"))
+
+func _on_barman_area_entered(_body:Node2D) -> void:
+	if $"../DrinkTable".to_be_picked == true:
+		fish_interact_furniture.emit(load("res://src/scenes/Bar/drink-bar/drink-bar.tscn"))
+
+func _on_denstist_area_entered(_body:Node2D) -> void:
+	if $"../DentistTable".to_be_picked == true:
+		fish_interact_furniture.emit(load("res://src/scenes/dentist/dentist-main.tscn"))

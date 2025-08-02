@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhir1xuucrf47"]
+[gd_scene load_steps=9 format=3 uid="uid://bsrcm4qh8wk62"]
 
-[ext_resource type="Texture2D" uid="uid://b83bybvsw3e3i" path="res://place-holders/splash_placeholder.png" id="1_26xan"]
-[ext_resource type="Script" path="res://src/scenes/splash-screen/silliSplash.gd" id="1_r8hcj"]
+[ext_resource type="Texture2D" uid="uid://b83bybvsw3e3i" path="res://sprites/splash_placeholder.png" id="1_26xan"]
+[ext_resource type="Script" uid="uid://2un8v54nmig7" path="res://src/scenes/splash-screen/silliSplash.gd" id="1_r8hcj"]
+[ext_resource type="Theme" uid="uid://dbq8hhq65foaf" path="res://src/scenes/splash-screen/splash-theme.tres" id="3_yg6k2"]
+[ext_resource type="Texture2D" uid="uid://cblj71a7on2nc" path="res://sprites/qr/jkopano.png" id="4_ildsp"]
+[ext_resource type="Texture2D" uid="uid://b02wmmies74ke" path="res://sprites/qr/nprze.png" id="4_k6u2f"]
+[ext_resource type="Texture2D" uid="uid://brplp2lqmc2x" path="res://sprites/qr/ederDeve.png" id="5_fdah8"]
+[ext_resource type="Texture2D" uid="uid://cuwwikrdmaace" path="res://sprites/qr/lunaru.png" id="6_wi4in"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8hcj"]
 draw_center = false
@@ -23,13 +28,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -812.0
-offset_top = 111.0
-offset_right = -234.0
-offset_bottom = 242.0
+offset_left = -816.0
+offset_top = 67.0
+offset_right = -389.0
+offset_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_r8hcj")
 text = "Start Game"
 
@@ -39,13 +44,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -812.0
-offset_top = 315.0
-offset_right = -234.0
-offset_bottom = 446.0
+offset_left = -372.0
+offset_top = 66.0
+offset_right = -119.0
+offset_bottom = 153.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_r8hcj")
 text = "Quit
 "
@@ -54,20 +59,84 @@ text = "Quit
 zoom = Vector2(0.6, 0.6)
 
 [node name="dwukropek3" type="Label" parent="."]
-offset_left = -832.0
-offset_top = -532.0
-offset_right = -663.0
-offset_bottom = -259.0
+offset_left = -835.0
+offset_top = -402.0
+offset_right = -603.0
+offset_bottom = 7.0
+theme = ExtResource("3_yg6k2")
 theme_override_font_sizes/font_size = 300
-text = ":3"
+text = ":"
+
+[node name="dwukropek4" type="Label" parent="."]
+offset_left = -760.0
+offset_top = -379.0
+offset_right = -528.0
+offset_bottom = 30.0
+theme = ExtResource("3_yg6k2")
+theme_override_font_sizes/font_size = 300
+text = "3"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -89.0
+offset_top = 274.0
+offset_right = 657.0
+offset_bottom = 300.0
+theme = ExtResource("3_yg6k2")
+theme_override_font_sizes/font_size = 25
+text = "If you see a developer of this game, give them this info:"
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Label3"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 25.0
+offset_right = 728.0
+offset_bottom = 51.0
+theme = ExtResource("3_yg6k2")
+theme_override_font_sizes/font_size = 25
+text = "Mabye Barberfish Barbershop is the friends we made along the way"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -86.0
+offset_top = 179.0
+offset_right = 668.0
+offset_bottom = 210.0
+theme = ExtResource("3_yg6k2")
+theme_override_font_sizes/font_size = 30
+text = "For more information about the developers, visit their githubs"
+autowrap_mode = 2
 
 [node name="Label" type="Label" parent="."]
-offset_left = -819.0
-offset_top = -150.0
-offset_right = 1491.0
-offset_bottom = 127.0
-theme_override_font_sizes/font_size = 70
+offset_left = -817.0
+offset_top = -112.0
+offset_right = 167.0
+offset_bottom = 47.0
+theme = ExtResource("3_yg6k2")
+theme_override_font_sizes/font_size = 45
 text = "Your PC ran Barberfish Barbershop.
-Thank you for downloading our game, have fun."
+Thank you for downloading our game, we kindly advise you to have fun."
+autowrap_mode = 2
 
+[node name="qrs" type="Node" parent="."]
+
+[node name="Sprite2D5" type="Sprite2D" parent="qrs"]
+position = Vector2(-196, 252)
+scale = Vector2(1, 1.025)
+texture = ExtResource("5_fdah8")
+
+[node name="Sprite2D4" type="Sprite2D" parent="qrs"]
+position = Vector2(-373, 254)
+texture = ExtResource("4_ildsp")
+
+[node name="Sprite2D3" type="Sprite2D" parent="qrs"]
+position = Vector2(-551, 255)
+texture = ExtResource("6_wi4in")
+
+[node name="Sprite2D2" type="Sprite2D" parent="qrs"]
+position = Vector2(-729.75, 254.25)
+scale = Vector2(1.00307, 1.04037)
+texture = ExtResource("4_k6u2f")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

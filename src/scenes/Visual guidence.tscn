@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://caxtm6fpjlmn1" path="res://sprites/levels/komoda.png" id="6_eqylo"]
 [ext_resource type="Texture2D" uid="uid://d1fn85sqow3nq" path="res://sprites/levels/table.png" id="7_102sg"]
 [ext_resource type="Texture2D" uid="uid://d2l6wi2asrqhf" path="res://sprites/levels/zlew.png" id="8_ia7mj"]
-[ext_resource type="Script" uid="uid://dtf73ifrsi1ct" path="res://src/scenes/LvL1/zegar.gd" id="9_kq30s"]
+[ext_resource type="Script" uid="uid://dtf73ifrsi1ct" path="res://src/scenes/clock/zegar.gd" id="9_kq30s"]
 [ext_resource type="Texture2D" uid="uid://00ta1ddnetew" path="res://sprites/levels/Zegar-tarcza.png" id="10_eytpb"]
 [ext_resource type="Texture2D" uid="uid://cfq2fw538dhus" path="res://sprites/levels/Zegar-rama.png" id="11_qy0rn"]
 [ext_resource type="Texture2D" uid="uid://bfmvrw8ey6v63" path="res://sprites/levels/Zegar-kreska.png" id="12_b583i"]

@@ -6,6 +6,8 @@ var chosen_drink = null
 
 @export var drink_indicator_scene : PackedScene
 
+@onready var sfxplayer = $"../SFXplayer2"
+
 var drink_indicator_instance = null
 
 func _ready():
@@ -36,7 +38,7 @@ func _ready():
 	if drink_indicator_scene:
 		drink_indicator_instance = drink_indicator_scene.instantiate()
 		add_child(drink_indicator_instance)
-		drink_indicator_instance.position = Vector2(300, -300)
+		drink_indicator_instance.position = Vector2(400, -300)
 
 		var drink_sprite = chosen_drink.get_node_or_null("Sprite2D")
 		if drink_sprite:
@@ -45,7 +47,7 @@ func _ready():
 	connect("area_entered", Callable(self, "_on_Shark_area_entered"))
 
 func start_moving():
-	var target_x = -get_viewport_rect().size.x - 150
+	var target_x = -get_viewport_rect().size.x - 200
 	var distance = position.x - target_x
 	var duration = distance / speed
 	
@@ -59,10 +61,11 @@ func _on_drink_dropped(drink):
 	if drink == chosen_drink:
 		if drink_indicator_instance:
 			drink_indicator_instance.queue_free()
+			sfxplayer.play()
 		start_moving()
 		drink.queue_free()
 	else:
-		var death_scene = preload("res://src/scenes/death/death.tscn")
-		get_tree().change_scene_to_packed(death_scene)	
+		var death_scene = preload("res://src/scenes/death/death-with-animation/death.tscn")
+		get_tree().change_scene_to_packed(death_scene)
 		
 	

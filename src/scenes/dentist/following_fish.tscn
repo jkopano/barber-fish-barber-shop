@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6pygjg1se48h"]
+
+[ext_resource type="SpriteFrames" uid="uid://i040y6dsw4eq" path="res://src/scenes/dentist/fish_anim.tres" id="1_2fhcr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 2
+texture_repeat = 1
+sprite_frames = ExtResource("1_2fhcr")
+animation = &"closed"
