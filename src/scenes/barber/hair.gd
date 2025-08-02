@@ -3,7 +3,7 @@ extends Node2D
 var hair_strands = []
 var cut_hair_strands = []
 var time = 0.0
-var initial_inside_density = 0.0
+var initial_inside_density = []
 var initial_outside_density = 0.0
 var show_green = false
 var show_red = false
@@ -18,32 +18,42 @@ const base_color = Color.SADDLE_BROWN
 const hair_color_variation = 0.1
 
 # Main circle
-const hairRadius = 150
+const hairRadius = 125
 var hair_center = Vector2(1000, 300)
 
-# Reference circle
-var reference_radius = 0.0
-var reference_offset = Vector2.ZERO
+# Reference circles
+var numCircles = 1
+var reference_circles = []
 
 var move_x = 0
 
 var play = false
 
+func getNumCircles():
+	if Globals.serializeData.level<2:
+		numCircles = 1
+	elif Globals.serializeData.level<4:
+		numCircles = 2
+	else:
+		numCircles = 3
 func _ready():
 	randomize()
+	getNumCircles()
 	hair_center.y = get_viewport_rect().size.y / 2
 	hair_center.x = get_viewport_rect().size.x
-	move_x = - hair_center.x * 0.4
-	# Hair strands setup
+	move_x = -hair_center.x * 0.6
+	
+	
 	for i in range(1000):
 		var valid_position_found = false
 		var hairStrandOffset = Vector2.ZERO
 		var numTries = 0
 		while not valid_position_found and numTries < 10:
 			numTries += 1
+
 			var angle = randf() * TAU
-			var direction = Vector2(cos(angle), sin(angle))
-			direction *= randf() * hairRadius
+			var distance = sqrt(randf()) * hairRadius  # This gives uniform density
+			var direction = Vector2(cos(angle), sin(angle)) * distance
 			hairStrandOffset = direction
 
 			valid_position_found = true
@@ -56,52 +66,85 @@ func _ready():
 			"base_offset": hairStrandOffset,
 			"tip_offset": hairStrandOffset + Vector2(0, 30),
 			"velocity": Vector2.ZERO,
-			"hair_color": base_color + Color(randf()*hair_color_variation, randf()*hair_color_variation, randf()*hair_color_variation)
+			"hair_color": base_color + Color(
+				randf() * hair_color_variation,
+				randf() * hair_color_variation,
+				randf() * hair_color_variation
+			)
 		})
 
-	# Reference circle
-	reference_radius = hairRadius * (randf() * 0.4 + 0.4)
-	var angle = randf() * TAU
-	var direction = Vector2(cos(angle), sin(angle))
-	reference_offset = direction * randf() * (hairRadius - reference_radius)
+	# Reference circles generation
+	while reference_circles.size() < numCircles:
+		var radius = hairRadius * (randf() * 0.2 + 0.3) # 0.3 to 0.5
+		var tries = 0
+		var offset = Vector2.ZERO
+		var valid = false
+
+		while tries < 100 and not valid:
+			tries += 1
+			var angle = randf() * TAU
+			var dist = randf() * (hairRadius - radius)
+			offset = Vector2(cos(angle), sin(angle)) * dist
+
+			valid = true
+			for existing in reference_circles:
+				if offset.distance_to(existing.offset) < (radius + existing.radius):
+					valid = false
+					break
+
+		if valid:
+			reference_circles.append({
+				"radius": radius,
+				"offset": offset
+			})
 
 	# Initial densities
-	var inside_count = 0
+	var inside_counts = []
+	for i in range(reference_circles.size()):
+		inside_counts.append(0)
 	var outside_count = 0
+
 	for strand in hair_strands:
-		var dist = strand["base_offset"].distance_to(reference_offset)
-		if dist <= reference_radius:
-			inside_count += 1
-		else:
+		var inside_any = false
+		for i in range(reference_circles.size()):
+			var circle = reference_circles[i]
+			if strand["base_offset"].distance_to(circle.offset) <= circle.radius:
+				inside_counts[i] += 1
+				inside_any = true
+				break
+		if not inside_any:
 			outside_count += 1
 
-	var inside_area = PI * reference_radius * reference_radius
-	var outside_area = PI * hairRadius * hairRadius - inside_area
+	var outside_area = PI * hairRadius * hairRadius
+	for circle in reference_circles:
+		outside_area -= PI * circle.radius * circle.radius
 
-	initial_inside_density = inside_count / inside_area
+	for i in range(reference_circles.size()):
+		var circle = reference_circles[i]
+		var inside_area = PI * circle.radius * circle.radius
+		initial_inside_density.append(inside_counts[i] / inside_area)
+
 	initial_outside_density = outside_count / outside_area
 
 	start_movement_tween(set_done)
+
 func set_done():
 	play = !play
+
 func complete_game():
 	Globals.serializeData.level += 1
 	get_tree().change_scene_to_packed(load("res://src/scenes/LvL1/tilemap.tscn"))
 
 func start_movement_tween(callback):
-	# Example wiggle + ease in sequence:
 	var tween = create_tween()
-
-	# EASE IN to the left
 	var target1 = hair_center + Vector2(move_x, 0)
 	tween.tween_property(self, "hair_center", target1, 1.0)\
 		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
 
-	# Quick tweaks
 	tween.tween_property(self, "hair_center", hair_center + Vector2(move_x, 0) + Vector2(-100, 0), 0.05)
 	tween.tween_property(self, "hair_center", hair_center + Vector2(move_x, 0) + Vector2(100, 0), 0.1)
 	tween.tween_property(self, "hair_center", hair_center + Vector2(move_x, 0) + Vector2(-100, 0), 0.05)
-	
+
 	tween.tween_callback(callback)
 
 func _process(delta):
@@ -110,7 +153,6 @@ func _process(delta):
 
 	var mouse_pos = get_viewport().get_mouse_position()
 
-	# Cutting
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and play == true:
 		for i in range(len(hair_strands) - 1, -1, -1):
 			var strand = hair_strands[i]
@@ -143,11 +185,8 @@ func _process(delta):
 			velocity += force * delta
 
 		tip += velocity * delta
-
-		# Damping + spring force
 		velocity *= 0.98
 
-		# Enforce max length
 		var max_length = 30.0
 		var diff = tip - base
 		var dist = diff.length()
@@ -165,34 +204,47 @@ func _process(delta):
 		strand["position"] += strand["velocity"] * delta
 		strand["angle"] += strand["angular_velocity"] * delta
 
-	# Densities
 	if density_timer >= 0.5:
 		density_timer = 0.0
 
-		var inside_count = 0
+		var inside_counts = []
+		for i in range(reference_circles.size()):
+			inside_counts.append(0)
 		var outside_count = 0
 
 		for strand in hair_strands:
-			var dist = strand["base_offset"].distance_to(reference_offset)
-			if dist <= reference_radius:
-				inside_count += 1
-			else:
+			var inside_any = false
+			for i in range(reference_circles.size()):
+				var circle = reference_circles[i]
+				if strand["base_offset"].distance_to(circle.offset) <= circle.radius:
+					inside_counts[i] += 1
+					inside_any = true
+					break
+			if not inside_any:
 				outside_count += 1
 
-		var inside_area = PI * reference_radius * reference_radius
-		var outside_area = PI * hairRadius * hairRadius - inside_area
+		var outside_area = PI * hairRadius * hairRadius
+		for circle in reference_circles:
+			outside_area -= PI * circle.radius * circle.radius
 
-		var inside_density = inside_count / inside_area
+		var inside_ok = true
+		for i in range(reference_circles.size()):
+			var circle = reference_circles[i]
+			var inside_area = PI * circle.radius * circle.radius
+			var inside_density = inside_counts[i] / inside_area
+			var ratio = inside_density / initial_inside_density[i]
+			if ratio < 0.5:
+				inside_ok = false
+
 		var outside_density = outside_count / outside_area
 		var outside_ratio = outside_density / initial_outside_density
-		var inside_ratio = inside_density / initial_inside_density
 
-		if outside_ratio <= 0.2 and inside_ratio >= 0.5:
-			if move_x<0:
+		if outside_ratio <= 0.2 and inside_ok:
+			if move_x < 0:
 				play = false
 				move_x = -move_x
 				start_movement_tween(complete_game)
-		elif inside_ratio < 0.5:
+		elif not inside_ok:
 			show_green = false
 			show_red = true
 			var death_scene = preload("res://src/scenes/death/death-with-animation/death.tscn")
@@ -204,13 +256,14 @@ func _process(delta):
 	queue_redraw()
 
 func _draw():
-	draw_circle(hair_center + reference_offset, reference_radius, Color.DARK_GRAY)
+	for circle in reference_circles:
+		draw_circle(hair_center + circle.offset, circle.radius, Color.GREEN)
 
 	for strand in hair_strands:
 		draw_line(
 			hair_center + strand["base_offset"],
 			hair_center + strand["tip_offset"],
-			strand["hair_color"]* Color(1., 1., 1., 0.5), 3
+			strand["hair_color"] * Color(1., 1., 1., 0.5), 3
 		)
 
 	for strand in cut_hair_strands:
@@ -220,6 +273,8 @@ func _draw():
 		draw_line(pos, pos + dir * length, strand["hair_color"] + Color(0.3, 0.3, 0.3) * Color(1., 1., 1., 0.5), 3)
 
 	if show_green:
-		draw_circle(hair_center + reference_offset, reference_radius, Color.SEA_GREEN)
+		for circle in reference_circles:
+			draw_circle(hair_center + circle.offset, circle.radius, Color.SEA_GREEN)
 	elif show_red:
-		draw_circle(hair_center + reference_offset, reference_radius, Color.INDIAN_RED)
+		for circle in reference_circles:
+			draw_circle(hair_center + circle.offset, circle.radius, Color.INDIAN_RED)
