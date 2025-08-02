@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8l0d085bbdef"]
+
+[ext_resource type="Texture2D" uid="uid://d1fn85sqow3nq" path="res://sprites/table.png" id="1_shwnh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibobf"]
+size = Vector2(49.3855, 18.1734)
+
+[node name="Barman" type="Sprite2D"]
+texture = ExtResource("1_shwnh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.38419e-07, 4)
+rotation = 0.47473
+shape = SubResource("RectangleShape2D_ibobf")
