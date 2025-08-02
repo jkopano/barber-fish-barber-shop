@@ -16,7 +16,6 @@ func _ready() -> void:
 	next_rotate = for_every
 
 func _process(delta: float) -> void:
-	print(Globals.time_elapsed)
 	if ispaused == false:
 		Globals.time_elapsed += delta
 	
@@ -27,7 +26,7 @@ func _process(delta: float) -> void:
 	if time * 0.75 <= Globals.time_elapsed:
 		tarcza.self_modulate = Color(255, 0, 0, 255)
 		
-	if time <= time_elapsed:
+	if time <= Globals.time_elapsed:
 		await get_tree().create_timer(0.2).timeout
 		var death_scene = preload("res://src/scenes/death/death-with-animation/death.tscn")
 		get_tree().change_scene_to_packed(death_scene)
