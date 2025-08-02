@@ -18,10 +18,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://src/globals.gd"
+Global="*res://src/Global.gd"
 
 [file_customization]
 
 folder_colors={
+"res://fonts/": "pink",
 "res://place-holders/": "red",
 "res://sprites/": "teal",
 "res://src/": "blue"
