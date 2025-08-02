@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhir1xuucrf47"]
+[gd_scene load_steps=4 format=3 uid="uid://bsrcm4qh8wk62"]
 
-[ext_resource type="Texture2D" uid="uid://b83bybvsw3e3i" path="res://place-holders/splash_placeholder.png" id="1_26xan"]
-[ext_resource type="Script" path="res://src/scenes/splash-screen/silliSplash.gd" id="1_r8hcj"]
+[ext_resource type="Texture2D" uid="uid://b83bybvsw3e3i" path="res://img/splash_placeholder.png" id="1_26xan"]
+[ext_resource type="Script" uid="uid://2un8v54nmig7" path="res://src/scenes/splash-screen/silliSplash.gd" id="1_r8hcj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8hcj"]
 draw_center = false
