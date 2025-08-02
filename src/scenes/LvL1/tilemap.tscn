@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://balwn7nail4e1"]
+[gd_scene load_steps=27 format=4 uid="uid://balwn7nail4e1"]
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
 [ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://m3qbvtd31lem" path="res://sprites/levels/winko-point.png" id="13_68jg1"]
 [ext_resource type="Texture2D" uid="uid://s46x68lh0u5k" path="res://sprites/levels/nozycki-point.png" id="15_6hthj"]
 [ext_resource type="Texture2D" uid="uid://cwsmpfky4csqc" path="res://sprites/fryzjer/komoda-lustro.png" id="15_it7ct"]
+[ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="17_68jg1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
 normal = Vector2(-0.469209, 0.883087)
@@ -210,6 +211,9 @@ position = Vector2(-1, 0)
 scale = Vector2(3.107, 3.107)
 tile_map_data = PackedByteArray("AAD5////AwAAAAAAAAD5/wAAAwAAAAAAAAD7//3/AwAAAAAAAAD8//z/AwAAAAAAAAD9//z/AwAAAAAAAAD+//z/AwAAAAAAAAABAPz/AwAAAAAAAAACAPz/AwAAAAAAAAADAPz/AwAAAAAAAAAEAPz/AwAAAAAAAAD5//7/AwAAAAAAAAD7//z/AwAAAAAAAAD4////AwAAAAAAAAD4/wAAAwAAAAAAAAD6//7/AwAAAAAAAAD4/wEAAwAAAAAAAAD5/wEAAwAAAAAAAAD5/wIAAwAAAAAAAAD6/wMAAwAAAAAAAAD6/wIAAwAAAAAAAAD7/wMAAwAAAAAAAAD6//3/AwAAAAAAAAAFAPz/AAAAAAAAAAAGAP3/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_fc11b")
+
+[node name="zegar" parent="." instance=ExtResource("17_68jg1")]
+position = Vector2(517, -262)
 
 [node name="Area2D" type="Area2D" parent="."]
 

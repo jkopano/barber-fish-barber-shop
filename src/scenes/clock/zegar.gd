@@ -8,25 +8,26 @@ extends Node2D
 var time = 60.0
 var for_every : float
 var next_rotate : float
-var time_elapsed := 0.0
+# var time_elapsed := 0.0
 var ispaused = false
 
 func _ready() -> void:
-	for_every = time / 16
+	for_every = time / 12
 	next_rotate = for_every
 
 func _process(delta: float) -> void:
+	print(Globals.time_elapsed)
 	if ispaused == false:
-		time_elapsed += delta
+		Globals.time_elapsed += delta
 	
-	if next_rotate <= time_elapsed:
-		kreska.rotation += 0.3926991
+	if next_rotate <= Globals.time_elapsed:
+		kreska.rotation = deg_to_rad(30) * ( int( Globals.time_elapsed ) / 12 + 1 )
 		next_rotate = next_rotate + for_every
 		
-	if time * 0.75 <= time_elapsed:
+	if time * 0.75 <= Globals.time_elapsed:
 		tarcza.self_modulate = Color(255, 0, 0, 255)
 		
-	if time <= time_elapsed:
+	if time <= Globals.time_elapsed:
 		print("game over")
 
 #
