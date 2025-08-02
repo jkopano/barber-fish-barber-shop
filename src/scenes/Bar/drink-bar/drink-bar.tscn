@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bqrwowtfsjhpb"]
+[gd_scene load_steps=18 format=3 uid="uid://bqrwowtfsjhpb"]
 
 [ext_resource type="Texture2D" uid="uid://bs2rtejtqnxl2" path="res://sprites/bar/bar-background.png" id="1_6x5pp"]
 [ext_resource type="Script" uid="uid://cxxlhtq4fa0ao" path="res://src/scenes/Bar/drink-bar/shark.gd" id="2_blw56"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="10_iw7jy"]
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="11_xmi8b"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="12_qfnpb"]
+[ext_resource type="AudioStream" uid="uid://dtj760f3ofavk" path="res://Sounds/SOUND DESIGN/Cały projekt/Bubbels.wav" id="13_qfnpb"]
+[ext_resource type="AudioStream" uid="uid://bochrjd8sn8v3" path="res://Sounds/SOUND DESIGN/specific scean/ClickClickGlass.wav" id="14_d8dma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pu02"]
 size = Vector2(760, 709)
@@ -114,3 +116,10 @@ amount = 5
 texture = ExtResource("12_qfnpb")
 lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_xmi8b")
+
+[node name="SFXplayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_qfnpb")
+autoplay = true
+
+[node name="SFXplayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_d8dma")
