@@ -1,4 +1,3 @@
 extends AnimatedSprite2D
-
-func _ready() -> void:
-	play("open")
+func playAnim(animName):
+	play(animName)

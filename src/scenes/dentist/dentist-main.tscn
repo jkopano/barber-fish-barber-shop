@@ -1,14 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://clnuf52g18udg"]
+[gd_scene load_steps=13 format=3 uid="uid://clnuf52g18udg"]
 
 [ext_resource type="Texture2D" uid="uid://57n5ym3jmnbm" path="res://place-holders/tooth0.png" id="1_2in81"]
 [ext_resource type="Texture2D" uid="uid://heqp14tkfmrc" path="res://place-holders/mouth.png" id="1_04j1l"]
 [ext_resource type="Script" uid="uid://coc0oh0fxxqil" path="res://src/scenes/dentist/categoryHolder.gd" id="1_y7h83"]
 [ext_resource type="Script" uid="uid://cxpam4axssoha" path="res://src/scenes/dentist/scripts/tooth.gd" id="2_04j1l"]
 [ext_resource type="Script" uid="uid://cif33ot4o5uq5" path="res://src/scenes/dentist/scripts/mouth.gd" id="2_b13w4"]
-[ext_resource type="Texture2D" uid="uid://bnk4ga5g31xym" path="res://place-holders/placeholder.png" id="4_0iurs"]
 [ext_resource type="Script" uid="uid://roj2ko5w8gks" path="res://src/scenes/dentist/scripts/button.gd" id="5_b13w4"]
+[ext_resource type="Texture2D" uid="uid://i5ddjurq4kby" path="res://sprites/dentist/brush1-2.0.png" id="6_sgacy"]
+[ext_resource type="Texture2D" uid="uid://b1flpocwecxys" path="res://sprites/dentist/brush3-2.0.png" id="8_y565x"]
 [ext_resource type="Script" uid="uid://b0phdmhcdibrw" path="res://src/scenes/dentist/followingFish.gd" id="8_yjrd2"]
-[ext_resource type="SpriteFrames" uid="uid://i040y6dsw4eq" path="res://src/scenes/dentist/fish_anim.tres" id="9_dc70q"]
+[ext_resource type="SpriteFrames" uid="uid://b7cjttbl7vdbf" path="res://src/scenes/dentist/fish_anim.tres" id="9_dc70q"]
+[ext_resource type="Texture2D" uid="uid://cfqvm0qb1od2h" path="res://sprites/dentist/brush2-2.0.png" id="9_svpao"]
 [ext_resource type="Script" uid="uid://celvaa7dgo1rh" path="res://src/scenes/dentist/fishAnimated.gd" id="10_d3hnj"]
 
 [node name="main" type="Node2D"]
@@ -30,77 +32,74 @@ script = ExtResource("2_04j1l")
 
 [node name="tooth0" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(149.653, 19.45)
+position = Vector2(150.9, 15.7)
 texture = ExtResource("1_2in81")
 
 [node name="tooth1" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(131.453, 22.25)
+position = Vector2(128.9, 19.9)
 scale = Vector2(1.20303, 1.20303)
 texture = ExtResource("1_2in81")
 
 [node name="tooth2" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(106.6, 24.6)
+position = Vector2(103.7, 22.9)
 scale = Vector2(1.26303, 1.26303)
 texture = ExtResource("1_2in81")
 
 [node name="tooth3" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(2.60004, 17.8)
+position = Vector2(-0.299958, 18.7)
 rotation = 3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("1_2in81")
 
 [node name="tooth4" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(25.2, 22.6)
+position = Vector2(21.1, 22.9)
 rotation = 3.14159
 scale = Vector2(1.203, -1.203)
 texture = ExtResource("1_2in81")
 
 [node name="tooth5" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(51, 26)
+position = Vector2(44.5, 25.1)
 rotation = 3.14159
 scale = Vector2(1.263, -1.263)
 texture = ExtResource("1_2in81")
 
 [node name="tooth6" type="Sprite2D" parent="teeth"]
 texture_filter = 1
-position = Vector2(77.6, 27.4)
+position = Vector2(74.9, 24.9)
 scale = Vector2(1.41093, 1.41094)
 texture = ExtResource("1_2in81")
 
 [node name="yellow" type="Button" parent="."]
-offset_left = 931.0
-offset_top = 428.0
-offset_right = 1094.0
-offset_bottom = 519.0
-text = "yellow"
-icon = ExtResource("4_0iurs")
+offset_left = 847.0
+offset_top = 556.0
+offset_right = 991.0
+offset_bottom = 701.0
+icon = ExtResource("6_sgacy")
 flat = true
 expand_icon = true
 script = ExtResource("5_b13w4")
 
 [node name="red" type="Button" parent="."]
-offset_left = 933.0
-offset_top = 524.0
-offset_right = 1096.0
-offset_bottom = 615.0
-text = "red"
-icon = ExtResource("4_0iurs")
+offset_left = 988.0
+offset_top = 554.0
+offset_right = 1136.0
+offset_bottom = 697.0
+icon = ExtResource("8_y565x")
 flat = true
 expand_icon = true
 script = ExtResource("5_b13w4")
 
 [node name="green" type="Button" parent="."]
-offset_left = 929.0
-offset_top = 329.0
-offset_right = 1092.0
-offset_bottom = 420.0
-text = "green"
-icon = ExtResource("4_0iurs")
+offset_left = 681.0
+offset_top = 557.0
+offset_right = 825.0
+offset_bottom = 699.0
+icon = ExtResource("9_svpao")
 flat = true
 expand_icon = true
 script = ExtResource("5_b13w4")
@@ -112,9 +111,10 @@ script = ExtResource("8_yjrd2")
 scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="mouse following/Node2D"]
-position = Vector2(0, 30)
-rotation = 1.5708
+texture_filter = 1
+position = Vector2(0.5, 30)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
 sprite_frames = ExtResource("9_dc70q")
-animation = &"open"
-frame_progress = 0.845024
+animation = &"yellow"
 script = ExtResource("10_d3hnj")

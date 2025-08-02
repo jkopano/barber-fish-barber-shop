@@ -1,45 +1,63 @@
-[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://b7cjttbl7vdbf"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://b7cjttbl7vdbf"]
 
-[ext_resource type="Texture2D" uid="uid://dxyv8fyua7wkm" path="res://place-holders/dentist-fish-closed-atlas.png" id="1_w0ww6"]
-[ext_resource type="Texture2D" uid="uid://cf3jugs1nh11w" path="res://place-holders/dentist-fish-open-atlas.png" id="2_7kmk0"]
+[ext_resource type="Texture2D" uid="uid://c0p46buugc06r" path="res://sprites/dentist/Sprriba-spritesheet.png" id="1_w0ww6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kfwh5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kmk0"]
 atlas = ExtResource("1_w0ww6")
-region = Rect2(0, 0, 49, 23)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lhtju"]
-atlas = ExtResource("1_w0ww6")
-region = Rect2(49, 0, 49, 23)
+region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_inisb"]
-atlas = ExtResource("2_7kmk0")
-region = Rect2(0, 0, 49, 23)
+atlas = ExtResource("1_w0ww6")
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hdil5"]
-atlas = ExtResource("2_7kmk0")
-region = Rect2(49, 0, 49, 23)
+atlas = ExtResource("1_w0ww6")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gycay"]
+atlas = ExtResource("1_w0ww6")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s62hw"]
+atlas = ExtResource("1_w0ww6")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auyj8"]
+atlas = ExtResource("1_w0ww6")
+region = Rect2(32, 96, 32, 32)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kfwh5")
+"texture": SubResource("AtlasTexture_7kmk0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lhtju")
+"texture": SubResource("AtlasTexture_inisb")
 }],
 "loop": true,
-"name": &"closed",
+"name": &"green",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_inisb")
+"texture": SubResource("AtlasTexture_hdil5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hdil5")
+"texture": SubResource("AtlasTexture_gycay")
 }],
 "loop": true,
-"name": &"open",
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s62hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auyj8")
+}],
+"loop": true,
+"name": &"yellow",
 "speed": 5.0
 }]

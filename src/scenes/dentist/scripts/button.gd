@@ -1,6 +1,6 @@
 extends Button
 
-var max_x = -50
+var max_y = -50
 var default_position = Vector2.ZERO
 
 var play_anim = 0
@@ -18,6 +18,9 @@ func unSelected():
 		isSelected = false
 func switchCategory():
 	self.get_parent().setCategory(name)
+	for child in self.get_parent().get_children():
+		if child.name == "mouse following":
+			child.playAnim(name)
 	if (not isSelected):
 		play_anim = 1
 	isSelected = true
@@ -42,4 +45,4 @@ func _process(delta: float) -> void:
 
 	var t: float = clamp(anim_time / max_anim_time, 0.0, 1.0)
 	var ease_out: float = 1.0 - pow(1.0 - t, 2)
-	position.x = default_position.x + (ease_out * max_x*play_anim) + (selected * max_x)
+	position.y = default_position.y + (ease_out * max_y*play_anim) + (selected * max_y)

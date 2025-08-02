@@ -27,3 +27,5 @@ func _process(delta: float) -> void:
 	get_children()[0].rotation = current_rotation
 	last_mouse_position = current_mouse_position
 	position = get_viewport().get_mouse_position()
+func playAnim(animName):
+	get_child(0).get_child(0).playAnim(animName)
