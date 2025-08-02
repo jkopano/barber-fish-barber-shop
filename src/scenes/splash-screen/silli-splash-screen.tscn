@@ -87,6 +87,7 @@ text = "If you see a developer of this game, give them this info:"
 autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="Label3"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 25.0
 offset_right = 728.0
