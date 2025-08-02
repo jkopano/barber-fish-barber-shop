@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://du2ubyiag4fai"]
+
+[ext_resource type="Texture2D" uid="uid://criei6ltyn5dm" path="res://sprites/death/after_death_bg.png" id="1_hihad"]
+[ext_resource type="Script" uid="uid://br0plgq4rsiii" path="res://src/scenes/death/after-death/afterDeath.gd" id="1_wqkuh"]
+[ext_resource type="FontFile" uid="uid://cfql3cr6kkfa1" path="res://fonts/YujiBoku-Regular.ttf" id="2_3rs6r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqkuh"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmgqc"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnl8h"]
+draw_center = false
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_wqkuh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hihad")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -890.5
+offset_top = -457.5
+offset_right = 890.5
+offset_bottom = -164.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_fonts/font = ExtResource("2_3rs6r")
+theme_override_font_sizes/font_size = 100
+text = "SINCE WHEN WERE YOU THE ONE IN CONTROL?"
+autowrap_mode = 2
+
+[node name="Request" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -890.5
+offset_top = -129.5
+offset_right = 890.5
+offset_bottom = 163.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_fonts/font = ExtResource("2_3rs6r")
+theme_override_font_sizes/font_size = 100
+text = "GIVE ME YOUR SOUL OR YOU WON'T BE ABLE TO GO BACK"
+autowrap_mode = 2
+
+[node name="Accept" type="Button" parent="."]
+offset_left = -596.0
+offset_top = 273.0
+offset_right = -107.0
+offset_bottom = 426.0
+theme_override_colors/font_hover_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_colors/font_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_colors/font_focus_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_fonts/font = ExtResource("2_3rs6r")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxFlat_wqkuh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gmgqc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lnl8h")
+text = "ACCEPT"
+
+[node name="Refuse" type="Button" parent="."]
+offset_left = 106.0
+offset_top = 273.0
+offset_right = 595.0
+offset_bottom = 426.0
+theme_override_colors/font_hover_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_colors/font_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_colors/font_focus_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_fonts/font = ExtResource("2_3rs6r")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxFlat_wqkuh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gmgqc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lnl8h")
+text = "REFUSE
+"
+
+[connection signal="pressed" from="Accept" to="." method="_on_accept_pressed"]
+[connection signal="pressed" from="Refuse" to="." method="_on_refuse_pressed"]
