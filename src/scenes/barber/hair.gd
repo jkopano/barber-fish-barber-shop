@@ -208,14 +208,14 @@ func _draw():
 		draw_line(
 			hair_center + strand["base_offset"],
 			hair_center + strand["tip_offset"],
-			strand["hair_color"], 3
+			strand["hair_color"]* Color(1., 1., 1., 0.5), 3
 		)
 
 	for strand in cut_hair_strands:
 		var pos = strand["position"]
 		var dir = strand["direction"].rotated(strand["angle"])
 		var length = strand["length"]
-		draw_line(pos, pos + dir * length, strand["hair_color"] + Color(0.3, 0.3, 0.3), 3)
+		draw_line(pos, pos + dir * length, strand["hair_color"] + Color(0.3, 0.3, 0.3) * Color(1., 1., 1., 0.5), 3)
 
 	if show_green:
 		draw_circle(hair_center + reference_offset, reference_radius, Color.SEA_GREEN)

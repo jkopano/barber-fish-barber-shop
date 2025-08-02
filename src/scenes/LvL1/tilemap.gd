@@ -24,4 +24,3 @@ func interact_with_shark() -> void:
 
 func _on_player_fish_interact() -> void:
 	interact_with_shark()
-

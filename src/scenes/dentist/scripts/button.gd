@@ -32,7 +32,7 @@ func switchCategory():
 func _ready() -> void:
 	focus_mode = Control.FOCUS_NONE
 	if name == "yellow":
-		switchCategory()
+		call_deferred("switchCategory")
 	default_position = position
 	pressed.connect(switchCategory)
 

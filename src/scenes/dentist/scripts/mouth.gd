@@ -2,7 +2,7 @@ extends Sprite2D
 
 var mask_texture
 
-var mouthMask = preload("res://place-holders/mouth-mask.png")
+var mouthMask = preload("res://sprites/dentist/bigshark-notooth-mask.png")
 var pea = preload("res://src/scenes/dentist/pea.tscn")
 
 var peas = []
@@ -31,6 +31,8 @@ func _ready():
 	spawn_entites(texture.get_size()/2, int(randf() * 3+2))
 
 func _process(delta: float) -> void:
+	if (peas.is_empty()):
+		get_parent().peasDone = true
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		pressed = true
 	else:

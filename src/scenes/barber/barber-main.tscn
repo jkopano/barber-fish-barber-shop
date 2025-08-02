@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnxiy03x62g1d"]
+[gd_scene load_steps=8 format=3 uid="uid://bnxiy03x62g1d"]
 
 [ext_resource type="Texture2D" uid="uid://cjh1eoyjubghc" path="res://sprites/fryzjer/fryzjer-background.png" id="1_pkkap"]
 [ext_resource type="Script" uid="uid://bd3xwvvc55vpg" path="res://src/scenes/barber/hair.gd" id="2_3basa"]
 [ext_resource type="Texture2D" uid="uid://dirca2bcyk6d3" path="res://sprites/fryzjer/rekin góra.png" id="2_emc83"]
 [ext_resource type="Script" uid="uid://e8wgnj0u03aw" path="res://src/scenes/barber/sharkMove.gd" id="3_pkkap"]
+[ext_resource type="Script" uid="uid://b0phdmhcdibrw" path="res://src/scenes/dentist/followingFish.gd" id="5_e85rf"]
+[ext_resource type="SpriteFrames" uid="uid://b7cjttbl7vdbf" path="res://src/scenes/dentist/fish_anim.tres" id="6_8k2vg"]
+[ext_resource type="Script" uid="uid://celvaa7dgo1rh" path="res://src/scenes/dentist/fishAnimated.gd" id="7_g6pde"]
 
 [node name="main" type="Node2D"]
 
@@ -20,3 +23,18 @@ script = ExtResource("3_pkkap")
 
 [node name="hair" type="Node2D" parent="."]
 script = ExtResource("2_3basa")
+
+[node name="mouse following" type="Node2D" parent="."]
+script = ExtResource("5_e85rf")
+
+[node name="Node2D" type="Node2D" parent="mouse following"]
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="mouse following/Node2D"]
+texture_filter = 1
+position = Vector2(0.5, 30)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+sprite_frames = ExtResource("6_8k2vg")
+animation = &"normal"
+script = ExtResource("7_g6pde")
