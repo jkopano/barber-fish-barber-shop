@@ -5,3 +5,12 @@ enum Need {
 	DRINK,
 	TEETH
 }
+
+enum State {
+	MENU,
+	PLAYING,
+	PAUSED,
+	BARBER,
+	BARMAN,
+	DENTIST,
+}
