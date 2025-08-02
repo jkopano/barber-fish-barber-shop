@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=20 format=4 uid="uid://balwn7nail4e1"]
+=======
+[gd_scene load_steps=31 format=4 uid="uid://balwn7nail4e1"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
 [ext_resource type="Texture2D" uid="uid://by6ckrxlhgyk7" path="res://sprites/levels/woodblock.png" id="2_vqkoe"]
@@ -12,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bfmvrw8ey6v63" path="res://sprites/levels/Zegar-kreska.png" id="10_r3aaw"]
 [ext_resource type="Texture2D" uid="uid://d1fn85sqow3nq" path="res://sprites/levels/table.png" id="11_r3aaw"]
 [ext_resource type="Texture2D" uid="uid://d2l6wi2asrqhf" path="res://sprites/levels/zlew.png" id="12_vjw8b"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://vwhlc52jnf6w" path="res://sprites/levels/komoda-cala.png" id="13_mwhif"]
 
 [sub_resource type="GDScript" id="GDScript_1nue0"]
@@ -23,6 +28,16 @@ func _ready() -> void:
 	var shark_instance = shark.instantiate()
 	$Sharks.add_child(shark_instance)
 "
+=======
+[ext_resource type="Texture2D" uid="uid://bfhwalypxtmkm" path="res://sprites/fryzjer/komoda-szafka.png" id="13_6hthj"]
+[ext_resource type="Texture2D" uid="uid://m3qbvtd31lem" path="res://sprites/levels/winko-point.png" id="13_68jg1"]
+[ext_resource type="Texture2D" uid="uid://s46x68lh0u5k" path="res://sprites/levels/nozycki-point.png" id="15_6hthj"]
+[ext_resource type="Texture2D" uid="uid://cwsmpfky4csqc" path="res://sprites/fryzjer/komoda-lustro.png" id="15_it7ct"]
+[ext_resource type="AudioStream" uid="uid://dtomdsxlxrm2t" path="res://Sounds/SOUND DESIGN/Cały projekt/SzantaLoop.wav" id="17_68jg1"]
+[ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="17_it7ct"]
+[ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="18_xutvd"]
+[ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
+>>>>>>> Stashed changes
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
 normal = Vector2(-0.469209, 0.883087)

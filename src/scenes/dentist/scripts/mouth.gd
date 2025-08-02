@@ -1,6 +1,7 @@
 extends Node2D
 
 var mask_texture
+@onready  var sfxplayer =  $"../AudioStreamPlayer"
 
 var mouthMask = preload("res://img/mouth-mask.png")
 
@@ -45,6 +46,7 @@ func switchCollectingCategory(category):
 	collectingCategory = category
 func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+<<<<<<< Updated upstream
 		if (collectingCategory == "yellow"):
 			for rock in yellowRocks:
 				if rock.clean():
@@ -53,3 +55,16 @@ func _process(delta: float) -> void:
 			for rock in redRocks:
 				if rock.clean():
 					redRocks.erase(rock)
+=======
+		if sfxplayer.playing == false: 
+			sfxplayer.play()
+			
+		pressed = true
+	else:
+		sfxplayer.stop()
+		if pressed == true and get_parent().getCategory() == "green":
+			for peaBean in peas:
+				if peaBean.clean(60):
+					peas.erase(peaBean)
+		pressed = false
+>>>>>>> Stashed changes

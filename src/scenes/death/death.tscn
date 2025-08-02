@@ -1,7 +1,15 @@
+<<<<<<< Updated upstream:src/scenes/death/death.tscn
 [gd_scene load_steps=25 format=3 uid="uid://ook4isjtvxxn"]
 
 [ext_resource type="Texture2D" uid="uid://df2a5qs7xs5bb" path="res://place-holders/game_over.png" id="1_8vv3q"]
 [ext_resource type="Texture2D" uid="uid://4dpsmurf7pnh" path="res://sprites/Gameover-spritesheet.png" id="2_pc1bb"]
+=======
+[gd_scene load_steps=30 format=3 uid="uid://ook4isjtvxxn"]
+
+[ext_resource type="Script" uid="uid://dy6u1hiq661eo" path="res://src/scenes/death/death-with-animation/death.gd" id="1_pc1bb"]
+[ext_resource type="Texture2D" uid="uid://4dpsmurf7pnh" path="res://sprites/death/Gameover-spritesheet.png" id="2_pc1bb"]
+[ext_resource type="AudioStream" uid="uid://dqev74mfwodo" path="res://Sounds/SOUND DESIGN/specific scean/GameOver.wav" id="3_biv1g"]
+>>>>>>> Stashed changes:src/scenes/death/death-with-animation/death.tscn
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_le720"]
 atlas = ExtResource("2_pc1bb")
@@ -172,3 +180,35 @@ position = Vector2(6.10352e-05, -3.05176e-05)
 scale = Vector2(5.95556, 5.95556)
 sprite_frames = SubResource("SpriteFrames_fx35o")
 autoplay = "default"
+<<<<<<< Updated upstream:src/scenes/death/death.tscn
+=======
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -73.5
+offset_right = 250.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_colors/font_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_colors/font_focus_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_gdyvw")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_povwb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pc1bb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_le720")
+text = "Restart"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_biv1g")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+>>>>>>> Stashed changes:src/scenes/death/death-with-animation/death.tscn

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://denucgk2m3s66"]
+
+[ext_resource type="Script" path="res://src/scenes/clock/zegar.gd" id="1_f7rvt"]
+[ext_resource type="Texture2D" uid="uid://00ta1ddnetew" path="res://sprites/levels/Zegar-tarcza.png" id="2_14gn5"]
+[ext_resource type="Texture2D" uid="uid://cfq2fw538dhus" path="res://sprites/levels/Zegar-rama.png" id="3_mexke"]
+[ext_resource type="Texture2D" uid="uid://bfmvrw8ey6v63" path="res://sprites/levels/Zegar-kreska.png" id="4_yu6cw"]
+
+[node name="zegar" type="Node2D"]
+scale = Vector2(3.107, 3.107)
+script = ExtResource("1_f7rvt")
+
+[node name="Zegar-tarcza" type="Sprite2D" parent="."]
+position = Vector2(-0.0926847, -0.736402)
+texture = ExtResource("2_14gn5")
+
+[node name="Zegar-rama" type="Sprite2D" parent="."]
+position = Vector2(-0.0926933, -0.70228)
+texture = ExtResource("3_mexke")
+
+[node name="Zegar-kreska" type="Sprite2D" parent="."]
+position = Vector2(-0.0926933, -0.70228)
+rotation = 6.28319
+texture = ExtResource("4_yu6cw")
+
+[node name="Countdown" type="Timer" parent="."]
