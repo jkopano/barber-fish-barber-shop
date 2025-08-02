@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckrc7ro3vegqb"]
+
+[ext_resource type="Texture2D" uid="uid://caxtm6fpjlmn1" path="res://sprites/levels/komoda.png" id="1_r6ysj"]
+[ext_resource type="Script" uid="uid://b6x7eoe7dven1" path="res://src/scenes/barber/barber.gd" id="2_ndkp7"]
+
+[node name="Barber" type="Sprite2D"]
+texture = ExtResource("1_r6ysj")
+script = ExtResource("2_ndkp7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-3, -7)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(7, 14)
+polygon = PackedVector2Array(16, 3, 17, -12, 5, -17, 3, -30, -21, -17, -15, 18)
