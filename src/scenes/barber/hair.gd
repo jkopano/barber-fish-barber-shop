@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var sfxplayer = $"../AudioStreamPlayer"
+
 var hair_strands = []
 var cut_hair_strands = []
 var time = 0.0
@@ -154,6 +156,7 @@ func _process(delta):
 	var mouse_pos = get_viewport().get_mouse_position()
 
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and play == true:
+		sfxplayer.play()
 		for i in range(len(hair_strands) - 1, -1, -1):
 			var strand = hair_strands[i]
 			var base = hair_center + strand["base_offset"]
@@ -169,6 +172,9 @@ func _process(delta):
 				}
 				cut_hair_strands.append(cut_strand)
 				hair_strands.remove_at(i)
+				
+	else:
+		sfxplayer.stop()
 
 	# Hair physics
 	for strand in hair_strands:

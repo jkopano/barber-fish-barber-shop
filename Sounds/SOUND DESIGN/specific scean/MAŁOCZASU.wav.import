@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://2oxtk0dh6ufa"
-path="res://.godot/imported/MAŁOCZASU.wav-1c650129d2829c081b1a87dd5552fbe9.sample"
+path="res://.godot/imported/MAŁOCZASU.wav-deb2e7451b0ad590eeacc19a06772b0b.sample"
 
 [deps]
 
-source_file="res://Sounds/SOUND DESIGN/MAŁOCZASU.wav"
-dest_files=["res://.godot/imported/MAŁOCZASU.wav-1c650129d2829c081b1a87dd5552fbe9.sample"]
+source_file="res://Sounds/SOUND DESIGN/specific scean/MAŁOCZASU.wav"
+dest_files=["res://.godot/imported/MAŁOCZASU.wav-deb2e7451b0ad590eeacc19a06772b0b.sample"]
 
 [params]
 

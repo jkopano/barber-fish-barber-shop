@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bochrjd8sn8v3"
-path="res://.godot/imported/ClickClickGlass.wav-7d41e2f854d07d57dd8cb5295280f945.sample"
+path="res://.godot/imported/ClickClickGlass.wav-870605ed4dff8b945c1026482e66560f.sample"
 
 [deps]
 
-source_file="res://Sounds/SOUND DESIGN/ClickClickGlass.wav"
-dest_files=["res://.godot/imported/ClickClickGlass.wav-7d41e2f854d07d57dd8cb5295280f945.sample"]
+source_file="res://Sounds/SOUND DESIGN/specific scean/ClickClickGlass.wav"
+dest_files=["res://.godot/imported/ClickClickGlass.wav-870605ed4dff8b945c1026482e66560f.sample"]
 
 [params]
 

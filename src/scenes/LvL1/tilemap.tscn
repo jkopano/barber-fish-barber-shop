@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=30 format=4 uid="uid://balwn7nail4e1"]
+
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
 [ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
@@ -16,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://m3qbvtd31lem" path="res://sprites/levels/winko-point.png" id="13_68jg1"]
 [ext_resource type="Texture2D" uid="uid://s46x68lh0u5k" path="res://sprites/levels/nozycki-point.png" id="15_6hthj"]
 [ext_resource type="Texture2D" uid="uid://cwsmpfky4csqc" path="res://sprites/fryzjer/komoda-lustro.png" id="15_it7ct"]
+[ext_resource type="AudioStream" uid="uid://dtomdsxlxrm2t" path="res://Sounds/SOUND DESIGN/Cały projekt/SzantaLoop.wav" id="17_68jg1"]
+
 [ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="17_it7ct"]
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="18_xutvd"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
@@ -228,6 +232,10 @@ tile_set = SubResource("TileSet_fc11b")
 position = Vector2(193, -11)
 rotation = 0.521853
 shape = SubResource("RectangleShape2D_fl7jp")
+
+[node name="Muzyka" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_68jg1")
+autoplay = true
 
 [node name="Bubble1" type="GPUParticles2D" parent="."]
 position = Vector2(4, 321)
