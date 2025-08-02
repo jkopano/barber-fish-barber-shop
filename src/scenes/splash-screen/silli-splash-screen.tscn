@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bsrcm4qh8wk62"]
 
 [ext_resource type="Texture2D" uid="uid://b83bybvsw3e3i" path="res://sprites/splash_placeholder.png" id="1_26xan"]
-[ext_resource type="Script" path="res://src/scenes/splash-screen/silliSplash.gd" id="1_r8hcj"]
+[ext_resource type="Script" uid="uid://2un8v54nmig7" path="res://src/scenes/splash-screen/silliSplash.gd" id="1_r8hcj"]
 [ext_resource type="Theme" uid="uid://dbq8hhq65foaf" path="res://src/scenes/splash-screen/splash-theme.tres" id="3_yg6k2"]
 [ext_resource type="Texture2D" uid="uid://cblj71a7on2nc" path="res://sprites/qr/jkopano.png" id="4_ildsp"]
 [ext_resource type="Texture2D" uid="uid://b02wmmies74ke" path="res://sprites/qr/nprze.png" id="4_k6u2f"]
@@ -87,6 +87,7 @@ text = "If you see a developer of this game, give them this info:"
 autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="Label3"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 25.0
 offset_right = 728.0
@@ -137,4 +138,5 @@ position = Vector2(-729.75, 254.25)
 scale = Vector2(1.00307, 1.04037)
 texture = ExtResource("4_k6u2f")
 
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

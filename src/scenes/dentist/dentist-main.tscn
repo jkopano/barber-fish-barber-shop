@@ -1,11 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://clnuf52g18udg"]
 
-<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://coc0oh0fxxqil" path="res://src/scenes/dentist/categoryHolder.gd" id="1_y7h83"]
-=======
-[ext_resource type="Texture2D" uid="uid://57n5ym3jmnbm" path="res://place-holders/tooth0.png" id="1_2in81"]
-[ext_resource type="Script" path="res://src/scenes/dentist/categoryHolder.gd" id="1_y7h83"]
->>>>>>> Stashed changes
 [ext_resource type="Script" uid="uid://cxpam4axssoha" path="res://src/scenes/dentist/scripts/tooth.gd" id="2_04j1l"]
 [ext_resource type="Script" uid="uid://cif33ot4o5uq5" path="res://src/scenes/dentist/scripts/mouth.gd" id="2_b13w4"]
 [ext_resource type="Texture2D" uid="uid://bepgunullt5lt" path="res://sprites/dentist/bigshark-notooth.png" id="2_sgacy"]
@@ -19,7 +14,7 @@
 [ext_resource type="Script" uid="uid://b0phdmhcdibrw" path="res://src/scenes/dentist/followingFish.gd" id="8_yjrd2"]
 [ext_resource type="SpriteFrames" uid="uid://b7cjttbl7vdbf" path="res://src/scenes/dentist/fish_anim.tres" id="9_dc70q"]
 [ext_resource type="Texture2D" uid="uid://cfqvm0qb1od2h" path="res://sprites/dentist/brush2-2.0.png" id="9_svpao"]
-[ext_resource type="Script" path="res://src/scenes/dentist/fishAnimated.gd" id="10_d3hnj"]
+[ext_resource type="Script" uid="uid://celvaa7dgo1rh" path="res://src/scenes/dentist/fishAnimated.gd" id="10_d3hnj"]
 
 [node name="main" type="Node2D"]
 texture_filter = 2
