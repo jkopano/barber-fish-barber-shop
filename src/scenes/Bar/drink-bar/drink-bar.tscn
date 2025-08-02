@@ -25,8 +25,10 @@ size = Vector2(70, 100)
 particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(980, 1, 1)
-gravity = Vector3(0, -98, 0)
+gravity = Vector3(0, -980, 0)
 scale_max = 3.5
+turbulence_enabled = true
+turbulence_noise_speed_random = 1.0
 
 [node name="main" type="Node2D"]
 
