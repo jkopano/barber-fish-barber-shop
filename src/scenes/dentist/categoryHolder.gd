@@ -1,4 +1,4 @@
-extends Node2D
+extends MiniGame
 
 var category = "yellow"
 func getCategory():
@@ -11,4 +11,4 @@ var greenYellowDonw = false
 
 func _process(delta: float) -> void:
 	if peasDone and greenYellowDonw:
-		print("done")
+		exit_game()
