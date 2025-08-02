@@ -1,13 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://clnuf52g18udg"]
+[gd_scene load_steps=10 format=3 uid="uid://clnuf52g18udg"]
 
 [ext_resource type="Texture2D" uid="uid://57n5ym3jmnbm" path="res://img/tooth0.png" id="1_2in81"]
 [ext_resource type="Texture2D" uid="uid://heqp14tkfmrc" path="res://img/mouth.png" id="1_04j1l"]
+[ext_resource type="Script" uid="uid://coc0oh0fxxqil" path="res://src/scenes/dentist/categoryHolder.gd" id="1_y7h83"]
 [ext_resource type="Script" uid="uid://cxpam4axssoha" path="res://src/scenes/dentist/tooth.gd" id="2_04j1l"]
 [ext_resource type="Script" uid="uid://cif33ot4o5uq5" path="res://src/scenes/dentist/mouth.gd" id="2_b13w4"]
 [ext_resource type="Texture2D" uid="uid://bnk4ga5g31xym" path="res://img/placeholder.png" id="4_0iurs"]
 [ext_resource type="Script" uid="uid://roj2ko5w8gks" path="res://src/scenes/dentist/button.gd" id="5_b13w4"]
+[ext_resource type="Script" uid="uid://b0phdmhcdibrw" path="res://src/scenes/dentist/followingFish.gd" id="8_yjrd2"]
+[ext_resource type="SpriteFrames" uid="uid://i040y6dsw4eq" path="res://src/scenes/dentist/fish_anim.tres" id="9_dc70q"]
 
 [node name="main" type="Node2D"]
+texture_filter = 2
+script = ExtResource("1_y7h83")
 
 [node name="mouth" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -76,7 +81,6 @@ icon = ExtResource("4_0iurs")
 flat = true
 expand_icon = true
 script = ExtResource("5_b13w4")
-category = "yellow"
 
 [node name="red" type="Button" parent="."]
 offset_left = 933.0
@@ -88,4 +92,16 @@ icon = ExtResource("4_0iurs")
 flat = true
 expand_icon = true
 script = ExtResource("5_b13w4")
-category = "red"
+
+[node name="mouse following" type="Node2D" parent="."]
+script = ExtResource("8_yjrd2")
+
+[node name="Node2D" type="Node2D" parent="mouse following"]
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="mouse following/Node2D"]
+position = Vector2(0, 30)
+rotation = 1.5708
+sprite_frames = ExtResource("9_dc70q")
+animation = &"open"
+frame_progress = 0.845024

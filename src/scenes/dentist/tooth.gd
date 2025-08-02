@@ -5,8 +5,6 @@ var mask_texture
 var yellowRock = preload("res://src/scenes/dentist/yellowRock.tscn")
 var redRock = preload("res://src/scenes/dentist/redRock.tscn")
 
-var collectingCategory = "yellow"
-
 var yellowRocks = []
 var redRocks = []
 
@@ -57,15 +55,13 @@ func _ready():
 				file_path = file_path.substr(0, file_path.length() - 4)
 				spawn_entites(file_path, child, texture.get_size()/2, int(randf() * 3), int(randf() * 3))
 				
-func switchCollectingCategory(category):
-	collectingCategory = category
 func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if (collectingCategory == "yellow"):
+		if (get_parent().getCategory() == "yellow"):
 			for rock in yellowRocks:
-				if rock.clean():
+				if rock.clean(30):
 					yellowRocks.erase(rock)
-		elif (collectingCategory == "red"):
+		elif (get_parent().getCategory() == "red"):
 			for rock in redRocks:
-				if rock.clean():
+				if rock.clean(30):
 					redRocks.erase(rock)
