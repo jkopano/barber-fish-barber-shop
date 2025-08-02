@@ -22,7 +22,6 @@ script = ExtResource("3_pkkap")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 position = Vector2(84.0091, 2.47896)
-scale = Vector2(1, 1)
 texture = ExtResource("2_emc83")
 
 [node name="hair" type="Node2D" parent="."]

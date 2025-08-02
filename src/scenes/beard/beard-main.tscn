@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctqei2jgax873"]
+
+[ext_resource type="Texture2D" uid="uid://dqdprpie4txxv" path="res://sprites/dentist/dentist-background.png" id="1_5dnh0"]
+[ext_resource type="Texture2D" uid="uid://di6pu0c4bnclp" path="res://sprites/bar/shark-cute.png" id="2_ca573"]
+[ext_resource type="Script" uid="uid://bepkqnuldpux4" path="res://src/scenes/beard/beardHair.gd" id="3_ca573"]
+
+[node name="main" type="Node2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(576, 330)
+scale = Vector2(3.6625, 3.71111)
+texture = ExtResource("1_5dnh0")
+
+[node name="shark" type="Sprite2D" parent="."]
+position = Vector2(429, 370)
+scale = Vector2(6.31609, 6.31609)
+texture = ExtResource("2_ca573")
+
+[node name="hair" type="Node2D" parent="."]
+position = Vector2(563, 336)
+script = ExtResource("3_ca573")
