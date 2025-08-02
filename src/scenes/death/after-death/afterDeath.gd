@@ -14,14 +14,14 @@ func _ready():
 	request.text = ""
 	accept.visible = false
 	refuse.visible = false
-	if Global.has_ever_visited_after_death_scene:
+	if Globals.has_ever_visited_after_death_scene:
 		start_typing(label,full_text_label)
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(4.5).timeout
 	start_typing(request,full_text_request)
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(4.5).timeout
 	accept.visible = true
 	refuse.visible = true
-	Global.has_ever_visited_after_death_scene = true
+	Globals.has_ever_visited_after_death_scene = true
 	
 func start_typing(l,t):
 	current_index = 0
@@ -35,7 +35,7 @@ func _reveal_next_char(l,t):
 		_reveal_next_char(l,t)
 
 func _on_accept_pressed() :
-	Global.has_ever_visited_after_death_scene = false
+	Globals.has_ever_visited_after_death_scene = false
 	var main_menu_scene = preload("res://src/scenes/splash-screen/silli-splash-screen.tscn")
 	get_tree().change_scene_to_packed(main_menu_scene)
 

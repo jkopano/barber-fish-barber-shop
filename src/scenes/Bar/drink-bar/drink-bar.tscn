@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqrwowtfsjhpb"]
+[gd_scene load_steps=16 format=3 uid="uid://bqrwowtfsjhpb"]
 
 [ext_resource type="Texture2D" uid="uid://bs2rtejtqnxl2" path="res://sprites/bar/bar-background.png" id="1_6x5pp"]
 [ext_resource type="Script" uid="uid://cxxlhtq4fa0ao" path="res://src/scenes/Bar/drink-bar/shark.gd" id="2_blw56"]
@@ -9,12 +9,22 @@
 [ext_resource type="Texture2D" uid="uid://du0vvsyaxsalr" path="res://sprites/bar/drinkable-b.png" id="7_23hjn"]
 [ext_resource type="Texture2D" uid="uid://bsxtjxdb6aqq2" path="res://sprites/bar/drinkable-g.png" id="8_3rrnj"]
 [ext_resource type="Texture2D" uid="uid://ddbbd1nj58mk" path="res://sprites/bar/drinkable-p.png" id="9_771wu"]
+[ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="10_iw7jy"]
+[ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="11_xmi8b"]
+[ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="12_qfnpb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pu02"]
 size = Vector2(760, 709)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmt2k"]
 size = Vector2(70, 100)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xmi8b"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(980, 1, 1)
+gravity = Vector3(0, -98, 0)
+scale_max = 3.5
 
 [node name="main" type="Node2D"]
 
@@ -83,3 +93,24 @@ shape = SubResource("RectangleShape2D_rmt2k")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
+
+[node name="Bubble1" type="GPUParticles2D" parent="."]
+position = Vector2(0, 544)
+amount = 5
+texture = ExtResource("10_iw7jy")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_xmi8b")
+
+[node name="Bubble2" type="GPUParticles2D" parent="."]
+position = Vector2(0, 544)
+amount = 5
+texture = ExtResource("11_xmi8b")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_xmi8b")
+
+[node name="Bubble3" type="GPUParticles2D" parent="."]
+position = Vector2(0, 544)
+amount = 5
+texture = ExtResource("12_qfnpb")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_xmi8b")
