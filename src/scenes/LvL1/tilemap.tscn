@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://balwn7nail4e1"]
+[gd_scene load_steps=49 format=4 uid="uid://balwn7nail4e1"]
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
 [ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="17_it7ct"]
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="18_xutvd"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
-[ext_resource type="Texture2D" uid="uid://deq4lha58betb" path="res://sprites/fireworks/fireworks_base.png" id="20_b0ig0"]
 [ext_resource type="Script" uid="uid://clxyf1mwwpc2n" path="res://src/scenes/LvL1/firework.gd" id="21_pe2fm"]
 [ext_resource type="Texture2D" uid="uid://c7w5ya7sv5kjv" path="res://sprites/fireworks/fireworks.png" id="22_pe2fm"]
 
@@ -134,6 +133,64 @@ animations = [{
 }],
 "loop": true,
 "name": &"fire",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn20r"]
+atlas = ExtResource("22_pe2fm")
+region = Rect2(0, 0, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpkwy"]
+atlas = ExtResource("22_pe2fm")
+region = Rect2(0, 2, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pba5w"]
+atlas = ExtResource("22_pe2fm")
+region = Rect2(0, 4, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwt27"]
+atlas = ExtResource("22_pe2fm")
+region = Rect2(0, 6, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqhi2"]
+atlas = ExtResource("22_pe2fm")
+region = Rect2(0, 8, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0n3b"]
+atlas = ExtResource("22_pe2fm")
+region = Rect2(0, 10, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcmvt"]
+atlas = ExtResource("22_pe2fm")
+region = Rect2(0, 12, 15, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnv4q"]
+resource_name = "start"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn20r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpkwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pba5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwt27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqhi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0n3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcmvt")
+}],
+"loop": true,
+"name": &"start",
 "speed": 7.0
 }]
 
@@ -316,12 +373,6 @@ texture = ExtResource("19_b0ig0")
 lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_pe2fm")
 
-[node name="FireworksBase" type="Sprite2D" parent="."]
-position = Vector2(-92, 9)
-scale = Vector2(6, 6)
-texture = ExtResource("20_b0ig0")
-script = ExtResource("21_pe2fm")
-
 [node name="Firework1" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cn20r")
 animation = &"fire"
@@ -345,6 +396,14 @@ animation = &"fire"
 [node name="Firework6" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cn20r")
 animation = &"fire"
+
+[node name="FireworkBase" type="AnimatedSprite2D" parent="."]
+position = Vector2(-89, 22)
+rotation = 4.71239
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_nnv4q")
+animation = &"start"
+script = ExtResource("21_pe2fm")
 
 [connection signal="shark_needs_barber" from="." to="layer2/Minigames/BarberTable" method="_on_tilemap_shark_needs_barber"]
 [connection signal="shark_needs_denstist" from="." to="layer2/Minigames/DentistTable" method="_on_tilemap_shark_needs_denstist"]

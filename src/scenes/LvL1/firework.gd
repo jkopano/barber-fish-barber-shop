@@ -1,4 +1,4 @@
-extends Sprite2D
+extends AnimatedSprite2D
 
 @onready var fireworks = [
 	get_parent().get_node("Firework1"),
@@ -20,10 +20,12 @@ func _ready():
 		
 	if Globals.has_ever_visited_main_room:
 		self.visible = true
+		self.play("start")
 		tween.tween_property(self,"position:y",-150,0.75)
 		tween.connect("finished", Callable(self, "_on_fireworkbase_tween_finished"))
 		
 func _on_fireworkbase_tween_finished():
+	self.visible = false
 	var radius = 100.0  # jak daleko leci fajerwerk
 	var angle_step = 60  # co ile stopni
 	var center = Vector2(position.x + 5,position.y)
@@ -37,6 +39,7 @@ func _on_fireworkbase_tween_finished():
 		var target_position = center + offset
 
 		firework.position = center
+		firework.rotation = angle_rad
 		firework.visible = true
 		firework.play("fire")
 
