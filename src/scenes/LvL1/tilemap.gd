@@ -11,6 +11,7 @@ var shark = preload("res://src/scenes/LvL1/shark/shark.tscn")
 func _ready() -> void:
 	var shark_instance = shark.instantiate()
 	$Sharks.add_child(shark_instance)
+	Globals.has_ever_visited_main_room = true
 
 
 func interact_with_shark() -> void:

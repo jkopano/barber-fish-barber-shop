@@ -24,3 +24,5 @@ var serializeData = {
 	time = 0,
 }
 var has_ever_visited_after_death_scene := false
+
+var has_ever_visited_main_room := false
