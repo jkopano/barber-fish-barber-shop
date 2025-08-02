@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckrc7ro3vegqb"]
 
 [ext_resource type="Texture2D" uid="uid://caxtm6fpjlmn1" path="res://sprites/levels/komoda.png" id="1_r6ysj"]
-[ext_resource type="Script" uid="uid://b6x7eoe7dven1" path="res://src/scenes/barber/barber.gd" id="2_ndkp7"]
+[ext_resource type="Script" path="res://src/scenes/barber/barber.gd" id="2_ndkp7"]
 
 [node name="Barber" type="Sprite2D"]
 texture = ExtResource("1_r6ysj")
