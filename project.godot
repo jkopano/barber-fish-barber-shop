@@ -24,7 +24,7 @@ Globals="*res://src/globals.gd"
 folder_colors={
 "res://place-holders/": "red",
 "res://sprites/": "teal",
-"res://src/": "pink"
+"res://src/": "blue"
 }
 
 [input]

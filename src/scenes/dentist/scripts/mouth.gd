@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		pressed = true
 	else:
-		if pressed == true:
+		if pressed == true and get_parent().getCategory() == "green":
 			for peaBean in peas:
 				if peaBean.clean(60):
 					peas.erase(peaBean)
