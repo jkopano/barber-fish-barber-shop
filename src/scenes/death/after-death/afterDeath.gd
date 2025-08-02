@@ -35,6 +35,7 @@ func _reveal_next_char(l,t):
 		_reveal_next_char(l,t)
 
 func _on_accept_pressed() :
+	Global.has_ever_visited_after_death_scene = false
 	var main_menu_scene = preload("res://src/scenes/splash-screen/silli-splash-screen.tscn")
 	get_tree().change_scene_to_packed(main_menu_scene)
 
