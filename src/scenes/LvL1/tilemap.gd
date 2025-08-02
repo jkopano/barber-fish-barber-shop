@@ -1,5 +1,7 @@
 extends Node2D
 
+signal swap_scene(scene: PackedScene)
+
 signal shark_needs_barber()
 signal shark_needs_drink()
 signal shark_needs_denstist()
@@ -24,3 +26,6 @@ func interact_with_shark() -> void:
 
 func _on_player_fish_interact() -> void:
 	interact_with_shark()
+
+func _on_player_fish_interact_furniture(scene:PackedScene) -> void:
+	get_tree().change_scene_to_packed(scene)
