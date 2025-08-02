@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://b7cjttbl7vdbf"]
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://b7cjttbl7vdbf"]
 
 [ext_resource type="Texture2D" uid="uid://c0p46buugc06r" path="res://sprites/dentist/Sprriba-spritesheet.png" id="1_w0ww6"]
 
@@ -9,6 +9,14 @@ region = Rect2(0, 64, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_inisb"]
 atlas = ExtResource("1_w0ww6")
 region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0ww6"]
+atlas = ExtResource("1_w0ww6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwriw"]
+atlas = ExtResource("1_w0ww6")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hdil5"]
 atlas = ExtResource("1_w0ww6")
@@ -37,6 +45,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0ww6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwriw")
+}],
+"loop": true,
+"name": &"normal",
 "speed": 5.0
 }, {
 "frames": [{

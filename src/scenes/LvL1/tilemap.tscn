@@ -105,7 +105,7 @@ clip_children = 0
 y_sort_enabled = true
 position = Vector2(-92.0001, 52)
 scale = Vector2(3.11321, 3.11321)
-speed = 15000
+speed = 60000
 
 [node name="DrinkTable" type="Sprite2D" parent="layer2/Minigames"]
 clip_children = 2

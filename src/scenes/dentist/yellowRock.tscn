@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://njjob2n0ut61"]
 
-[ext_resource type="Script" uid="uid://jldltb0qnmv6" path="res://src/scenes/dentist/cleanable.gd" id="1_i57sq"]
-[ext_resource type="Texture2D" uid="uid://n4vld7ngt51r" path="res://img/yellowRock.png" id="2_i3cm5"]
+[ext_resource type="Script" uid="uid://jldltb0qnmv6" path="res://src/scenes/dentist/scripts/cleanable.gd" id="1_i57sq"]
+[ext_resource type="Texture2D" uid="uid://n4vld7ngt51r" path="res://sprites/dentist/yellowRock.png" id="2_i3cm5"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_i57sq")
