@@ -21,7 +21,3 @@ var serializeData = {
 	level = 1,
 	time = 0,
 }
-
-func go_back_to_main():
-
-	pass

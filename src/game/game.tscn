@@ -7,9 +7,9 @@
 [node name="Game" type="Node2D"]
 script = ExtResource("1_kgj8g")
 
-[node name="Tilemap" parent="." instance=ExtResource("1_qnjlk")]
+[node name="Deck" parent="." instance=ExtResource("1_qnjlk")]
 
 [node name="Clock" parent="." instance=ExtResource("2_s6lek")]
 position = Vector2(520, -265)
 
-[connection signal="swap_scene" from="Tilemap" to="." method="_on_tilemap_swap_scene"]
+[connection signal="swap_scene" from="Deck" to="." method="_on_tilemap_swap_scene"]

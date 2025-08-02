@@ -58,7 +58,7 @@ size = Vector2(39.9936, 10.301)
 size = Vector2(40.9565, 14.6676)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_it7ct"]
-size = Vector2(11.149, 31.1493)
+size = Vector2(12.3134, 31.7528)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7jp"]
 size = Vector2(86.6245, 31)
@@ -102,6 +102,7 @@ tile_set = SubResource("TileSet_fc11b")
 clip_children = 0
 
 [node name="Player" parent="layer2/Minigames" instance=ExtResource("4_qf6y4")]
+unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(-92.0001, 52)
 scale = Vector2(3.11321, 3.11321)
@@ -192,8 +193,8 @@ texture = ExtResource("15_6hthj")
 [node name="Area2D" type="Area2D" parent="layer2/Minigames/BarberTable"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="layer2/Minigames/BarberTable/Area2D"]
-position = Vector2(9.97749, 22.2079)
-rotation = 1.0472
+position = Vector2(7.72451, 23.4953)
+rotation = 1.0821
 shape = SubResource("RectangleShape2D_it7ct")
 
 [node name="Camera2D" type="Camera2D" parent="."]

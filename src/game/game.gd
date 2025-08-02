@@ -1,6 +1,14 @@
 extends Node2D
 
-# var main_scene = preload("res://src/scenes/LvL1/tilemap.tscn")
 
-func _on_tilemap_swap_scene(scene:PackedScene) -> void:
-	get_tree().change_scene_to_packed(scene)
+func return_to_main():
+	Globals.serializeData.level += 1
+
+	var old_node = get_node("Deck")
+	remove_child(old_node)
+	old_node.queue_free()
+
+	var new_node_scene = load("res://src/scenes/LvL1/tilemap.tscn")
+	var new_node = new_node_scene.instantiate()
+	add_child(new_node)
+

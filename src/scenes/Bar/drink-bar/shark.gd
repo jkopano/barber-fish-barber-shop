@@ -1,5 +1,6 @@
 extends Area2D
 
+signal end_minigame()
 var moving := false
 var speed := 500
 var chosen_drink = null
@@ -61,6 +62,8 @@ func _on_drink_dropped(drink):
 			drink_indicator_instance.queue_free()
 		start_moving()
 		drink.queue_free()
+
+		end_minigame.emit()
 	else:
 		var death_scene = preload("res://src/scenes/death/death-with-animation/death.tscn")
 		get_tree().change_scene_to_packed(death_scene)

@@ -1,4 +1,4 @@
-extends Node2D
+extends MiniGame
 
 var hair_strands = []
 var cut_hair_strands = []
@@ -86,9 +86,7 @@ func _ready():
 func set_done():
 	play = !play
 func complete_game():
-	Globals.serializeData.level += 1
-	get_tree().change_scene_to_packed(load("res://src/scenes/LvL1/tilemap.tscn"))
-	get_tree().get_node("/TileMap/layer2/Minigames/Player")
+	exit_game()
 
 	
 
