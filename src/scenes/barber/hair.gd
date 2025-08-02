@@ -82,11 +82,15 @@ func _ready():
 	initial_outside_density = outside_count / outside_area
 
 	start_movement_tween(set_done)
+
 func set_done():
 	play = !play
 func complete_game():
 	Globals.serializeData.level += 1
 	get_tree().change_scene_to_packed(load("res://src/scenes/LvL1/tilemap.tscn"))
+	get_tree().get_node("/TileMap/layer2/Minigames/Player")
+
+	
 
 func start_movement_tween(callback):
 	# Example wiggle + ease in sequence:
