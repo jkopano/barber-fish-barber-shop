@@ -2,7 +2,7 @@ extends Sprite2D
 
 var mask_texture
 
-var mouthMask = preload("res://place-holders/mouth-mask.png")
+var mouthMask = preload("res://sprites/dentist/bigshark-notooth-mask.png")
 
 var pea = preload("res://src/scenes/dentist/pea.tscn")
 
@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		pressed = true
 	else:
-		if pressed == true:
+		if pressed == true and get_parent().getCategory() == "green":
 			for peaBean in peas:
 				if peaBean.clean(60):
 					peas.erase(peaBean)

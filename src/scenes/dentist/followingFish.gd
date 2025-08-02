@@ -15,15 +15,17 @@ func _process(delta: float) -> void:
 	var mouse_velocity = current_mouse_position - last_mouse_position
 
 	if mouse_velocity.length() > 0.01:
+		rotation_smoothness = 5.0
 		wind_direction = -mouse_velocity.normalized()
-		var target_angle = wind_direction.angle()
+	else:
+		rotation_smoothness = 1.0
+		wind_direction = Vector2(1, 0)
+	var target_angle = wind_direction.angle()
 
-		current_rotation = lerp_angle(current_rotation, target_angle, rotation_smoothness * delta)
+	current_rotation = lerp_angle(current_rotation, target_angle, rotation_smoothness * delta)
 
-		get_children()[0].rotation = current_rotation
+	get_children()[0].rotation = current_rotation
 	last_mouse_position = current_mouse_position
 	position = get_viewport().get_mouse_position()
-	queue_redraw()
-	
-func _draw():
-	draw_line(get_viewport().get_mouse_position(), get_viewport().get_mouse_position()+(wind_direction*50), Color.AQUA)
+func playAnim(animName):
+	get_child(0).get_child(0).playAnim(animName)
