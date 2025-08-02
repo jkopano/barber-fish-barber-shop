@@ -1,5 +1,8 @@
 extends Node
 
+func _ready():
+	Globals.has_ever_visited_after_death_scene = false
+	Globals.has_ever_visited_main_room = false
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

@@ -16,8 +16,10 @@ func _ready():
 		firework.visible = false
 		firework.scale = Vector2(2,2)
 		
-	if Globals.has_ever_visited_main_room:
+	self.visible = false
 		
+	if Globals.has_ever_visited_main_room:
+		self.visible = true
 		tween.tween_property(self,"position:y",-150,0.75)
 		tween.connect("finished", Callable(self, "_on_fireworkbase_tween_finished"))
 		
