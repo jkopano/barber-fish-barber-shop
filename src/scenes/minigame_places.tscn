@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg247acf34svv"]
+
+[ext_resource type="Texture2D" uid="uid://d1fn85sqow3nq" path="res://sprites/levels/table.png" id="1_2fgeg"]
+[ext_resource type="Texture2D" uid="uid://d2l6wi2asrqhf" path="res://sprites/levels/zlew.png" id="2_anf8g"]
+[ext_resource type="Texture2D" uid="uid://vwhlc52jnf6w" path="res://sprites/levels/komoda-cala.png" id="3_i1ig4"]
+
+[node name="Minigames" type="Node2D"]
+clip_children = 2
+y_sort_enabled = true
+scale = Vector2(0.321854, 0.321854)
+
+[node name="Table" type="Sprite2D" parent="."]
+visible = false
+clip_children = 2
+position = Vector2(28, -103)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("1_2fgeg")
+region_enabled = true
+region_rect = Rect2(5.48885, 16.4688, 52.231, 40.1625)
+region_filter_clip_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Table"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table/StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(13.196, 23.4953, 24.7827, 16.4145, -12.2304, -2.25298, -24.4609, 3.86225, 12.5523, 23.1735)
+
+[node name="Zlew" type="Sprite2D" parent="."]
+visible = false
+clip_children = 2
+y_sort_enabled = true
+position = Vector2(408, 162)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("2_anf8g")
+region_enabled = true
+region_rect = Rect2(18.1917, 14.3241, 27.1047, 34.0293)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Zlew"]
+visible = false
+y_sort_enabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Zlew/StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(2.25298, 15.449, 12.8741, 9.97747, -1.28741, 3.54039, -12.5523, 8.3682)
+
+[node name="Komoda-cala" type="Sprite2D" parent="."]
+visible = false
+clip_children = 2
+y_sort_enabled = true
+position = Vector2(-218, -140)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("3_i1ig4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Komoda-cala"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Komoda-cala/StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(-9.97747, 25.7483, 19.3112, 10.2993, 9.01191, 4.50595, -21.8861, 19.6331)

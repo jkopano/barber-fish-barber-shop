@@ -2,7 +2,7 @@ extends Node2D
 
 var mask_texture
 
-var mouthMask = preload("res://img/mouth-mask.png")
+var mouthMask = preload("res://place-holders/mouth-mask.png")
 
 
 var peas = []

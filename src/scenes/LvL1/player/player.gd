@@ -56,3 +56,14 @@ func _on_area_2d_body_exited(_body:Node2D) -> void:
 	print("dupa2")
 	is_interactable = false
 
+func _on_barber_area_entered(_body:Node2D)-> void:
+	if $"../BarberTable".to_be_picked == true:
+		print("barber")
+
+func _on_barman_area_entered(_body:Node2D) -> void:
+	if $"../DrinkTable".to_be_picked == true:
+		print("barman")
+
+func _on_denstist_area_entered(_body:Node2D) -> void:
+	if $"../DentistTable".to_be_picked == true:
+		print("denstist")
