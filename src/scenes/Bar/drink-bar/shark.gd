@@ -62,7 +62,7 @@ func _on_drink_dropped(drink):
 		start_moving()
 		drink.queue_free()
 	else:
-		var death_scene = preload("res://src/scenes/death/death.tscn")
+		var death_scene = preload("res://src/scenes/death/death-with-animation/death.tscn")
 		get_tree().change_scene_to_packed(death_scene)
 		
 	

@@ -170,7 +170,7 @@ func _process(delta):
 		elif inside_ratio < 0.5:
 			show_green = false
 			show_red = true
-			var death_scene = preload("res://src/scenes/death/death.tscn")
+			var death_scene = preload("res://src/scenes/death/death-with-animation/death.tscn")
 			get_tree().change_scene_to_packed(death_scene)
 		else:
 			show_green = false
