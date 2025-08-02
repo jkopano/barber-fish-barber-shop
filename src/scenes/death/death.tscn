@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ook4isjtvxxn"]
+
+[ext_resource type="Texture2D" uid="uid://df2a5qs7xs5bb" path="res://place-holders/game_over.png" id="1_8vv3q"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8vv3q")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)

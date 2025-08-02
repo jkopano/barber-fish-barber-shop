@@ -1,35 +1,28 @@
-<<<<<<<< HEAD:src/scenes/levels/level1/tilemap.tscn
-[gd_scene load_steps=15 format=4 uid="uid://balwn7nail4e1"]
+[gd_scene load_steps=20 format=4 uid="uid://balwn7nail4e1"]
 
-[ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/background.png" id="1_lmebn"]
-[ext_resource type="Script" uid="uid://dtcy8oixhrka" path="res://src/scenes/levels/level.gd" id="1_nny24"]
-[ext_resource type="Texture2D" uid="uid://by6ckrxlhgyk7" path="res://sprites/woodblock.png" id="2_x70uf"]
-[ext_resource type="PackedScene" uid="uid://7j0rpjjl4ayy" path="res://src/scenes/player/player.tscn" id="4_lmebn"]
-[ext_resource type="Texture2D" uid="uid://dvu4d4ttfwad0" path="res://sprites/wallblock.png" id="4_x70uf"]
-========
-[gd_scene load_steps=17 format=4 uid="uid://balwn7nail4e1"]
-
-[ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/background.png" id="1_4ifww"]
-[ext_resource type="Texture2D" uid="uid://by6ckrxlhgyk7" path="res://sprites/woodblock.png" id="2_vqkoe"]
-[ext_resource type="Texture2D" uid="uid://dvu4d4ttfwad0" path="res://sprites/wallblock.png" id="3_fl7jp"]
+[ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
+[ext_resource type="Texture2D" uid="uid://by6ckrxlhgyk7" path="res://sprites/levels/woodblock.png" id="2_vqkoe"]
+[ext_resource type="Texture2D" uid="uid://dvu4d4ttfwad0" path="res://sprites/levels/wallblock.png" id="3_fl7jp"]
 [ext_resource type="PackedScene" uid="uid://7j0rpjjl4ayy" path="res://src/scenes/LvL1/player/player.tscn" id="4_qf6y4"]
 [ext_resource type="Script" uid="uid://bw2qtm107cat" path="res://src/scenes/LvL1/shark/shark.gd" id="5_4f5dw"]
 [ext_resource type="Texture2D" uid="uid://4uh8yeyd6w5j" path="res://sprites/light.png" id="6_u1k1w"]
 [ext_resource type="Script" uid="uid://dtf73ifrsi1ct" path="res://src/scenes/LvL1/zegar.gd" id="7_4f5dw"]
-[ext_resource type="Texture2D" uid="uid://00ta1ddnetew" path="res://sprites/Zegar-tarcza.png" id="8_u1k1w"]
-[ext_resource type="Texture2D" uid="uid://cfq2fw538dhus" path="res://sprites/Zegar-rama.png" id="9_1nue0"]
-[ext_resource type="Texture2D" uid="uid://bfmvrw8ey6v63" path="res://sprites/Zegar-kreska.png" id="10_r3aaw"]
+[ext_resource type="Texture2D" uid="uid://00ta1ddnetew" path="res://sprites/levels/Zegar-tarcza.png" id="8_u1k1w"]
+[ext_resource type="Texture2D" uid="uid://cfq2fw538dhus" path="res://sprites/levels/Zegar-rama.png" id="9_1nue0"]
+[ext_resource type="Texture2D" uid="uid://bfmvrw8ey6v63" path="res://sprites/levels/Zegar-kreska.png" id="10_r3aaw"]
+[ext_resource type="Texture2D" uid="uid://d1fn85sqow3nq" path="res://sprites/levels/table.png" id="11_r3aaw"]
+[ext_resource type="Texture2D" uid="uid://d2l6wi2asrqhf" path="res://sprites/levels/zlew.png" id="12_vjw8b"]
+[ext_resource type="Texture2D" uid="uid://vwhlc52jnf6w" path="res://sprites/levels/komoda-cala.png" id="13_mwhif"]
 
 [sub_resource type="GDScript" id="GDScript_1nue0"]
 script/source = "extends Node2D
 
-var shark = preload(\"res://sprites/shark.png\")
+var shark = preload(\"res://src/scenes/LvL1/shark/shark.tscn\")
 
 func _ready() -> void:
 	var shark_instance = shark.instantiate()
 	$Sharks.add_child(shark_instance)
 "
->>>>>>>> hubcio-testy:src/scenes/LvL1/tilemap.tscn2519580926.tmp
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
 normal = Vector2(-0.469209, 0.883087)
@@ -39,22 +32,13 @@ distance = 416.366
 normal = Vector2(0.469849, -0.882747)
 distance = -136.536
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x70uf"]
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yejvd"]
-polygon = PackedVector2Array(-0.108814, -24.5921, -15.5605, -16.9751, -16, 0, 0, 8, 16, 0, 15.5605, -17.4103)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ge684"]
 texture = ExtResource("2_vqkoe")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
 0:0/0/y_sort_origin = -16
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_yejvd")
 0:1/0 = 0
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_43ne2"]
-polygon = PackedVector2Array(16, 0, 16.2134, -16.3222, -0.326443, -24.3745, -15.5605, -16.1045, -16, 0, 0, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1kat"]
 texture = ExtResource("3_fl7jp")
@@ -62,58 +46,40 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
 0:0/0/y_sort_origin = -8
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_43ne2")
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, -16, 0, 0, 8, 16, 0)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
 0:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_fc11b"]
 tile_shape = 1
 tile_layout = 5
 tile_size = Vector2i(32, 16)
-occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_ge684")
 sources/3 = SubResource("TileSetAtlasSource_u1kat")
 
-<<<<<<<< HEAD:src/scenes/levels/level1/tilemap.tscn
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x70uf"]
-size = Vector2(80.9486, 30.2446)
-
-[node name="Deck" type="Node2D"]
-script = ExtResource("1_nny24")
-========
 [node name="Tilemap" type="Node2D"]
 script = SubResource("GDScript_1nue0")
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(3.577, 3.577)
 texture = ExtResource("1_4ifww")
->>>>>>>> hubcio-testy:src/scenes/LvL1/tilemap.tscn2519580926.tmp
 
-[node name="Barriers" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(405, -407)
 shape = SubResource("WorldBoundaryShape2D_u1kat")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Barriers"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-25, 15)
 rotation = -0.0349066
 shape = SubResource("WorldBoundaryShape2D_43ne2")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barriers"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(212, 285)
 polygon = PackedVector2Array(-61, -39, -13, -61, 36, -37, 85, -56, 136, -34, 236, -85, 234, -140, 281, -109, 276, -54, 97, 39)
 
-<<<<<<<< HEAD:src/scenes/levels/level1/tilemap.tscn
-[node name="Background" type="Sprite2D" parent="."]
-material = SubResource("CanvasItemMaterial_x70uf")
-scale = Vector2(3.577, 3.577)
-texture = ExtResource("1_lmebn")
-
-========
->>>>>>>> hubcio-testy:src/scenes/LvL1/tilemap.tscn2519580926.tmp
 [node name="layer1" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 scale = Vector2(3.107, 3.107)
@@ -123,45 +89,61 @@ tile_set = SubResource("TileSet_fc11b")
 [node name="layer2" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 scale = Vector2(3.107, 3.107)
-tile_map_data = PackedByteArray("AAD9//3/AwAAAAAAAAD+//3/AwAAAAAAAAD///3/AwAAAAAAAAACAP3/AwAAAAAAAAADAP3/AwAAAAAAAAAEAP3/AwAAAAAAAAAFAP3/AwAAAAAAAAAGAP7/AwAAAAAAAAAHAP//AwAAAAAAAAD8//7/AwAAAAAAAAD7////AwAAAAAAAAD6/wAAAwAAAAAAAAD6/wEAAwAAAAAAAAD6/wIAAwAAAAAAAAD6/wMAAwAAAAAAAAD8/wQAAwAAAAAAAAD7/wMAAwAAAAAAAAD7/wQAAwAAAAAAAAD7/wIAAwAAAAAAAAD8/wMAAwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9//3/AwAAAAAAAAD+//3/AwAAAAAAAAD///3/AwAAAAAAAAACAP3/AwAAAAAAAAADAP3/AwAAAAAAAAAEAP3/AwAAAAAAAAAFAP3/AwAAAAAAAAAGAP7/AwAAAAAAAAAHAP//AwAAAAAAAAD8//7/AwAAAAAAAAD7////AwAAAAAAAAD6/wAAAwAAAAAAAAD6/wEAAwAAAAAAAAD6/wIAAwAAAAAAAAD6/wMAAwAAAAAAAAD8/wQAAwAAAAAAAAD7/wMAAwAAAAAAAAD7/wQAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_fc11b")
 
 [node name="Player" parent="layer2" instance=ExtResource("4_qf6y4")]
 y_sort_enabled = true
 position = Vector2(-29.6106, 16.7364)
-scale = Vector2(0.643707, 0.643707)
-speed = 10000
+scale = Vector2(1.002, 1.002)
+speed = 2
+
+[node name="Minigames" type="Node2D" parent="."]
+
+[node name="Table" type="Sprite2D" parent="Minigames"]
+position = Vector2(41, -121)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("11_r3aaw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Minigames/Table"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Minigames/Table/StaticBody2D"]
+polygon = PackedVector2Array(13.196, 23.4953, 24.7827, 16.4145, -12.2304, -2.25298, -24.4609, 3.86225, 12.5523, 23.1735)
+
+[node name="Zlew" type="Sprite2D" parent="Minigames"]
+position = Vector2(408, 162)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("12_vjw8b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Minigames/Zlew"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Minigames/Zlew/StaticBody2D"]
+polygon = PackedVector2Array(2.25298, 15.449, 12.8741, 9.97747, -1.28741, 3.54039, -12.5523, 8.3682)
+
+[node name="Komoda-cala" type="Sprite2D" parent="Minigames"]
+position = Vector2(-218, -140)
+scale = Vector2(3.107, 3.107)
+texture = ExtResource("13_mwhif")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Minigames/Komoda-cala"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Minigames/Komoda-cala/StaticBody2D"]
+polygon = PackedVector2Array(-9.97747, 25.7483, 19.3112, 10.2993, 9.01191, 4.50595, -21.8861, 19.6331)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(3.107, 3.107)
 
 [node name="Sharks" type="Node2D" parent="."]
-position = Vector2(227, -112)
+position = Vector2(228, -112)
 scale = Vector2(2, 2)
-<<<<<<<< HEAD:src/scenes/levels/level1/tilemap.tscn
-========
 script = ExtResource("5_4f5dw")
->>>>>>>> hubcio-testy:src/scenes/LvL1/tilemap.tscn2519580926.tmp
 
 [node name="layer3" type="TileMapLayer" parent="."]
 position = Vector2(-1, 0)
 scale = Vector2(3.107, 3.107)
-tile_map_data = PackedByteArray("AAD5////AAAAAAAAAAD5/wAAAAAAAAAAAAD7//3/AAAAAAAAAAD8//z/AAAAAAAAAAD9//z/AAAAAAAAAAD+//z/AAAAAAAAAAABAPz/AAAAAAAAAAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP7/AAAAAAAAAAD5//7/AAAAAAAAAAD7//z/AAAAAAAAAAD4////AAAAAAAAAAD4/wAAAAAAAAAAAAD6//3/AAAAAAAAAAD6//7/AAAAAAAAAAD4/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD5/wIAAAAAAAAAAAD6/wMAAAAAAAAAAAD6/wIAAAAAAAAAAAD7/wMAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD5////AwAAAAAAAAD5/wAAAwAAAAAAAAD7//3/AwAAAAAAAAD8//z/AwAAAAAAAAD9//z/AwAAAAAAAAD+//z/AwAAAAAAAAABAPz/AwAAAAAAAAACAPz/AwAAAAAAAAADAPz/AwAAAAAAAAAEAPz/AwAAAAAAAAAFAP3/AwAAAAAAAAAGAP7/AwAAAAAAAAD5//7/AwAAAAAAAAD7//z/AwAAAAAAAAD4////AwAAAAAAAAD4/wAAAwAAAAAAAAD6//7/AwAAAAAAAAD4/wEAAwAAAAAAAAD5/wEAAwAAAAAAAAD5/wIAAwAAAAAAAAD6/wMAAwAAAAAAAAD6/wIAAwAAAAAAAAD7/wMAAwAAAAAAAAD6//3/AwAAAAAAAAA=")
 tile_set = SubResource("TileSet_fc11b")
 
-<<<<<<<< HEAD:src/scenes/levels/level1/tilemap.tscn
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(196.257, -18.9744)
-rotation = 0.432842
-shape = SubResource("RectangleShape2D_x70uf")
-
-[connection signal="fish_interact" from="layer2/Player" to="." method="_on_player_fish_interact"]
-[connection signal="body_entered" from="Area2D" to="layer2/Player" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="layer2/Player" method="_on_area_2d_body_exited"]
-========
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(326, -171)
 shadow_enabled = true
@@ -190,4 +172,3 @@ rotation = 6.28319
 texture = ExtResource("10_r3aaw")
 
 [node name="Countdown" type="Timer" parent="zegar"]
->>>>>>>> hubcio-testy:src/scenes/LvL1/tilemap.tscn2519580926.tmp

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://diaqj76h284n0"]
+
+[ext_resource type="Script" uid="uid://bw2qtm107cat" path="res://src/scenes/LvL1/shark/shark.gd" id="1_hgbx8"]
+[ext_resource type="Texture2D" uid="uid://c6yo1c3sg6yt1" path="res://sprites/levels/shark.png" id="2_nml8x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nml8x"]
+size = Vector2(34.6169, 70.7954)
+
+[node name="Shark" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_hgbx8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nml8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.151608, -0.38382)
+rotation = 0.6353
+shape = SubResource("RectangleShape2D_nml8x")
+
+[node name="Need" type="Sprite2D" parent="."]
+position = Vector2(36, -40)
+scale = Vector2(3, 3)
