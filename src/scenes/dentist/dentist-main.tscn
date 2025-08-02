@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://clnuf52g18udg"]
+[gd_scene load_steps=20 format=3 uid="uid://clnuf52g18udg"]
 
 [ext_resource type="Script" uid="uid://coc0oh0fxxqil" path="res://src/scenes/dentist/categoryHolder.gd" id="1_y7h83"]
 [ext_resource type="Script" uid="uid://cxpam4axssoha" path="res://src/scenes/dentist/scripts/tooth.gd" id="2_04j1l"]
@@ -14,7 +14,19 @@
 [ext_resource type="Script" uid="uid://b0phdmhcdibrw" path="res://src/scenes/dentist/followingFish.gd" id="8_yjrd2"]
 [ext_resource type="SpriteFrames" uid="uid://b7cjttbl7vdbf" path="res://src/scenes/dentist/fish_anim.tres" id="9_dc70q"]
 [ext_resource type="Texture2D" uid="uid://cfqvm0qb1od2h" path="res://sprites/dentist/brush2-2.0.png" id="9_svpao"]
-[ext_resource type="Script" uid="uid://celvaa7dgo1rh" path="res://src/scenes/dentist/fishAnimated.gd" id="10_d3hnj"]
+[ext_resource type="Script" path="res://src/scenes/dentist/fishAnimated.gd" id="10_d3hnj"]
+[ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="16_e2x3l"]
+[ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="17_2c2yr"]
+[ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="18_do2e0"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vmhag"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(600, 1, 1)
+gravity = Vector3(0, -980, 0)
+scale_max = 3.5
+turbulence_enabled = true
+turbulence_noise_speed_random = 1.0
 
 [node name="main" type="Node2D"]
 texture_filter = 2
@@ -136,3 +148,24 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = ExtResource("9_dc70q")
 animation = &"yellow"
 script = ExtResource("10_d3hnj")
+
+[node name="Bubble1" type="GPUParticles2D" parent="."]
+position = Vector2(596, 670)
+amount = 5
+texture = ExtResource("16_e2x3l")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_vmhag")
+
+[node name="Bubble2" type="GPUParticles2D" parent="."]
+position = Vector2(592, 673)
+amount = 5
+texture = ExtResource("17_2c2yr")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_vmhag")
+
+[node name="Bubble3" type="GPUParticles2D" parent="."]
+position = Vector2(597, 670)
+amount = 5
+texture = ExtResource("18_do2e0")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_vmhag")

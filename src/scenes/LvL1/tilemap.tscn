@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=4 uid="uid://balwn7nail4e1"]
+[gd_scene load_steps=30 format=4 uid="uid://balwn7nail4e1"]
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
-[ext_resource type="Script" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
+[ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
 [ext_resource type="Texture2D" uid="uid://by6ckrxlhgyk7" path="res://sprites/levels/woodblock.png" id="2_vqkoe"]
 [ext_resource type="Texture2D" uid="uid://dvu4d4ttfwad0" path="res://sprites/levels/wallblock.png" id="3_fl7jp"]
 [ext_resource type="PackedScene" uid="uid://7j0rpjjl4ayy" path="res://src/scenes/LvL1/player/player.tscn" id="4_qf6y4"]
@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://m3qbvtd31lem" path="res://sprites/levels/winko-point.png" id="13_68jg1"]
 [ext_resource type="Texture2D" uid="uid://s46x68lh0u5k" path="res://sprites/levels/nozycki-point.png" id="15_6hthj"]
 [ext_resource type="Texture2D" uid="uid://cwsmpfky4csqc" path="res://sprites/fryzjer/komoda-lustro.png" id="15_it7ct"]
+[ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="17_it7ct"]
+[ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="18_xutvd"]
+[ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
 normal = Vector2(-0.469209, 0.883087)
@@ -62,6 +65,15 @@ size = Vector2(11.149, 31.1493)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7jp"]
 size = Vector2(86.6245, 31)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pe2fm"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(570, 1, 1)
+gravity = Vector3(0, -980, 0)
+scale_max = 3.5
+turbulence_enabled = true
+turbulence_noise_speed_random = 1.0
 
 [node name="Tilemap" type="Node2D"]
 script = ExtResource("1_qf6y4")
@@ -216,6 +228,27 @@ tile_set = SubResource("TileSet_fc11b")
 position = Vector2(193, -11)
 rotation = 0.521853
 shape = SubResource("RectangleShape2D_fl7jp")
+
+[node name="Bubble1" type="GPUParticles2D" parent="."]
+position = Vector2(4, 321)
+amount = 5
+texture = ExtResource("17_it7ct")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_pe2fm")
+
+[node name="Bubble2" type="GPUParticles2D" parent="."]
+position = Vector2(0, 324)
+amount = 5
+texture = ExtResource("18_xutvd")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_pe2fm")
+
+[node name="Bubble3" type="GPUParticles2D" parent="."]
+position = Vector2(5, 321)
+amount = 5
+texture = ExtResource("19_b0ig0")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_pe2fm")
 
 [connection signal="shark_needs_barber" from="." to="layer2/Minigames/BarberTable" method="_on_tilemap_shark_needs_barber"]
 [connection signal="shark_needs_denstist" from="." to="layer2/Minigames/DentistTable" method="_on_tilemap_shark_needs_denstist"]
