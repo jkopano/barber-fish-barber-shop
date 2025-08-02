@@ -1,6 +1,6 @@
 extends Node2D
 
-var fishClosed = preload("res://img/dentist-fish-closed-atlas.png")
+var fishClosed = preload("res://place-holders/dentist-fish-closed-atlas.png")
 var pos = Vector2.ZERO
 var last_mouse_position : Vector2
 var current_rotation : float = 0.0
@@ -26,4 +26,4 @@ func _process(delta: float) -> void:
 	queue_redraw()
 	
 func _draw():
-	draw_line(position, position+(wind_direction*50), Color.AQUA)
+	draw_line(get_viewport().get_mouse_position(), get_viewport().get_mouse_position()+(wind_direction*50), Color.AQUA)

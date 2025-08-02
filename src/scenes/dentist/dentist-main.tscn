@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://clnuf52g18udg"]
 
-[ext_resource type="Texture2D" uid="uid://57n5ym3jmnbm" path="res://img/tooth0.png" id="1_2in81"]
-[ext_resource type="Texture2D" uid="uid://heqp14tkfmrc" path="res://img/mouth.png" id="1_04j1l"]
+[ext_resource type="Texture2D" uid="uid://57n5ym3jmnbm" path="res://place-holders/tooth0.png" id="1_2in81"]
+[ext_resource type="Texture2D" uid="uid://heqp14tkfmrc" path="res://place-holders/mouth.png" id="1_04j1l"]
 [ext_resource type="Script" uid="uid://coc0oh0fxxqil" path="res://src/scenes/dentist/categoryHolder.gd" id="1_y7h83"]
-[ext_resource type="Script" uid="uid://cxpam4axssoha" path="res://src/scenes/dentist/tooth.gd" id="2_04j1l"]
-[ext_resource type="Script" uid="uid://cif33ot4o5uq5" path="res://src/scenes/dentist/mouth.gd" id="2_b13w4"]
-[ext_resource type="Texture2D" uid="uid://bnk4ga5g31xym" path="res://img/placeholder.png" id="4_0iurs"]
-[ext_resource type="Script" uid="uid://roj2ko5w8gks" path="res://src/scenes/dentist/button.gd" id="5_b13w4"]
+[ext_resource type="Script" uid="uid://cxpam4axssoha" path="res://src/scenes/dentist/scripts/tooth.gd" id="2_04j1l"]
+[ext_resource type="Script" uid="uid://cif33ot4o5uq5" path="res://src/scenes/dentist/scripts/mouth.gd" id="2_b13w4"]
+[ext_resource type="Texture2D" uid="uid://bnk4ga5g31xym" path="res://place-holders/placeholder.png" id="4_0iurs"]
+[ext_resource type="Script" uid="uid://roj2ko5w8gks" path="res://src/scenes/dentist/scripts/button.gd" id="5_b13w4"]
 [ext_resource type="Script" uid="uid://b0phdmhcdibrw" path="res://src/scenes/dentist/followingFish.gd" id="8_yjrd2"]
 [ext_resource type="SpriteFrames" uid="uid://i040y6dsw4eq" path="res://src/scenes/dentist/fish_anim.tres" id="9_dc70q"]
 

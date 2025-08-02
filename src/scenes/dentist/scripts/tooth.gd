@@ -10,7 +10,7 @@ var redRocks = []
 
 func spawn_entites(texture_name:String, object:Sprite2D, offset, redEntitiesToSpawn, yellowEntitiesToSpawn):
 	randomize()
-	var path = "res://img/"+texture_name+"-mask.png"
+	var path = "res://place-holders/"+texture_name+"-mask.png"
 	mask_texture = load(path)
 	var image = mask_texture.get_image()
 	var color_pixels := {}

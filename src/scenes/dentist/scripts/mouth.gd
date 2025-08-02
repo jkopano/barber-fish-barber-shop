@@ -2,7 +2,7 @@ extends Sprite2D
 
 var mask_texture
 
-var mouthMask = preload("res://img/mouth-mask.png")
+var mouthMask = preload("res://place-holders/mouth-mask.png")
 
 var pea = preload("res://src/scenes/dentist/pea.tscn")
 
