@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://i040y6dsw4eq"]
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://b7cjttbl7vdbf"]
 
 [ext_resource type="Texture2D" uid="uid://dxyv8fyua7wkm" path="res://place-holders/dentist-fish-closed-atlas.png" id="1_w0ww6"]
 [ext_resource type="Texture2D" uid="uid://cf3jugs1nh11w" path="res://place-holders/dentist-fish-open-atlas.png" id="2_7kmk0"]
