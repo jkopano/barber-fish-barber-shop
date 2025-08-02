@@ -27,6 +27,8 @@ func _process(delta: float) -> void:
 		tarcza.self_modulate = Color(255, 0, 0, 255)
 		
 	if time <= time_elapsed:
-		print("game over")
+		await get_tree().create_timer(0.2).timeout
+		var death_scene = preload("res://src/scenes/death/death-with-animation/death.tscn")
+		get_tree().change_scene_to_packed(death_scene)
 
 #

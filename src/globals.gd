@@ -21,3 +21,4 @@ var serializeData = {
 	level = 1,
 	time = 0,
 }
+var has_ever_visited_after_death_scene := false

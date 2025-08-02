@@ -1,12 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsrcm4qh8wk62"]
+[gd_scene load_steps=7 format=3 uid="uid://dhir1xuucrf47"]
 
-[ext_resource type="Texture2D" uid="uid://b83bybvsw3e3i" path="res://sprites/splash_placeholder.png" id="1_26xan"]
-[ext_resource type="Script" path="res://src/scenes/splash-screen/silliSplash.gd" id="1_r8hcj"]
-[ext_resource type="Theme" uid="uid://dbq8hhq65foaf" path="res://src/scenes/splash-screen/splash-theme.tres" id="3_yg6k2"]
-[ext_resource type="Texture2D" uid="uid://cblj71a7on2nc" path="res://sprites/qr/jkopano.png" id="4_ildsp"]
-[ext_resource type="Texture2D" uid="uid://b02wmmies74ke" path="res://sprites/qr/nprze.png" id="4_k6u2f"]
-[ext_resource type="Texture2D" uid="uid://brplp2lqmc2x" path="res://sprites/qr/ederDeve.png" id="5_fdah8"]
-[ext_resource type="Texture2D" uid="uid://cuwwikrdmaace" path="res://sprites/qr/lunaru.png" id="6_wi4in"]
+[ext_resource type="Texture2D" uid="uid://b83bybvsw3e3i" path="res://place-holders/splash_placeholder.png" id="1_26xan"]
+[ext_resource type="Script" uid="uid://2un8v54nmig7" path="res://src/scenes/splash-screen/silliSplash.gd" id="1_r8hcj"]
+[ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="3_k6u2f"]
+[ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="4_qansn"]
+[ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="5_ildsp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8hcj"]
 draw_center = false
@@ -138,4 +136,35 @@ position = Vector2(-729.75, 254.25)
 scale = Vector2(1.00307, 1.04037)
 texture = ExtResource("4_k6u2f")
 
+[node name="Bubble1" type="CPUParticles2D" parent="."]
+position = Vector2(0, 541)
+amount = 10
+texture = ExtResource("3_k6u2f")
+lifetime = 2.0
+speed_scale = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(980, 1)
+gravity = Vector2(0, -980)
+
+[node name="Bubble2" type="CPUParticles2D" parent="."]
+position = Vector2(0, 541)
+amount = 10
+texture = ExtResource("4_qansn")
+lifetime = 2.0
+speed_scale = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(980, 1)
+gravity = Vector2(0, -980)
+
+[node name="Bubble3" type="CPUParticles2D" parent="."]
+position = Vector2(0, 541)
+amount = 10
+texture = ExtResource("5_ildsp")
+lifetime = 2.0
+speed_scale = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(980, 1)
+gravity = Vector2(0, -980)
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
