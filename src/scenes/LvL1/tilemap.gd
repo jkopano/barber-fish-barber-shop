@@ -34,7 +34,7 @@ func _ready() -> void:
 		add_child(level_popup.instantiate())
 
 	if Globals.game.get_current_run().get_current().current_shrek_number != 1:
-		add_child(shark_leaving.instantiate())
+		$Sharks.add_child(shark_leaving.instantiate())
 
 	Globals.has_ever_visited_main_room = true
 
