@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://balwn7nail4e1"]
+[gd_scene load_steps=41 format=4 uid="uid://balwn7nail4e1"]
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
 [ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
