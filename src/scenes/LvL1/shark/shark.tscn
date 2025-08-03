@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://diaqj76h284n0"]
 
 [ext_resource type="Script" uid="uid://bw2qtm107cat" path="res://src/scenes/LvL1/shark/shark.gd" id="1_hgbx8"]
-[ext_resource type="Texture2D" uid="uid://c6yo1c3sg6yt1" path="res://sprites/levels/shark.png" id="2_nml8x"]
+[ext_resource type="Texture2D" uid="uid://c6yo1c3sg6yt1" path="res://sprites/shark.png" id="2_nml8x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nml8x"]
 size = Vector2(34.6169, 70.7954)
