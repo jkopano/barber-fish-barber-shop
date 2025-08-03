@@ -114,7 +114,7 @@ offset_right = 167.0
 offset_bottom = 47.0
 theme = ExtResource("3_yg6k2")
 theme_override_font_sizes/font_size = 45
-text = "Your PC ran Barberfish Barbershop.
+text = "Your PC is running Barberfish Barbershop.
 Thank you for downloading our game, we kindly advise you to have fun."
 autowrap_mode = 2
 

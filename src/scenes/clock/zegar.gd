@@ -5,24 +5,21 @@ extends Node2D
 @onready var kreska = $"Zegar-kreska"
 @onready var tarcza = $"Zegar-tarcza"
 
-var time = 60.0
+var time = Globals.time
 var for_every : float
 var next_rotate : float
 # var time_elapsed := 0.0
 var ispaused = false
 
 func _ready() -> void:
-	for_every = time / 12
+	for_every = time / 30
 	next_rotate = for_every
 
 func _process(delta: float) -> void:
-	print(Globals.time_elapsed)
 	if ispaused == false:
 		Globals.time_elapsed += delta
 	
-	if next_rotate <= Globals.time_elapsed:
-		kreska.rotation = deg_to_rad(30) * ( int( Globals.time_elapsed ) / 12 + 1 )
-		next_rotate = next_rotate + for_every
+	kreska.rotation = deg_to_rad(12) * int( Globals.time_elapsed / 2 )
 		
 	if time * 0.75 <= Globals.time_elapsed:
 		tarcza.self_modulate = Color(255, 0, 0, 255)
@@ -33,5 +30,9 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_packed(death_scene)
 	if time <= Globals.time_elapsed:
 		print("game over")
+	if time <= Globals.time_elapsed:
+		await get_tree().create_timer(0.2).timeout
+		var death_scene = preload("res://src/scenes/death/death-with-animation/death.tscn")
+		get_tree().change_scene_to_packed(death_scene
 
 #

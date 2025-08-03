@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://diaqj76h284n0"]
 
 [ext_resource type="Script" uid="uid://bw2qtm107cat" path="res://src/scenes/LvL1/shark/shark.gd" id="1_hgbx8"]
-[ext_resource type="Texture2D" uid="uid://c6yo1c3sg6yt1" path="res://sprites/levels/shark.png" id="2_nml8x"]
+[ext_resource type="Texture2D" uid="uid://c6yo1c3sg6yt1" path="res://sprites/shark.png" id="2_nml8x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nml8x"]
 size = Vector2(34.6169, 70.7954)
@@ -11,7 +11,15 @@ collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_hgbx8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0.0941176, 0.0941176, 0.0941176, 0.239216)
+position = Vector2(-5, 6)
+texture = ExtResource("2_nml8x")
+offset = Vector2(0, 7)
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Art" type="Sprite2D" parent="."]
 texture = ExtResource("2_nml8x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
