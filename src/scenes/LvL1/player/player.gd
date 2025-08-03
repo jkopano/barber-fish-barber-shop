@@ -8,7 +8,9 @@ signal fish_interact
 
 func _ready() -> void:
 	if Globals.player_data and Globals.player_data.pos:
-		position  = Globals.player_data.pos
+		position = Globals.player_data.pos
+	if Globals.player_data and Globals.player_data.frame:
+		$Fish.frame = Globals.player_data.frame
 
 func _process(dt: float) -> void:
 	move(dt)

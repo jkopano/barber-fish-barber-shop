@@ -24,5 +24,5 @@ func _process(_dt):
 	pass
 
 func interact():
-	$Need.queue_free()
-	print("siur")
+	if $Need:
+		$Need.queue_free()
