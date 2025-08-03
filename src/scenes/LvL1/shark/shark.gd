@@ -4,7 +4,7 @@ class_name Shark
 var tooth_bubble = preload("res://sprites/levels/brush-dymek.png")
 var drink_bubble = preload("res://sprites/levels/winkoi-dymek.png")
 var brush_bubble = preload("res://sprites/levels/nozycki-dymek.png")
-var broda_bubble = preload("res://sprites/levels/nozycki-dymek.png")
+var broda_bubble = preload("res://sprites/levels/dymek-maszynka.png")
 
 var a_need: String
 var id: int
