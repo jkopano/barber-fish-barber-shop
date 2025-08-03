@@ -40,6 +40,9 @@ func _ready() -> void:
 
 	$SharksLeft.text = "Sharks Left " + str( shark_amount - shrek_number + 1 ) + "/" + str( shark_amount )
 
+	if Globals.game.get_current_run().get_current().current_shrek_number == 1:
+		Globals.time_elapsed = 0
+
 
 func interact_with_shark() -> void:
 	if $Sharks.get_child(0).a_need == "DRINK":
