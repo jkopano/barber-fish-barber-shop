@@ -172,4 +172,5 @@ lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_vmhag")
 
 [node name="zegar" parent="." instance=ExtResource("19_2c2yr")]
-position = Vector2(1120, 46)
+position = Vector2(1107, 46)
+scale = Vector2(2.5, 2.5)
