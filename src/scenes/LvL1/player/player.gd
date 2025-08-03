@@ -4,8 +4,11 @@ extends CharacterBody2D
 var is_interactable = false
 
 signal fish_interact_furniture(scene: PackedScene)
-
 signal fish_interact
+
+func _ready() -> void:
+	if Globals.player_data and Globals.player_data.pos:
+		position  = Globals.player_data.pos
 
 func _process(dt: float) -> void:
 	move(dt)
@@ -67,3 +70,7 @@ func _on_barman_area_entered(_body:Node2D) -> void:
 func _on_denstist_area_entered(_body:Node2D) -> void:
 	if $"../DentistTable".to_be_picked == true:
 		fish_interact_furniture.emit(load("res://src/scenes/dentist/dentist-main.tscn"))
+
+func _on_beard_area_entered(_body:Node2D)-> void:
+	if $"../BeardMirror".to_be_picked == true:
+		fish_interact_furniture.emit(load("res://src/scenes/beard/beard-main.tscn"))

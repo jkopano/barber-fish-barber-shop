@@ -1,4 +1,4 @@
-extends Node2D
+extends MiniGame
 
 @onready var sfxplayer = $"../AudioStreamPlayer"
 
@@ -32,9 +32,9 @@ var move_x = 0
 var play = false
 
 func getNumCircles():
-	if Globals.serializeData.level<2:
+	if Globals.game.get_current_run().current_level < 2:
 		numCircles = 1
-	elif Globals.serializeData.level<4:
+	elif Globals.game.get_current_run().current_level<4:
 		numCircles = 2
 	else:
 		numCircles = 3
@@ -134,8 +134,9 @@ func set_done():
 	play = !play
 
 func complete_game():
-	Globals.serializeData.level += 1
-	get_tree().change_scene_to_packed(load("res://src/scenes/LvL1/tilemap.tscn"))
+	exit_game()
+
+	
 
 func start_movement_tween(callback):
 	var tween = create_tween()
@@ -263,7 +264,7 @@ func _process(delta):
 
 func _draw():
 	for circle in reference_circles:
-		draw_circle(hair_center + circle.offset, circle.radius, Color.GREEN)
+		draw_circle(hair_center + circle.offset, circle.radius, Color(.3, .3, .6))
 
 	for strand in hair_strands:
 		draw_line(
@@ -277,10 +278,3 @@ func _draw():
 		var dir = strand["direction"].rotated(strand["angle"])
 		var length = strand["length"]
 		draw_line(pos, pos + dir * length, strand["hair_color"] + Color(0.3, 0.3, 0.3) * Color(1., 1., 1., 0.5), 3)
-
-	if show_green:
-		for circle in reference_circles:
-			draw_circle(hair_center + circle.offset, circle.radius, Color.SEA_GREEN)
-	elif show_red:
-		for circle in reference_circles:
-			draw_circle(hair_center + circle.offset, circle.radius, Color.INDIAN_RED)

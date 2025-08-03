@@ -7,7 +7,7 @@ extends Node
 var full_text_label = "SINCE WHEN WERE YOU THE ONE IN CONTROL?"
 var full_text_request = "GIVE ME YOUR SOUL OR YOU WON'T BE ABLE TO GO BACK!"
 var current_index = 0
-var typing_speed = 0.075
+var typing_speed = 0.040
 
 func _ready():
 	label.text = ""
@@ -16,9 +16,9 @@ func _ready():
 	refuse.visible = false
 	if Globals.has_ever_visited_after_death_scene:
 		start_typing(label,full_text_label)
-		await get_tree().create_timer(4.5).timeout
+		await get_tree().create_timer(typing_speed * len(full_text_label) +1.4).timeout
 	start_typing(request,full_text_request)
-	await get_tree().create_timer(4.5).timeout
+	await get_tree().create_timer(typing_speed * len(full_text_request) + 0.4).timeout
 	accept.visible = true
 	refuse.visible = true
 	Globals.has_ever_visited_after_death_scene = true

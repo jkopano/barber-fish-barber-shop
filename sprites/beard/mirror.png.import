@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6yo1c3sg6yt1"
-path="res://.godot/imported/shark.png-40f5adf5c358aad1bc5d8a299e5470f2.ctex"
+uid="uid://d25cin7ocs06e"
+path="res://.godot/imported/mirror.png-089e7a9ae6c404e4c88197621e3e53d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/levels/shark.png"
-dest_files=["res://.godot/imported/shark.png-40f5adf5c358aad1bc5d8a299e5470f2.ctex"]
+source_file="res://sprites/beard/mirror.png"
+dest_files=["res://.godot/imported/mirror.png-089e7a9ae6c404e4c88197621e3e53d9.ctex"]
 
 [params]
 
