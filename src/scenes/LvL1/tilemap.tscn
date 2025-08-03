@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://balwn7nail4e1"]
+[gd_scene load_steps=43 format=4 uid="uid://balwn7nail4e1"]
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
 [ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
@@ -26,11 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://dk6lc5p2fmonk" path="res://sprites/levels/mirror_up.png" id="20_s6ltw"]
 [ext_resource type="Script" uid="uid://dpomkr6hjtakb" path="res://src/scenes/LvL1/fireworkManager.gd" id="23_4eu8v"]
 [ext_resource type="PackedScene" uid="uid://dfy8k84rdg4n6" path="res://src/scenes/firework/firework.tscn" id="24_l0rlb"]
+[ext_resource type="FontFile" uid="uid://dph4pvyp60eri" path="res://fonts/calibri.ttf" id="25_s6ltw"]
 [ext_resource type="Texture2D" uid="uid://dhqialq1rty6v" path="res://sprites/trans-without-sition.png" id="27_smims"]
 [ext_resource type="Script" uid="uid://cvphr3e4wrr72" path="res://src/scenes/LvL1/transIn-0,0.gd" id="28_bpkwy"]
 [ext_resource type="Script" uid="uid://sroiwob6w622" path="res://src/scenes/trans-0,0.gd" id="29_bpkwy"]
 [ext_resource type="Script" uid="uid://bto5joserwpu4" path="res://src/scenes/szark-0,0.gd" id="30_bpkwy"]
-[ext_resource type="FontFile" uid="uid://dph4pvyp60eri" path="res://fonts/calibri.ttf" id="25_s6ltw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
 normal = Vector2(-0.469209, 0.883087)

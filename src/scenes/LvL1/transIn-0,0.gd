@@ -16,6 +16,6 @@ func set_vis():
 func play_anim():
 	visible = true
 	var tween = create_tween()
-	tween.tween_property(self, "scale", Vector2.ZERO, 1)\
+	tween.tween_property(self, "scale", Vector2.ZERO, 0.5)\
 		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
 	tween.tween_callback(set_vis)
