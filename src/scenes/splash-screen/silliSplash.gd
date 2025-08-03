@@ -9,5 +9,4 @@ func _on_quit_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
-	var ms = preload("res://src/scenes/LvL1/tilemap.tscn")
-	get_tree().change_scene_to_packed(ms)
+	get_tree().change_scene_to_file("res://src/scenes/LvL1/tilemap.tscn")

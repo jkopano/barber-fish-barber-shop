@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://balwn7nail4e1"]
+[gd_scene load_steps=50 format=4 uid="uid://balwn7nail4e1"]
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
 [ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
@@ -16,11 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://m3qbvtd31lem" path="res://sprites/levels/winko-point.png" id="13_68jg1"]
 [ext_resource type="Texture2D" uid="uid://s46x68lh0u5k" path="res://sprites/levels/nozycki-point.png" id="15_6hthj"]
 [ext_resource type="Texture2D" uid="uid://cwsmpfky4csqc" path="res://sprites/fryzjer/komoda-lustro.png" id="15_it7ct"]
+[ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="17_4eu8v"]
 [ext_resource type="AudioStream" uid="uid://dtomdsxlxrm2t" path="res://Sounds/SOUND DESIGN/Cały projekt/SzantaLoop.wav" id="17_68jg1"]
 [ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="17_it7ct"]
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="18_xutvd"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
-[ext_resource type="Script" uid="uid://clxyf1mwwpc2n" path="res://src/scenes/LvL1/firework.gd" id="21_pe2fm"]
+[ext_resource type="Script" path="res://src/scenes/LvL1/firework.gd" id="21_pe2fm"]
 [ext_resource type="Texture2D" uid="uid://c7w5ya7sv5kjv" path="res://sprites/fireworks/fireworks.png" id="22_pe2fm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
@@ -198,6 +199,7 @@ animations = [{
 script = ExtResource("1_qf6y4")
 
 [node name="Background" type="Sprite2D" parent="."]
+position = Vector2(12, 9)
 scale = Vector2(3.577, 3.577)
 texture = ExtResource("1_4ifww")
 
@@ -237,7 +239,7 @@ unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(-92.0001, 52)
 scale = Vector2(3.11321, 3.11321)
-speed = 60000
+speed = 30000
 
 [node name="DrinkTable" type="Sprite2D" parent="layer2/Minigames"]
 clip_children = 2
@@ -342,15 +344,15 @@ scale = Vector2(3.107, 3.107)
 tile_map_data = PackedByteArray("AAD5////AwAAAAAAAAD5/wAAAwAAAAAAAAD7//3/AwAAAAAAAAD8//z/AwAAAAAAAAD9//z/AwAAAAAAAAD+//z/AwAAAAAAAAABAPz/AwAAAAAAAAACAPz/AwAAAAAAAAADAPz/AwAAAAAAAAAEAPz/AwAAAAAAAAD5//7/AwAAAAAAAAD7//z/AwAAAAAAAAD4////AwAAAAAAAAD4/wAAAwAAAAAAAAD6//7/AwAAAAAAAAD4/wEAAwAAAAAAAAD5/wEAAwAAAAAAAAD5/wIAAwAAAAAAAAD6/wMAAwAAAAAAAAD6/wIAAwAAAAAAAAD7/wMAAwAAAAAAAAD6//3/AwAAAAAAAAAFAPz/AAAAAAAAAAAGAP3/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_fc11b")
 
-[node name="zegar" parent="." instance=ExtResource("17_68jg1")]
-position = Vector2(517, -262)
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(193, -11)
 rotation = 0.521853
 shape = SubResource("RectangleShape2D_fl7jp")
+
+[node name="zegar" parent="." instance=ExtResource("17_4eu8v")]
+position = Vector2(519, -266)
 
 [node name="Muzyka" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_68jg1")

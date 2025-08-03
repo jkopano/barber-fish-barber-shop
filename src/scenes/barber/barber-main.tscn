@@ -1,18 +1,17 @@
-
-[gd_scene load_steps=12 format=3 uid="uid://bnxiy03x62g1d"]
+[gd_scene load_steps=14 format=3 uid="uid://bnxiy03x62g1d"]
 
 [ext_resource type="Texture2D" uid="uid://cjh1eoyjubghc" path="res://sprites/fryzjer/fryzjer-background.png" id="1_pkkap"]
 [ext_resource type="Script" uid="uid://bd3xwvvc55vpg" path="res://src/scenes/barber/hair.gd" id="2_3basa"]
 [ext_resource type="Texture2D" uid="uid://dirca2bcyk6d3" path="res://sprites/fryzjer/rekin góra.png" id="2_emc83"]
-[ext_resource type="Script" path="res://src/scenes/barber/sharkMove.gd" id="3_pkkap"]
+[ext_resource type="Script" uid="uid://e8wgnj0u03aw" path="res://src/scenes/barber/sharkMove.gd" id="3_pkkap"]
 [ext_resource type="Script" uid="uid://b0phdmhcdibrw" path="res://src/scenes/dentist/followingFish.gd" id="5_e85rf"]
 [ext_resource type="SpriteFrames" uid="uid://b7cjttbl7vdbf" path="res://src/scenes/dentist/fish_anim.tres" id="6_8k2vg"]
-[ext_resource type="Script" path="res://src/scenes/dentist/fishAnimated.gd" id="7_g6pde"]
-
+[ext_resource type="Script" uid="uid://celvaa7dgo1rh" path="res://src/scenes/dentist/fishAnimated.gd" id="7_g6pde"]
 [ext_resource type="AudioStream" uid="uid://c644uw003di5m" path="res://Sounds/SOUND DESIGN/specific scean/Hairslaying.wav" id="8_8k2vg"]
 [ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="8_phvmf"]
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="9_efful"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="10_nwuaa"]
+[ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="12_nwuaa"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ko3rf"]
 particle_flag_disable_z = true
@@ -57,9 +56,9 @@ sprite_frames = ExtResource("6_8k2vg")
 animation = &"normal"
 script = ExtResource("7_g6pde")
 
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8k2vg")
+
 [node name="Bubble1" type="GPUParticles2D" parent="."]
 position = Vector2(596, 670)
 amount = 5
@@ -80,3 +79,6 @@ amount = 5
 texture = ExtResource("10_nwuaa")
 lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_ko3rf")
+
+[node name="zegar" parent="." instance=ExtResource("12_nwuaa")]
+position = Vector2(1143, 43)

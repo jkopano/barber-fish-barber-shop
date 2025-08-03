@@ -16,13 +16,10 @@ func _ready() -> void:
 	next_rotate = for_every
 
 func _process(delta: float) -> void:
-	print(Globals.time_elapsed)
 	if ispaused == false:
 		Globals.time_elapsed += delta
 	
-	if next_rotate <= Globals.time_elapsed:
-		kreska.rotation = deg_to_rad(30) * ( int( Globals.time_elapsed ) / 12 + 1 )
-		next_rotate = next_rotate + for_every
+	kreska.rotation = deg_to_rad(30) * int( Globals.time_elapsed / 5 )
 		
 	if time * 0.75 <= Globals.time_elapsed:
 		tarcza.self_modulate = Color(255, 0, 0, 255)

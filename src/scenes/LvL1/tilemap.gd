@@ -8,6 +8,10 @@ signal shark_needs_denstist()
 
 var shark = preload("res://src/scenes/LvL1/shark/shark.tscn")
 
+func _init() -> void:
+	if not Globals.game:
+		Globals.game = Globals.GameData.new()
+
 func _ready() -> void:
 	var shark_instance = shark.instantiate()
 	$Sharks.add_child(shark_instance)
@@ -29,4 +33,6 @@ func _on_player_fish_interact() -> void:
 	interact_with_shark()
 
 func _on_player_fish_interact_furniture(scene:PackedScene) -> void:
+	Globals.player_data.pos = %Player.position
+	print(Globals.player_data.pos)
 	get_tree().change_scene_to_packed(scene)
