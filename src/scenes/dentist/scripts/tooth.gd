@@ -1,6 +1,7 @@
 extends Node2D
 
 var mask_texture
+@onready var sfxplayer = $"../AudioStreamPlayer"
 
 var yellowRock = preload("res://src/scenes/dentist/yellowRock.tscn")
 var redRock = preload("res://src/scenes/dentist/redRock.tscn")
@@ -59,6 +60,8 @@ func _process(delta: float) -> void:
 	if (redRocks.is_empty()and yellowRocks.is_empty()):
 		get_parent().greenYellowDonw = true
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		if sfxplayer.playing == false:
+			sfxplayer.play()
 		if (get_parent().getCategory() == "yellow"):
 			for rock in yellowRocks:
 				if rock.clean(30):
@@ -67,3 +70,5 @@ func _process(delta: float) -> void:
 			for rock in redRocks:
 				if rock.clean(30):
 					redRocks.erase(rock)
+	else:
+		sfxplayer.stop()

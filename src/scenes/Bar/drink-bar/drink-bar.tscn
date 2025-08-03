@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://bqrwowtfsjhpb"]
 
-[ext_resource type="Script" uid="uid://dekoh7b5hg5y5" path="res://src/scenes/Bar/drink-bar/drink_bar.gd" id="1_3rrnj"]
+[ext_resource type="Script" path="res://src/scenes/Bar/drink-bar/drink_bar.gd" id="1_3rrnj"]
 [ext_resource type="Texture2D" uid="uid://bs2rtejtqnxl2" path="res://sprites/bar/bar-background.png" id="1_6x5pp"]
 [ext_resource type="Script" uid="uid://cxxlhtq4fa0ao" path="res://src/scenes/Bar/drink-bar/shark.gd" id="2_blw56"]
 [ext_resource type="Script" uid="uid://b7qfsummkprsa" path="res://src/scenes/Bar/drink-bar/drink.gd" id="3_7xenl"]

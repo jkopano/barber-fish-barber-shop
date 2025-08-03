@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var kreska = $"Zegar-kreska"
 @onready var tarcza = $"Zegar-tarcza"
+@onready var sfxplayer = $AudioStreamPlayer
 
 var time: float
 var for_every : float
@@ -23,6 +24,7 @@ func _process(delta: float) -> void:
 		
 	if time * 0.75 <= Globals.time_elapsed:
 		tarcza.self_modulate = Color(255, 0, 0, 255)
+		sfxplayer.play()
 		
 	if time <= Globals.time_elapsed:
 		await get_tree().create_timer(0.2).timeout

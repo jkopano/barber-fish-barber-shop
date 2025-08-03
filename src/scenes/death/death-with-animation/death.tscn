@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://ook4isjtvxxn"]
+[gd_scene load_steps=30 format=3 uid="uid://ook4isjtvxxn"]
 
 [ext_resource type="Script" uid="uid://dy6u1hiq661eo" path="res://src/scenes/death/death-with-animation/death.gd" id="1_pc1bb"]
 [ext_resource type="Texture2D" uid="uid://4dpsmurf7pnh" path="res://sprites/death/Gameover-spritesheet.png" id="2_pc1bb"]
+[ext_resource type="AudioStream" uid="uid://dqev74mfwodo" path="res://Sounds/SOUND DESIGN/specific scean/GameOver.wav" id="3_biv1g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_le720"]
 atlas = ExtResource("2_pc1bb")
@@ -205,5 +206,9 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_povwb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_pc1bb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_le720")
 text = "Restart"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_biv1g")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://balwn7nail4e1"]
+[gd_scene load_steps=40 format=4 uid="uid://balwn7nail4e1"]
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
 [ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" uid="uid://dpomkr6hjtakb" path="res://src/scenes/LvL1/fireworkManager.gd" id="23_4eu8v"]
 [ext_resource type="PackedScene" uid="uid://dfy8k84rdg4n6" path="res://src/scenes/firework/firework.tscn" id="24_l0rlb"]
 [ext_resource type="FontFile" uid="uid://dph4pvyp60eri" path="res://fonts/calibri.ttf" id="25_s6ltw"]
+[ext_resource type="AudioStream" uid="uid://dtomdsxlxrm2t" path="res://Sounds/SOUND DESIGN/Cały projekt/SzantaLoop.wav" id="28_smims"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
 normal = Vector2(-0.469209, 0.883087)
@@ -309,6 +310,10 @@ horizontal_alignment = 1
 position = Vector2(-112, 116)
 script = ExtResource("23_4eu8v")
 firework_scene = ExtResource("24_l0rlb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_smims")
+autoplay = true
 
 [connection signal="shark_needs_barber" from="." to="layer2/Minigames/BarberTable" method="_on_tilemap_shark_needs_barber"]
 [connection signal="shark_needs_beard" from="." to="layer2/Minigames/BeardMirror" method="_on_tilemap_shark_needs_beard"]
