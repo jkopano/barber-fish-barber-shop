@@ -5,11 +5,17 @@ var tooth_bubble = preload("res://sprites/levels/brush-dymek.png")
 var drink_bubble = preload("res://sprites/levels/winkoi-dymek.png")
 var brush_bubble = preload("res://sprites/levels/nozycki-dymek.png")
 
+var changer = preload("res://src/scenes/LvL1/level_changer.tscn")
+
 var a_need: String
 var id: int
 
 func _ready():
 	a_need = Globals.Need.keys()[randi() % Globals.Need.size()]
+
+	if Globals.game.get_current_run().get_current().current_shrek_number > 1:
+		var changer_instance = changer.instantiate()
+		add_child(changer_instance)
 
 	if a_need == "DRINK":
 		$Need.texture = drink_bubble
