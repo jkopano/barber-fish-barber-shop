@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://cposhqqbprbhq"]
+
+[ext_resource type="FontFile" uid="uid://cfql3cr6kkfa1" path="res://fonts/YujiBoku-Regular.ttf" id="1_dm0s0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8s4dv"]
+font = ExtResource("1_dm0s0")
+font_size = 22
+outline_size = 2
+shadow_size = 20
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_left = 0.45
+anchor_top = 0.5
+anchor_right = 0.6
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="Label4" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "NEW GAME"
+label_settings = SubResource("LabelSettings_8s4dv")
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "ACHIEVMENTS"
+label_settings = SubResource("LabelSettings_8s4dv")
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_8s4dv")
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
+label_settings = SubResource("LabelSettings_8s4dv")
+horizontal_alignment = 1

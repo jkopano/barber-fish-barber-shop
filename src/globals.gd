@@ -70,6 +70,7 @@ var player_data = {
 }
 
 func new_run():
+	time_elapsed = 0
 	player_data = null
 	game.new_run()
 
