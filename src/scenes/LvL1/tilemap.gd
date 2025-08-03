@@ -14,6 +14,7 @@ func _ready() -> void:
 	Globals.has_ever_visited_main_room = true
 
 
+
 func interact_with_shark() -> void:
 	if $Sharks.get_child(0).a_need == "DRINK":
 		shark_needs_drink.emit()

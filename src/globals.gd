@@ -3,7 +3,12 @@ extends Node
 enum Need {
 	HAIR,
 	DRINK,
+<<<<<<< Updated upstream
 	TEETH
+=======
+	TEETH,
+	BEARD
+>>>>>>> Stashed changes
 }
 
 enum State {
