@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bqrwowtfsjhpb"]
+[gd_scene load_steps=31 format=3 uid="uid://bqrwowtfsjhpb"]
 
 [ext_resource type="Script" uid="uid://dekoh7b5hg5y5" path="res://src/scenes/Bar/drink-bar/drink_bar.gd" id="1_3rrnj"]
 [ext_resource type="Texture2D" uid="uid://bs2rtejtqnxl2" path="res://sprites/bar/bar-background.png" id="1_6x5pp"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cxoqqtpq7783" path="res://src/scenes/Bar/drink-indicator/drink-indicator.tscn" id="3_tu65y"]
 [ext_resource type="Texture2D" uid="uid://di6pu0c4bnclp" path="res://sprites/bar/shark-cute.png" id="4_23hjn"]
 [ext_resource type="Texture2D" uid="uid://bar1ng1lyiekb" path="res://sprites/bar/bar-frontdesk.png" id="5_3rrnj"]
+[ext_resource type="Texture2D" uid="uid://duqchv53ydxt8" path="res://sprites/bar/shark-sadge.png" id="6_fusjo"]
 [ext_resource type="Texture2D" uid="uid://du0vvsyaxsalr" path="res://sprites/bar/drinkable-b.png" id="7_23hjn"]
 [ext_resource type="Texture2D" uid="uid://bsxtjxdb6aqq2" path="res://sprites/bar/drinkable-g.png" id="8_3rrnj"]
 [ext_resource type="Texture2D" uid="uid://ddbbd1nj58mk" path="res://sprites/bar/drinkable-p.png" id="9_771wu"]
@@ -17,15 +18,42 @@
 [ext_resource type="AudioStream" uid="uid://bochrjd8sn8v3" path="res://Sounds/SOUND DESIGN/specific scean/ClickClickGlass.wav" id="14_d8dma"]
 [ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="16_tomei"]
 [ext_resource type="Script" uid="uid://copws60o21pti" path="res://src/scenes/Bar/drink-bar/followingFishDrinkBar.gd" id="17_70v6m"]
-[ext_resource type="Script" uid="uid://sroiwob6w622" path="res://src/scenes/trans-0,0.gd" id="17_fusjo"]
+[ext_resource type="Script" path="res://src/scenes/trans-0,0.gd" id="17_fusjo"]
 [ext_resource type="Texture2D" uid="uid://dhqialq1rty6v" path="res://sprites/trans-without-sition.png" id="18_1mj8h"]
 [ext_resource type="SpriteFrames" uid="uid://b7cjttbl7vdbf" path="res://src/scenes/dentist/fish_anim.tres" id="18_fusjo"]
-[ext_resource type="Script" uid="uid://celvaa7dgo1rh" path="res://src/scenes/dentist/fishAnimated.gd" id="19_1mj8h"]
-[ext_resource type="Script" uid="uid://bto5joserwpu4" path="res://src/scenes/szark-0,0.gd" id="19_alcfe"]
-[ext_resource type="Script" uid="uid://cvphr3e4wrr72" path="res://src/scenes/LvL1/transIn-0,0.gd" id="20_fusjo"]
+[ext_resource type="Script" path="res://src/scenes/dentist/fishAnimated.gd" id="19_1mj8h"]
+[ext_resource type="Script" path="res://src/scenes/szark-0,0.gd" id="19_alcfe"]
+[ext_resource type="Script" path="res://src/scenes/LvL1/transIn-0,0.gd" id="20_fusjo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pu02"]
 size = Vector2(760, 709)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poqnm"]
+atlas = ExtResource("4_23hjn")
+region = Rect2(0, 0, 87, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2ds2"]
+atlas = ExtResource("6_fusjo")
+region = Rect2(0, 0, 87, 98)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mj8h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poqnm")
+}],
+"loop": true,
+"name": &"happi",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2ds2")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmt2k"]
 size = Vector2(70, 100)
@@ -52,15 +80,15 @@ texture = ExtResource("1_6x5pp")
 script = ExtResource("2_blw56")
 drink_indicator_scene = ExtResource("3_tu65y")
 
-[node name="Sprite2D" type="Sprite2D" parent="Shark"]
-texture_filter = 1
-position = Vector2(-7, -64)
-scale = Vector2(8.81034, 8.81034)
-texture = ExtResource("4_23hjn")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shark"]
 position = Vector2(-3, -168.5)
 shape = SubResource("RectangleShape2D_4pu02")
+
+[node name="shark" type="AnimatedSprite2D" parent="Shark"]
+position = Vector2(-3, -104)
+scale = Vector2(8.51365, 8.51365)
+sprite_frames = SubResource("SpriteFrames_1mj8h")
+animation = &"sad"
 
 [node name="Frontdesk" type="Sprite2D" parent="."]
 position = Vector2(152.476, 323)
