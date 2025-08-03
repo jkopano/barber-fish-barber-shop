@@ -37,5 +37,6 @@ func _on_player_fish_interact() -> void:
 
 func _on_player_fish_interact_furniture(scene:PackedScene) -> void:
 	Globals.player_data.pos = %Player.position
+	Globals.player_data.frame = %Player/Fish.frame
 	print(Globals.player_data.pos)
 	get_tree().change_scene_to_packed(scene)

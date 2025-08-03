@@ -72,7 +72,7 @@ var player_data = {
 
 func new_run():
 	time_elapsed = 0
-	player_data = null
+	player_data.pos = null
 	game.new_run()
 
 var has_ever_visited_after_death_scene := false
