@@ -19,6 +19,7 @@ var one_bone_length = VINE_LENGTH / (NUM_EDGES - 1)
 # === INTERNAL DATA ===
 var vines = []             # Active vines still attached
 var falling_vines = []     # Cut pieces falling with rotation
+@onready var sfxplayer = $"../AudioStreamPlayer"
 
 var where_to_cut_vines = []
 
@@ -131,7 +132,11 @@ func _physics_process(delta):
 
 	# Cutting
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		if sfxplayer.playing == false:
+			sfxplayer.play()
 		cut_vines(last_mouse_pos, mouse_pos)
+	else:
+		sfxplayer.stop()
 
 	last_mouse_pos = mouse_pos
 

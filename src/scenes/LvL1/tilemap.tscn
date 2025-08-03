@@ -19,12 +19,14 @@
 [ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="17_4eu8v"]
 [ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="17_it7ct"]
 [ext_resource type="Texture2D" uid="uid://nixkhtvr2c5q" path="res://sprites/levels/mirror_down.png" id="17_r34xl"]
-[ext_resource type="Script" uid="uid://bo5qaf8w66o4o" path="res://src/scenes/LvL1/furniture/beard_mirror.gd" id="18_4eu8v"]
+[ext_resource type="Script" path="res://src/scenes/LvL1/furniture/beard_mirror.gd" id="18_4eu8v"]
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="18_xutvd"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
+[ext_resource type="Script" uid="uid://dpomkr6hjtakb" path="res://src/scenes/LvL1/fireworkManager.gd" id="23_4eu8v"]
+[ext_resource type="PackedScene" uid="uid://dfy8k84rdg4n6" path="res://src/scenes/firework/firework.tscn" id="24_l0rlb"]
 [ext_resource type="Texture2D" uid="uid://c28rd7h4ui2ep" path="res://sprites/levels/point-maszynkai.png" id="19_k8tlb"]
 [ext_resource type="Texture2D" uid="uid://dk6lc5p2fmonk" path="res://sprites/levels/mirror_up.png" id="20_s6ltw"]
-[ext_resource type="Script" uid="uid://clxyf1mwwpc2n" path="res://src/scenes/LvL1/firework.gd" id="21_pe2fm"]
+[ext_resource type="Script" path="res://src/scenes/LvL1/firework.gd" id="21_pe2fm"]
 [ext_resource type="Texture2D" uid="uid://c7w5ya7sv5kjv" path="res://sprites/fireworks/fireworks.png" id="22_pe2fm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
@@ -81,122 +83,6 @@ gravity = Vector3(0, -980, 0)
 scale_max = 3.5
 turbulence_enabled = true
 turbulence_noise_speed_random = 1.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pe2fm"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 0, 15, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4eu8v"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 2, 15, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l0rlb"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 4, 15, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k8tlb"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 6, 15, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r34xl"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 8, 15, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s6ltw"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 10, 15, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_smims"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 12, 15, 2)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cn20r"]
-resource_name = "fire"
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pe2fm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4eu8v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l0rlb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k8tlb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r34xl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s6ltw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_smims")
-}],
-"loop": true,
-"name": &"fire",
-"speed": 7.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cn20r"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 0, 15, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bpkwy"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 2, 15, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pba5w"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 4, 15, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wwt27"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 6, 15, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iqhi2"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 8, 15, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t0n3b"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 10, 15, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fcmvt"]
-atlas = ExtResource("22_pe2fm")
-region = Rect2(0, 12, 15, 2)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nnv4q"]
-resource_name = "start"
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cn20r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bpkwy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pba5w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wwt27")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iqhi2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t0n3b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fcmvt")
-}],
-"loop": true,
-"name": &"start",
-"speed": 7.0
-}]
 
 [node name="Tilemap" type="Node2D"]
 script = ExtResource("1_qf6y4")
@@ -406,36 +292,10 @@ texture = ExtResource("19_b0ig0")
 lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_pe2fm")
 
-[node name="Firework1" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_cn20r")
-animation = &"fire"
-
-[node name="Firework2" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_cn20r")
-animation = &"fire"
-
-[node name="Firework3" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_cn20r")
-animation = &"fire"
-
-[node name="Firework4" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_cn20r")
-animation = &"fire"
-
-[node name="Firework5" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_cn20r")
-animation = &"fire"
-
-[node name="Firework6" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_cn20r")
-animation = &"fire"
-
-[node name="FireworkBase" type="AnimatedSprite2D" parent="."]
-rotation = 4.71239
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_nnv4q")
-animation = &"start"
-script = ExtResource("21_pe2fm")
+[node name="FireworkNode" type="Node2D" parent="."]
+position = Vector2(-112, 116)
+script = ExtResource("23_4eu8v")
+firework_scene = ExtResource("24_l0rlb")
 
 [connection signal="shark_needs_barber" from="." to="layer2/Minigames/BarberTable" method="_on_tilemap_shark_needs_barber"]
 [connection signal="shark_needs_beard" from="." to="layer2/Minigames/BeardMirror" method="_on_tilemap_shark_needs_beard"]

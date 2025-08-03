@@ -1,30 +1,32 @@
 extends AnimatedSprite2D
 
-@onready var fireworks = [
-	get_parent().get_node("Firework1"),
-	get_parent().get_node("Firework2"),
-	get_parent().get_node("Firework3"),
-	get_parent().get_node("Firework4"),
-	get_parent().get_node("Firework5"),
-	get_parent().get_node("Firework6")
-]
+var fireworks = []
 var base = self
-var tween = create_tween()
 
 func _ready():
+	for i in range(1,7):
+		var firework = get_parent().get_node_or_null("Firework%d" % i)
+		if firework:
+			fireworks.append(firework)
+		else:
+			print("no node for Firework%d" % i)
+
+func start(position: Vector2):
+	print("got signal in firework")
+	
 	for firework in fireworks:
 		firework.visible = false
 		firework.scale = Vector2(2,2)
 		
-	self.visible = false
-		
-	if Globals.has_ever_visited_main_room:
-		self.visible = true
-		self.play("start")
-		tween.tween_property(self,"position:y",-150,0.75)
-		tween.connect("finished", Callable(self, "_on_fireworkbase_tween_finished"))
+	self.visible = true
+	self.play("start")
+	self.position = position
+	var tween = create_tween()
+	tween.tween_property(self,"position:y",-200,0.75)
+	tween.connect("finished", Callable(self, "_on_fireworkbase_tween_finished"))
 		
 func _on_fireworkbase_tween_finished():
+	print("got explosion signal")
 	self.visible = false
 	var radius = 100.0  # jak daleko leci fajerwerk
 	var angle_step = 60  # co ile stopni

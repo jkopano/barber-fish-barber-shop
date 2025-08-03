@@ -1,41 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://ctqei2jgax873"]
+[gd_scene load_steps=6 format=3 uid="uid://ctqei2jgax873"]
 
 [ext_resource type="Texture2D" uid="uid://dqdprpie4txxv" path="res://sprites/dentist/dentist-background.png" id="1_5dnh0"]
 [ext_resource type="Script" uid="uid://c2iceo6hcm53w" path="res://src/scenes/beard/beard_main.gd" id="1_bvvmb"]
 [ext_resource type="Texture2D" uid="uid://di6pu0c4bnclp" path="res://sprites/bar/shark-cute.png" id="2_ca573"]
 [ext_resource type="Script" uid="uid://bepkqnuldpux4" path="res://src/scenes/beard/beardHair.gd" id="3_ca573"]
-[ext_resource type="Script" uid="uid://cxpb4q81lwmhn" path="res://src/scenes/beard/shark.gd" id="4_mt1f5"]
-[ext_resource type="Texture2D" uid="uid://duqchv53ydxt8" path="res://sprites/bar/shark-sadge.png" id="4_svm7j"]
-[ext_resource type="Script" uid="uid://b0phdmhcdibrw" path="res://src/scenes/dentist/followingFish.gd" id="7_2lo60"]
-[ext_resource type="SpriteFrames" uid="uid://b7cjttbl7vdbf" path="res://src/scenes/dentist/fish_anim.tres" id="8_uhtof"]
-[ext_resource type="Script" uid="uid://celvaa7dgo1rh" path="res://src/scenes/dentist/fishAnimated.gd" id="9_7688i"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_poqnm"]
-atlas = ExtResource("2_ca573")
-region = Rect2(0, 0, 87, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f2ds2"]
-atlas = ExtResource("4_svm7j")
-region = Rect2(0, 0, 87, 98)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bvvmb"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_poqnm")
-}],
-"loop": true,
-"name": &"happi",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f2ds2")
-}],
-"loop": true,
-"name": &"sad",
-"speed": 5.0
-}]
+[ext_resource type="AudioStream" uid="uid://c644uw003di5m" path="res://Sounds/SOUND DESIGN/specific scean/Hairslaying.wav" id="5_mt1f5"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_bvvmb")
@@ -45,28 +14,14 @@ position = Vector2(576, 330)
 scale = Vector2(3.6625, 3.71111)
 texture = ExtResource("1_5dnh0")
 
-[node name="shark" type="AnimatedSprite2D" parent="."]
-position = Vector2(-93.9999, 376)
+[node name="shark" type="Sprite2D" parent="."]
+position = Vector2(429, 370)
 scale = Vector2(6.31609, 6.31609)
-sprite_frames = SubResource("SpriteFrames_bvvmb")
-animation = &"sad"
-script = ExtResource("4_mt1f5")
+texture = ExtResource("2_ca573")
 
 [node name="hair" type="Node2D" parent="."]
 position = Vector2(563, 336)
 script = ExtResource("3_ca573")
 
-[node name="mouse following" type="Node2D" parent="."]
-script = ExtResource("7_2lo60")
-
-[node name="Node2D" type="Node2D" parent="mouse following"]
-scale = Vector2(2, 2)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="mouse following/Node2D"]
-texture_filter = 1
-position = Vector2(0.5, 30)
-rotation = -1.5708
-scale = Vector2(1.5, 1.5)
-sprite_frames = ExtResource("8_uhtof")
-animation = &"normal"
-script = ExtResource("9_7688i")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_mt1f5")
