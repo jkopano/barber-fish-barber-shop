@@ -247,6 +247,7 @@ func _process(delta: float) -> void:
 	position.x += 10 * delta
 	var res = check_if_complete()
 	if res == "complete":
-		print("complete")
+		get_parent().on_finish_game()
 	elif res == "impossible":
-		print("impossible")
+		var death_scene = preload("res://src/scenes/death/death-with-animation/death.tscn")
+		get_tree().change_scene_to_packed(death_scene)

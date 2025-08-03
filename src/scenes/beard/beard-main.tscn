@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctqei2jgax873"]
+[gd_scene load_steps=5 format=3 uid="uid://ctqei2jgax873"]
 
 [ext_resource type="Texture2D" uid="uid://dqdprpie4txxv" path="res://sprites/dentist/dentist-background.png" id="1_5dnh0"]
+[ext_resource type="Script" uid="uid://c2iceo6hcm53w" path="res://src/scenes/beard/beard_main.gd" id="1_bvvmb"]
 [ext_resource type="Texture2D" uid="uid://di6pu0c4bnclp" path="res://sprites/bar/shark-cute.png" id="2_ca573"]
 [ext_resource type="Script" uid="uid://bepkqnuldpux4" path="res://src/scenes/beard/beardHair.gd" id="3_ca573"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_bvvmb")
 
 [node name="bg" type="Sprite2D" parent="."]
 position = Vector2(576, 330)

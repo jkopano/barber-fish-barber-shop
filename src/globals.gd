@@ -1,9 +1,10 @@
 extends Node
 
 enum Need {
-	HAIR,
-	DRINK,
-	TEETH
+	#HAIR,
+	#DRINK,
+	#TEETH,
+	BEARD
 }
 
 enum State {
