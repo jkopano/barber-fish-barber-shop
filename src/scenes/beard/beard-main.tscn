@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctqei2jgax873"]
+[gd_scene load_steps=12 format=3 uid="uid://ctqei2jgax873"]
 
 [ext_resource type="Texture2D" uid="uid://dqdprpie4txxv" path="res://sprites/dentist/dentist-background.png" id="1_5dnh0"]
 [ext_resource type="Script" uid="uid://c2iceo6hcm53w" path="res://src/scenes/beard/beard_main.gd" id="1_bvvmb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cxpb4q81lwmhn" path="res://src/scenes/beard/shark.gd" id="4_mt1f5"]
 [ext_resource type="Texture2D" uid="uid://duqchv53ydxt8" path="res://sprites/bar/shark-sadge.png" id="4_svm7j"]
 [ext_resource type="AudioStream" uid="uid://c644uw003di5m" path="res://Sounds/SOUND DESIGN/specific scean/Hairslaying.wav" id="5_mt1f5"]
+[ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="8_f2ds2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_poqnm"]
 atlas = ExtResource("2_ca573")
@@ -56,3 +57,6 @@ script = ExtResource("3_ca573")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_mt1f5")
+
+[node name="zegar" parent="." instance=ExtResource("8_f2ds2")]
+position = Vector2(1101, 53)

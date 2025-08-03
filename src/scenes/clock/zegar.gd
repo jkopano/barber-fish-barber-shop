@@ -12,7 +12,6 @@ var ispaused = false
 
 func _ready() -> void:
 	time = Globals.time
-	Globals.time_elapsed = 0
 	for_every = 2
 	next_rotate = for_every
 

@@ -72,6 +72,12 @@ func _ready() -> void:
 			Globals.time = 15
 			Globals.game.get_current_run().get_current().shrek_amount = 6
 
+
+	if Globals.game.get_current_run().get_current().current_shrek_number == 1:
+		Globals.time_elapsed = 0
+
+
+
 func interact_with_shark() -> void:
 	if $Sharks.get_child(0).a_need == "DRINK":
 		shark_needs_drink.emit()
