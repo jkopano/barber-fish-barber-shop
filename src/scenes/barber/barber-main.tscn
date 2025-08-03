@@ -81,4 +81,4 @@ lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_ko3rf")
 
 [node name="zegar" parent="." instance=ExtResource("12_nwuaa")]
-position = Vector2(1143, 43)
+position = Vector2(1096, 63)
