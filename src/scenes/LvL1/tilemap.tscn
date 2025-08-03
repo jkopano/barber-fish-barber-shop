@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="17_4eu8v"]
 [ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="17_it7ct"]
 [ext_resource type="Texture2D" uid="uid://nixkhtvr2c5q" path="res://sprites/levels/mirror_down.png" id="17_r34xl"]
-[ext_resource type="Script" path="res://src/scenes/LvL1/furniture/beard_mirror.gd" id="18_4eu8v"]
+[ext_resource type="Script" uid="uid://bo5qaf8w66o4o" path="res://src/scenes/LvL1/furniture/beard_mirror.gd" id="18_4eu8v"]
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="18_xutvd"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
 [ext_resource type="Texture2D" uid="uid://c28rd7h4ui2ep" path="res://sprites/levels/point-maszynkai.png" id="19_k8tlb"]
@@ -84,6 +84,8 @@ turbulence_noise_speed_random = 1.0
 
 [node name="Tilemap" type="Node2D"]
 script = ExtResource("1_qf6y4")
+shrek_amount = 5
+time = 10
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(3.577, 3.577)

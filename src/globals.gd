@@ -16,7 +16,7 @@ enum State {
 	DENTIST,
 }
 
-var time = 60
+var time = 30
 var time_elapsed = 0
 
 class GameData:
@@ -56,7 +56,7 @@ class RunData:
 class LevelData:
 	var id: int
 	var current_shrek_number: int = 1
-	var shrek_amount: int = 3
+	var shrek_amount: int = 5
 	var points: int = 100
 
 	func _init(_id):
