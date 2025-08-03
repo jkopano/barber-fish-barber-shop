@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://7hgrrfau25rh"]
+
+[ext_resource type="Texture2D" uid="uid://bv3fng6amef8u" path="res://sprites/levels/PlayerSprite.png" id="1_lwtgv"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fish" type="Sprite2D" parent="."]
+texture = ExtResource("1_lwtgv")
+hframes = 3
+vframes = 3
+frame = 3
