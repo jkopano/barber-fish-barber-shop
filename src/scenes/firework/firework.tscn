@@ -1,0 +1,156 @@
+[gd_scene load_steps=20 format=3 uid="uid://dfy8k84rdg4n6"]
+
+[ext_resource type="Texture2D" uid="uid://c7w5ya7sv5kjv" path="res://sprites/fireworks/fireworks.png" id="1_bdgkf"]
+[ext_resource type="Script" uid="uid://4qdhejmxfr8x" path="res://src/scenes/firework/fireworkBase.gd" id="1_jkpox"]
+[ext_resource type="Script" uid="uid://clxyf1mwwpc2n" path="res://src/scenes/firework/firework.gd" id="2_jkpox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe2fm"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 0, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eu8v"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 2, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0rlb"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 4, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8tlb"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 6, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r34xl"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 8, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6ltw"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 10, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smims"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 12, 15, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pya1"]
+resource_name = "fire"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe2fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eu8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0rlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8tlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r34xl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6ltw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smims")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn20r"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 0, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpkwy"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 2, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pba5w"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 4, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwt27"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 6, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqhi2"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 8, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0n3b"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 10, 15, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcmvt"]
+atlas = ExtResource("1_bdgkf")
+region = Rect2(0, 12, 15, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0p683"]
+resource_name = "start"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn20r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpkwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pba5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwt27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqhi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0n3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcmvt")
+}],
+"loop": true,
+"name": &"start",
+"speed": 7.0
+}]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jkpox")
+
+[node name="Firework1" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3pya1")
+animation = &"fire"
+
+[node name="Firework2" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3pya1")
+animation = &"fire"
+
+[node name="Firework3" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3pya1")
+animation = &"fire"
+
+[node name="Firework4" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3pya1")
+animation = &"fire"
+
+[node name="Firework5" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3pya1")
+animation = &"fire"
+
+[node name="Firework6" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3pya1")
+animation = &"fire"
+
+[node name="FireworkBase" type="AnimatedSprite2D" parent="."]
+position = Vector2(483, 579)
+rotation = 4.71239
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_0p683")
+animation = &"start"
+script = ExtResource("2_jkpox")
