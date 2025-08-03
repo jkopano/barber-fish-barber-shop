@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://balwn7nail4e1"]
+[gd_scene load_steps=39 format=4 uid="uid://balwn7nail4e1"]
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
 [ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dk6lc5p2fmonk" path="res://sprites/levels/mirror_up.png" id="20_s6ltw"]
 [ext_resource type="Script" uid="uid://dpomkr6hjtakb" path="res://src/scenes/LvL1/fireworkManager.gd" id="23_4eu8v"]
 [ext_resource type="PackedScene" uid="uid://dfy8k84rdg4n6" path="res://src/scenes/firework/firework.tscn" id="24_l0rlb"]
+[ext_resource type="FontFile" uid="uid://dph4pvyp60eri" path="res://fonts/calibri.ttf" id="25_s6ltw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
 normal = Vector2(-0.469209, 0.883087)
@@ -81,6 +82,10 @@ gravity = Vector3(0, -980, 0)
 scale_max = 3.5
 turbulence_enabled = true
 turbulence_noise_speed_random = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_smims"]
+font = ExtResource("25_s6ltw")
+font_size = 35
 
 [node name="Tilemap" type="Node2D"]
 script = ExtResource("1_qf6y4")
@@ -289,6 +294,14 @@ amount = 5
 texture = ExtResource("19_b0ig0")
 lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_pe2fm")
+
+[node name="SharksLeft" type="Label" parent="."]
+offset_left = -571.0
+offset_top = -320.0
+offset_right = -357.0
+offset_bottom = -269.0
+label_settings = SubResource("LabelSettings_smims")
+horizontal_alignment = 1
 
 [node name="FireworkNode" type="Node2D" parent="."]
 position = Vector2(-112, 116)

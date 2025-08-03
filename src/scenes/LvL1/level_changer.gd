@@ -7,5 +7,4 @@ func _ready():
 
 	print(shrek_number, shrek_amount)
 
-	$SharksLeft.text = "Sharks Left " + str( shrek_amount - shrek_number + 1 ) + "/" + str( shrek_amount )
 	$CurrentLevel/Label.text = "Level " + str(level + 1)

@@ -47,7 +47,7 @@ class RunData:
 		return levels[current_level]
 	
 	func next_shrek():
-		if get_current().current_shrek_number + 1 >= get_current().shrek_amount:
+		if get_current().current_shrek_number + 1 > get_current().shrek_amount:
 			current_level += 1
 		else:
 			get_current().current_shrek_number += 1
