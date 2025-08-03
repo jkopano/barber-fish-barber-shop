@@ -39,7 +39,7 @@ func _ready() -> void:
 	Globals.has_ever_visited_main_room = true
 
 	$SharksLeft.text = "Sharks Left " + str( shark_amount - shrek_number + 1 ) + "/" + str( shark_amount )
-
+	
 
 func interact_with_shark() -> void:
 	if $Sharks.get_child(0).a_need == "DRINK":
