@@ -1,10 +1,5 @@
 extends Node2D
 
-@export var shrek_amount = 3
-@export var current_shark = 1
-@export var time = 60
-@export var points = 100
-
 signal swap_scene(scene: PackedScene)
 
 signal shark_needs_barber()
@@ -18,8 +13,8 @@ var shark_leaving = preload("res://src/scenes/LvL1/shark/shark_leaving.tscn")
 
 func _init() -> void:
 	if not Globals.game:
-		Globals.game = Globals.for_bubert(shrek_amount, current_shark, time, null)
-		Globals.time = time
+		# Globals.game = Globals.for_bubert(shrek_amount, current_shark, time, null)
+		Globals.game = Globals.GameData.new()
 
 func _ready() -> void:
 	print(Globals.game.get_current_run().current_level)
@@ -54,7 +49,8 @@ func interact_with_shark() -> void:
 	if $Sharks.get_child(0).a_need == "BEARD":
 		shark_needs_beard.emit()
 
-	$Sharks.get_child(0).get_node("Need").queue_free()
+	if $Need:
+		$Sharks.get_child(0).get_node("Need").queue_free()
 
 
 func _on_player_fish_interact() -> void:
