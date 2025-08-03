@@ -19,17 +19,13 @@
 [ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="17_4eu8v"]
 [ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="17_it7ct"]
 [ext_resource type="Texture2D" uid="uid://nixkhtvr2c5q" path="res://sprites/levels/mirror_down.png" id="17_r34xl"]
-[ext_resource type="Script" uid="uid://bo5qaf8w66o4o" path="res://src/scenes/LvL1/furniture/beard_mirror.gd" id="18_4eu8v"]
+[ext_resource type="Script" path="res://src/scenes/LvL1/furniture/beard_mirror.gd" id="18_4eu8v"]
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="18_xutvd"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
 [ext_resource type="Texture2D" uid="uid://c28rd7h4ui2ep" path="res://sprites/levels/point-maszynkai.png" id="19_k8tlb"]
 [ext_resource type="Texture2D" uid="uid://dk6lc5p2fmonk" path="res://sprites/levels/mirror_up.png" id="20_s6ltw"]
 [ext_resource type="Script" uid="uid://dpomkr6hjtakb" path="res://src/scenes/LvL1/fireworkManager.gd" id="23_4eu8v"]
 [ext_resource type="PackedScene" uid="uid://dfy8k84rdg4n6" path="res://src/scenes/firework/firework.tscn" id="24_l0rlb"]
-[ext_resource type="Texture2D" uid="uid://dhqialq1rty6v" path="res://sprites/trans-without-sition.png" id="27_smims"]
-[ext_resource type="Script" uid="uid://cvphr3e4wrr72" path="res://src/scenes/LvL1/transIn-0,0.gd" id="28_bpkwy"]
-[ext_resource type="Script" uid="uid://sroiwob6w622" path="res://src/scenes/trans-0,0.gd" id="29_bpkwy"]
-[ext_resource type="Script" uid="uid://bto5joserwpu4" path="res://src/scenes/szark-0,0.gd" id="30_bpkwy"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
 normal = Vector2(-0.469209, 0.883087)
@@ -66,7 +62,7 @@ sources/0 = SubResource("TileSetAtlasSource_ge684")
 sources/3 = SubResource("TileSetAtlasSource_u1kat")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68jg1"]
-size = Vector2(39.9936, 13.3841)
+size = Vector2(39.9936, 10.301)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6hthj"]
 size = Vector2(40.9565, 14.6676)
@@ -222,28 +218,26 @@ shape = SubResource("RectangleShape2D_it7ct")
 
 [node name="BeardMirror" type="Sprite2D" parent="layer2/Minigames"]
 y_sort_enabled = true
-position = Vector2(314, -13)
-scale = Vector2(2.3464, 2.33928)
+position = Vector2(337, 4.84956)
+scale = Vector2(2.3464, 2.49463)
 texture = ExtResource("17_r34xl")
 script = ExtResource("18_4eu8v")
 
 [node name="Point" type="Sprite2D" parent="layer2/Minigames/BeardMirror"]
 top_level = true
-position = Vector2(324, -102)
+position = Vector2(347.23, -98.69)
 scale = Vector2(3, 3)
 texture = ExtResource("19_k8tlb")
 
 [node name="Area2D" type="Area2D" parent="layer2/Minigames/BeardMirror"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="layer2/Minigames/BeardMirror/Area2D"]
-position = Vector2(-3.40948, 30.9924)
+position = Vector2(-3.83567, 23.3103)
 rotation = 0.523599
 shape = SubResource("RectangleShape2D_68jg1")
 
 [node name="Sprite2D" type="Sprite2D" parent="layer2/Minigames/BeardMirror"]
 z_index = 1
-position = Vector2(0, 2.99237)
-scale = Vector2(1, 0.89313)
 texture = ExtResource("20_s6ltw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -298,21 +292,6 @@ process_material = SubResource("ParticleProcessMaterial_pe2fm")
 position = Vector2(-112, 116)
 script = ExtResource("23_4eu8v")
 firework_scene = ExtResource("24_l0rlb")
-
-[node name="transIn" type="Sprite2D" parent="."]
-z_index = 10
-texture = ExtResource("27_smims")
-script = ExtResource("28_bpkwy")
-
-[node name="TRANS" type="Node2D" parent="."]
-z_index = 100
-script = ExtResource("29_bpkwy")
-
-[node name="szark" type="Sprite2D" parent="TRANS"]
-z_index = 101
-texture_filter = 1
-texture = ExtResource("27_smims")
-script = ExtResource("30_bpkwy")
 
 [connection signal="shark_needs_barber" from="." to="layer2/Minigames/BarberTable" method="_on_tilemap_shark_needs_barber"]
 [connection signal="shark_needs_beard" from="." to="layer2/Minigames/BeardMirror" method="_on_tilemap_shark_needs_beard"]

@@ -13,4 +13,4 @@ func spawn_fireworks(position):
 		await get_tree().create_timer(wait_time).timeout
 		var firework = firework_scene.instantiate()
 		add_child(firework)
-		firework.start_fire(position + Vector2(100 * i, 0))
+		firework.start_fire(position + Vector2(80 * i, -120 + 25 * i))
