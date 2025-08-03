@@ -16,6 +16,7 @@ enum State {
 	DENTIST,
 }
 
+var time = 60
 var time_elapsed = 0
 
 class GameData:
@@ -46,12 +47,10 @@ class RunData:
 		return levels[current_level]
 	
 	func next_shrek():
-		if get_current().current_shrek_number + 1 >= get_current().shrek_amount:
+		if get_current().current_shrek_number + 1 > get_current().shrek_amount:
 			current_level += 1
 		else:
 			get_current().current_shrek_number += 1
-
-
 
 
 class LevelData:
@@ -69,6 +68,18 @@ var player_data = {
 	pos = Vector2(0, 0),
 	frame = 1,
 }
+
+func for_bubert(_shrek_amount, _current_shark, _time, _points) -> GameData:
+	var local_game = GameData.new()
+
+	for x in local_game.get_current_run().levels:
+		x.shrek_amount = _shrek_amount
+		x.current_shrek_number = _current_shark
+	time = _time
+
+	return local_game
+
+
 
 func new_run():
 	time_elapsed = 0

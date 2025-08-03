@@ -1,6 +1,7 @@
 extends Node
 
 func _ready():
+	Globals.game = Globals.GameData.new()
 	Globals.has_ever_visited_after_death_scene = false
 	Globals.has_ever_visited_main_room = false
 

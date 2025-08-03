@@ -5,7 +5,7 @@ extends Node2D
 @onready var kreska = $"Zegar-kreska"
 @onready var tarcza = $"Zegar-tarcza"
 
-var time = 60.0
+var time = Globals.time
 var for_every : float
 var next_rotate : float
 # var time_elapsed := 0.0
