@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctqei2jgax873"]
+[gd_scene load_steps=18 format=3 uid="uid://ctqei2jgax873"]
 
 [ext_resource type="Texture2D" uid="uid://dqdprpie4txxv" path="res://sprites/dentist/dentist-background.png" id="1_5dnh0"]
 [ext_resource type="Script" uid="uid://c2iceo6hcm53w" path="res://src/scenes/beard/beard_main.gd" id="1_bvvmb"]
@@ -7,10 +7,13 @@
 [ext_resource type="Script" uid="uid://cxpb4q81lwmhn" path="res://src/scenes/beard/shark.gd" id="4_mt1f5"]
 [ext_resource type="Texture2D" uid="uid://duqchv53ydxt8" path="res://sprites/bar/shark-sadge.png" id="4_svm7j"]
 [ext_resource type="AudioStream" uid="uid://c644uw003di5m" path="res://Sounds/SOUND DESIGN/specific scean/Hairslaying.wav" id="5_mt1f5"]
-[ext_resource type="Script" uid="uid://bb8gcsip44fe6" path="res://src/scenes/trans.gd" id="8_7688i"]
+[ext_resource type="Script" path="res://src/scenes/trans.gd" id="8_7688i"]
 [ext_resource type="Texture2D" uid="uid://dhqialq1rty6v" path="res://sprites/trans-without-sition.png" id="9_nj4l1"]
 [ext_resource type="Script" uid="uid://dlk2bher6dlfy" path="res://src/scenes/szark.gd" id="10_yrc55"]
 [ext_resource type="Script" uid="uid://duhrlq1dtchl0" path="res://src/scenes/LvL1/transIn.gd" id="11_6473l"]
+[ext_resource type="Script" uid="uid://b0phdmhcdibrw" path="res://src/scenes/dentist/followingFish.gd" id="12_6473l"]
+[ext_resource type="SpriteFrames" uid="uid://b7cjttbl7vdbf" path="res://src/scenes/dentist/fish_anim.tres" id="13_4ijt8"]
+[ext_resource type="Script" path="res://src/scenes/dentist/fishAnimated.gd" id="14_nkh05"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_poqnm"]
 atlas = ExtResource("2_ca573")
@@ -73,3 +76,18 @@ z_index = 100
 texture_filter = 1
 texture = ExtResource("9_nj4l1")
 script = ExtResource("11_6473l")
+
+[node name="mouse following" type="Node2D" parent="."]
+script = ExtResource("12_6473l")
+
+[node name="Node2D" type="Node2D" parent="mouse following"]
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="mouse following/Node2D"]
+texture_filter = 1
+position = Vector2(0.5, 30)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+sprite_frames = ExtResource("13_4ijt8")
+animation = &"normal"
+script = ExtResource("14_nkh05")
