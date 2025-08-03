@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://clnuf52g18udg"]
+[gd_scene load_steps=25 format=3 uid="uid://clnuf52g18udg"]
 
 [ext_resource type="Script" uid="uid://coc0oh0fxxqil" path="res://src/scenes/dentist/categoryHolder.gd" id="1_y7h83"]
 [ext_resource type="Script" uid="uid://cxpam4axssoha" path="res://src/scenes/dentist/scripts/tooth.gd" id="2_04j1l"]
@@ -19,6 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="17_2c2yr"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="18_do2e0"]
 [ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="19_2c2yr"]
+[ext_resource type="Script" uid="uid://bb8gcsip44fe6" path="res://src/scenes/trans.gd" id="20_v8two"]
+[ext_resource type="Texture2D" uid="uid://dhqialq1rty6v" path="res://sprites/trans-without-sition.png" id="21_85q2w"]
+[ext_resource type="Script" uid="uid://dlk2bher6dlfy" path="res://src/scenes/szark.gd" id="22_rpfcq"]
+[ext_resource type="Script" uid="uid://duhrlq1dtchl0" path="res://src/scenes/LvL1/transIn.gd" id="23_85q2w"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vmhag"]
 particle_flag_disable_z = true
@@ -174,3 +178,18 @@ process_material = SubResource("ParticleProcessMaterial_vmhag")
 [node name="zegar" parent="." instance=ExtResource("19_2c2yr")]
 position = Vector2(1107, 46)
 scale = Vector2(2.5, 2.5)
+
+[node name="TRANS" type="Node2D" parent="."]
+script = ExtResource("20_v8two")
+
+[node name="szark" type="Sprite2D" parent="TRANS"]
+z_index = 10
+texture_filter = 1
+texture = ExtResource("21_85q2w")
+script = ExtResource("22_rpfcq")
+
+[node name="transIn" type="Sprite2D" parent="."]
+z_index = 100
+texture_filter = 1
+texture = ExtResource("21_85q2w")
+script = ExtResource("23_85q2w")

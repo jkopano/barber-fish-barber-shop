@@ -32,6 +32,7 @@ var move_x = 0
 var play = false
 
 func getNumCircles():
+	return 1
 	if Globals.game.get_current_run().current_level < 2:
 		numCircles = 1
 	elif Globals.game.get_current_run().current_level<4:
@@ -150,6 +151,13 @@ func start_movement_tween(callback):
 
 	tween.tween_callback(callback)
 
+func begin_transition(callback):
+	for child in get_parent().get_children():
+		if child.name == "TRANS":
+			child.play_anim(callback, 1)
+
+func empty():
+	return 
 func _process(delta):
 	time += delta
 	density_timer += delta
@@ -250,7 +258,8 @@ func _process(delta):
 			if move_x < 0:
 				play = false
 				move_x = -move_x
-				start_movement_tween(complete_game)
+				begin_transition(complete_game)
+				start_movement_tween(empty)
 		elif not inside_ok:
 			show_green = false
 			show_red = true

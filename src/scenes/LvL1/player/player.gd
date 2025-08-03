@@ -61,18 +61,40 @@ func _on_area_2d_body_entered(_body:Node2D) -> void:
 func _on_area_2d_body_exited(_body:Node2D) -> void:
 	is_interactable = false
 
+func load_barber():
+	fish_interact_furniture.emit(load("res://src/scenes/barber/barber-main.tscn"))
+func load_barman():
+		fish_interact_furniture.emit(load("res://src/scenes/Bar/drink-bar/drink-bar.tscn"))
+func load_dentist():
+	fish_interact_furniture.emit(load("res://src/scenes/dentist/dentist-main.tscn"))
+func load_beard():
+	fish_interact_furniture.emit(load("res://src/scenes/beard/beard-main.tscn"))
+	
+
 func _on_barber_area_entered(_body:Node2D)-> void:
 	if $"../BarberTable".to_be_picked == true:
-		fish_interact_furniture.emit(load("res://src/scenes/barber/barber-main.tscn"))
+		var rooter = get_tree().current_scene.name
+		for child in get_tree().current_scene.get_children():
+			if child.name == "TRANS":
+				child.play_anim(load_barber, 0)
 
 func _on_barman_area_entered(_body:Node2D) -> void:
 	if $"../DrinkTable".to_be_picked == true:
-		fish_interact_furniture.emit(load("res://src/scenes/Bar/drink-bar/drink-bar.tscn"))
+		var rooter = get_tree().current_scene.name
+		for child in get_tree().current_scene.get_children():
+			if child.name == "TRANS":
+				child.play_anim(load_barman, 0)
 
 func _on_denstist_area_entered(_body:Node2D) -> void:
 	if $"../DentistTable".to_be_picked == true:
-		fish_interact_furniture.emit(load("res://src/scenes/dentist/dentist-main.tscn"))
+		var rooter = get_tree().current_scene.name
+		for child in get_tree().current_scene.get_children():
+			if child.name == "TRANS":
+				child.play_anim(load_dentist, 0)
 
 func _on_beard_area_entered(_body:Node2D)-> void:
 	if $"../BeardMirror".to_be_picked == true:
-		fish_interact_furniture.emit(load("res://src/scenes/beard/beard-main.tscn"))
+		var rooter = get_tree().current_scene.name
+		for child in get_tree().current_scene.get_children():
+			if child.name == "TRANS":
+				child.play_anim(load_beard, 0)

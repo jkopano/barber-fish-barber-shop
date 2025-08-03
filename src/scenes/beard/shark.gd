@@ -21,5 +21,4 @@ func _ready() -> void:
 
 func on_complete():
 	play("happi")
-	await get_tree().create_timer(0.7).timeout
 	get_parent().on_finish_game()

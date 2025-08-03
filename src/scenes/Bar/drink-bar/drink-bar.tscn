@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bqrwowtfsjhpb"]
+[gd_scene load_steps=24 format=3 uid="uid://bqrwowtfsjhpb"]
 
 [ext_resource type="Script" uid="uid://dekoh7b5hg5y5" path="res://src/scenes/Bar/drink-bar/drink_bar.gd" id="1_3rrnj"]
 [ext_resource type="Texture2D" uid="uid://bs2rtejtqnxl2" path="res://sprites/bar/bar-background.png" id="1_6x5pp"]
@@ -16,6 +16,10 @@
 [ext_resource type="AudioStream" uid="uid://dtj760f3ofavk" path="res://Sounds/SOUND DESIGN/Cały projekt/Bubbels.wav" id="13_qfnpb"]
 [ext_resource type="AudioStream" uid="uid://bochrjd8sn8v3" path="res://Sounds/SOUND DESIGN/specific scean/ClickClickGlass.wav" id="14_d8dma"]
 [ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="16_tomei"]
+[ext_resource type="Script" uid="uid://sroiwob6w622" path="res://src/scenes/trans-0,0.gd" id="17_fusjo"]
+[ext_resource type="Texture2D" uid="uid://dhqialq1rty6v" path="res://sprites/trans-without-sition.png" id="18_1mj8h"]
+[ext_resource type="Script" uid="uid://bto5joserwpu4" path="res://src/scenes/szark-0,0.gd" id="19_1mj8h"]
+[ext_resource type="Script" uid="uid://cvphr3e4wrr72" path="res://src/scenes/LvL1/transIn-0,0.gd" id="20_fusjo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pu02"]
 size = Vector2(760, 709)
@@ -132,5 +136,20 @@ stream = ExtResource("14_d8dma")
 
 [node name="zegar" parent="." instance=ExtResource("16_tomei")]
 position = Vector2(896, -479)
+
+[node name="TRANS" type="Node2D" parent="."]
+z_index = 99
+script = ExtResource("17_fusjo")
+
+[node name="szark" type="Sprite2D" parent="TRANS"]
+z_index = 100
+texture = ExtResource("18_1mj8h")
+script = ExtResource("19_1mj8h")
+
+[node name="transIn" type="Sprite2D" parent="."]
+z_index = 100
+texture_filter = 1
+texture = ExtResource("18_1mj8h")
+script = ExtResource("20_fusjo")
 
 [connection signal="end_minigame" from="Shark" to="." method="_on_shark_end_minigame"]

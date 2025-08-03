@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bnxiy03x62g1d"]
+[gd_scene load_steps=18 format=3 uid="uid://bnxiy03x62g1d"]
 
 [ext_resource type="Texture2D" uid="uid://cjh1eoyjubghc" path="res://sprites/fryzjer/fryzjer-background.png" id="1_pkkap"]
 [ext_resource type="Script" uid="uid://bd3xwvvc55vpg" path="res://src/scenes/barber/hair.gd" id="2_3basa"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="9_efful"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="10_nwuaa"]
 [ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="12_nwuaa"]
+[ext_resource type="Script" uid="uid://bb8gcsip44fe6" path="res://src/scenes/trans.gd" id="13_ko3rf"]
+[ext_resource type="Texture2D" uid="uid://dhqialq1rty6v" path="res://sprites/trans-without-sition.png" id="14_1ct2n"]
+[ext_resource type="Script" uid="uid://dlk2bher6dlfy" path="res://src/scenes/szark.gd" id="15_graf2"]
+[ext_resource type="Script" uid="uid://duhrlq1dtchl0" path="res://src/scenes/LvL1/transIn.gd" id="16_bk5rw"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ko3rf"]
 particle_flag_disable_z = true
@@ -82,3 +86,16 @@ process_material = SubResource("ParticleProcessMaterial_ko3rf")
 
 [node name="zegar" parent="." instance=ExtResource("12_nwuaa")]
 position = Vector2(1096, 63)
+
+[node name="TRANS" type="Node2D" parent="."]
+script = ExtResource("13_ko3rf")
+
+[node name="szark" type="Sprite2D" parent="TRANS"]
+texture = ExtResource("14_1ct2n")
+script = ExtResource("15_graf2")
+
+[node name="transIn" type="Sprite2D" parent="."]
+z_index = 100
+texture_filter = 1
+texture = ExtResource("14_1ct2n")
+script = ExtResource("16_bk5rw")

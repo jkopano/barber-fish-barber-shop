@@ -7,7 +7,11 @@ func _ready():
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
-
-func _on_start_pressed() -> void:
+func switch():
 	Globals.new_run()
 	get_tree().change_scene_to_file("res://src/scenes/LvL1/tilemap.tscn")
+	
+func _on_start_pressed() -> void:
+	for child in get_children():
+		if child.name =="TRANS":
+			child.play_anim(switch, 0.)

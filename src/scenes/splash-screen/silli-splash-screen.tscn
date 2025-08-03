@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsrcm4qh8wk62"]
+[gd_scene load_steps=12 format=3 uid="uid://bsrcm4qh8wk62"]
 
 [ext_resource type="Texture2D" uid="uid://b83bybvsw3e3i" path="res://sprites/splash_placeholder.png" id="1_26xan"]
 [ext_resource type="Script" uid="uid://2un8v54nmig7" path="res://src/scenes/splash-screen/silliSplash.gd" id="1_r8hcj"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b02wmmies74ke" path="res://sprites/qr/nprze.png" id="4_k6u2f"]
 [ext_resource type="Texture2D" uid="uid://brplp2lqmc2x" path="res://sprites/qr/ederDeve.png" id="5_fdah8"]
 [ext_resource type="Texture2D" uid="uid://cuwwikrdmaace" path="res://sprites/qr/lunaru.png" id="6_wi4in"]
+[ext_resource type="Script" uid="uid://sroiwob6w622" path="res://src/scenes/trans-0,0.gd" id="8_5nfdf"]
+[ext_resource type="Texture2D" uid="uid://dhqialq1rty6v" path="res://sprites/trans-without-sition.png" id="9_yspc0"]
+[ext_resource type="Script" uid="uid://bto5joserwpu4" path="res://src/scenes/szark-0,0.gd" id="10_yspc0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8hcj"]
 draw_center = false
@@ -37,6 +40,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_r8hcj")
 text = "Start Game"
+metadata/_edit_use_anchors_ = true
 
 [node name="Quit" type="Button" parent="."]
 anchors_preset = 8
@@ -54,6 +58,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_r8hcj")
 text = "Quit
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
@@ -66,6 +71,7 @@ offset_bottom = 7.0
 theme = ExtResource("3_yg6k2")
 theme_override_font_sizes/font_size = 300
 text = ":"
+metadata/_edit_use_anchors_ = true
 
 [node name="dwukropek4" type="Label" parent="."]
 offset_left = -760.0
@@ -75,6 +81,7 @@ offset_bottom = 30.0
 theme = ExtResource("3_yg6k2")
 theme_override_font_sizes/font_size = 300
 text = "3"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="."]
 offset_left = -89.0
@@ -85,6 +92,7 @@ theme = ExtResource("3_yg6k2")
 theme_override_font_sizes/font_size = 25
 text = "If you see a developer of this game, give them this info:"
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="Label3"]
 layout_mode = 0
@@ -96,6 +104,7 @@ theme = ExtResource("3_yg6k2")
 theme_override_font_sizes/font_size = 25
 text = "Mabye Barberfish Barbershop is the friends we made along the way"
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="."]
 offset_left = -86.0
@@ -106,6 +115,7 @@ theme = ExtResource("3_yg6k2")
 theme_override_font_sizes/font_size = 30
 text = "For more information about the developers, visit their githubs"
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = -817.0
@@ -117,6 +127,7 @@ theme_override_font_sizes/font_size = 45
 text = "Your PC is running Barberfish Barbershop.
 Thank you for downloading our game, we kindly advise you to have fun."
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="qrs" type="Node" parent="."]
 
@@ -137,6 +148,15 @@ texture = ExtResource("6_wi4in")
 position = Vector2(-729.75, 254.25)
 scale = Vector2(1.00307, 1.04037)
 texture = ExtResource("4_k6u2f")
+
+[node name="TRANS" type="Node2D" parent="."]
+z_index = 99
+script = ExtResource("8_5nfdf")
+
+[node name="szark" type="Sprite2D" parent="TRANS"]
+z_index = 100
+texture = ExtResource("9_yspc0")
+script = ExtResource("10_yspc0")
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
