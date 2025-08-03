@@ -49,7 +49,7 @@ font = ExtResource("1_s6wh4")
 font_size = 35
 
 [sub_resource type="Animation" id="Animation_d8irg"]
-length = 0.001
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -57,10 +57,10 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.003, 0.5442),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.17984]
+"values": [0.274017, 1.63188]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -69,10 +69,10 @@ tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-55, -38)]
+"values": [Vector2(-55, -38), Vector2(824, -862.075)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -81,10 +81,10 @@ tracks/2/path = NodePath(".:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(1, -1)]
 }
 
 [sub_resource type="Animation" id="Animation_lwbdg"]
@@ -167,7 +167,7 @@ horizontal_alignment = 1
 
 [node name="Shark" type="Sprite2D" parent="."]
 position = Vector2(-55, -38)
-rotation = 1.17984
+rotation = 0.274017
 texture = ExtResource("2_mmpkp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Shark"]
