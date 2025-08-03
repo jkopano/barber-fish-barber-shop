@@ -8,7 +8,7 @@ font = ExtResource("1_s6wh4")
 font_size = 50
 
 [sub_resource type="Animation" id="Animation_mmpkp"]
-length = 0.001
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,10 +16,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.3, 1.6, 1.94),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-94, -335)]
+"values": [Vector2(-94, -522.93), Vector2(-94, -343), Vector2(-94, -343), Vector2(-94, -522.93)]
 }
 
 [sub_resource type="Animation" id="Animation_s6wh4"]
@@ -137,9 +137,9 @@ _data = {
 
 [node name="CurrentLevel" type="Panel" parent="."]
 offset_left = -94.0
-offset_top = -335.0
+offset_top = -522.93
 offset_right = 99.0
-offset_bottom = -269.0
+offset_bottom = -456.93
 
 [node name="Label" type="Label" parent="CurrentLevel"]
 layout_mode = 0
