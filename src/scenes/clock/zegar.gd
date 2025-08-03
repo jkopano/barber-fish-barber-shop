@@ -5,21 +5,22 @@ extends Node2D
 @onready var kreska = $"Zegar-kreska"
 @onready var tarcza = $"Zegar-tarcza"
 
-var time = Globals.time
+var time: float
 var for_every : float
 var next_rotate : float
-# var time_elapsed := 0.0
 var ispaused = false
 
 func _ready() -> void:
-	for_every = time / 30
+	time = Globals.time
+	Globals.time_elapsed = 0
+	for_every = 2
 	next_rotate = for_every
 
 func _process(delta: float) -> void:
 	if ispaused == false:
 		Globals.time_elapsed += delta
 	
-	kreska.rotation = deg_to_rad(12) * int( Globals.time_elapsed / 2 )
+	kreska.rotation = deg_to_rad(12) * int( Globals.time_elapsed / for_every )
 		
 	if time * 0.75 <= Globals.time_elapsed:
 		tarcza.self_modulate = Color(255, 0, 0, 255)

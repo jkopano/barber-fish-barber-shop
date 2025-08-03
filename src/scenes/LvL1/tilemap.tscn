@@ -30,7 +30,7 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
 normal = Vector2(-0.469209, 0.883087)
-distance = 416.366
+distance = 437.473
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_43ne2"]
 normal = Vector2(0.469849, -0.882747)
@@ -264,7 +264,7 @@ tile_set = SubResource("TileSet_fc11b")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(193, -11)
+position = Vector2(186, -6)
 rotation = 0.521853
 shape = SubResource("RectangleShape2D_fl7jp")
 
