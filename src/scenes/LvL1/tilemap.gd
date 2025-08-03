@@ -5,6 +5,7 @@ signal swap_scene(scene: PackedScene)
 signal shark_needs_barber()
 signal shark_needs_drink()
 signal shark_needs_denstist()
+signal shark_needs_beard()
 
 var shark = preload("res://src/scenes/LvL1/shark/shark.tscn")
 
@@ -25,6 +26,8 @@ func interact_with_shark() -> void:
 		shark_needs_barber.emit()
 	if $Sharks.get_child(0).a_need == "TEETH":
 		shark_needs_denstist.emit()
+	if $Sharks.get_child(0).a_need == "BEARD":
+		shark_needs_beard.emit()
 
 	$Sharks.get_child(0).get_node("Need").queue_free()
 

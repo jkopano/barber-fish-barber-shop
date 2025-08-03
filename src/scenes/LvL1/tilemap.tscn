@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://balwn7nail4e1"]
+[gd_scene load_steps=53 format=4 uid="uid://balwn7nail4e1"]
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
 [ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
@@ -17,10 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://s46x68lh0u5k" path="res://sprites/levels/nozycki-point.png" id="15_6hthj"]
 [ext_resource type="Texture2D" uid="uid://cwsmpfky4csqc" path="res://sprites/fryzjer/komoda-lustro.png" id="15_it7ct"]
 [ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="17_4eu8v"]
-[ext_resource type="AudioStream" uid="uid://dtomdsxlxrm2t" path="res://Sounds/SOUND DESIGN/Cały projekt/SzantaLoop.wav" id="17_68jg1"]
 [ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="17_it7ct"]
+[ext_resource type="Texture2D" uid="uid://nixkhtvr2c5q" path="res://sprites/levels/mirror_down.png" id="17_r34xl"]
+[ext_resource type="Script" path="res://src/scenes/LvL1/furniture/beard_mirror.gd" id="18_4eu8v"]
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="18_xutvd"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
+[ext_resource type="Texture2D" uid="uid://c28rd7h4ui2ep" path="res://sprites/levels/point-maszynkai.png" id="19_k8tlb"]
+[ext_resource type="Texture2D" uid="uid://dk6lc5p2fmonk" path="res://sprites/levels/mirror_up.png" id="20_s6ltw"]
 [ext_resource type="Script" uid="uid://clxyf1mwwpc2n" path="res://src/scenes/LvL1/firework.gd" id="21_pe2fm"]
 [ext_resource type="Texture2D" uid="uid://c7w5ya7sv5kjv" path="res://sprites/fireworks/fireworks.png" id="22_pe2fm"]
 
@@ -238,7 +241,7 @@ unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(-92.0001, 52)
 scale = Vector2(3.11321, 3.11321)
-speed = 30000
+speed = 45000
 
 [node name="DrinkTable" type="Sprite2D" parent="layer2/Minigames"]
 clip_children = 2
@@ -329,6 +332,30 @@ position = Vector2(7.72451, 23.4953)
 rotation = 1.0821
 shape = SubResource("RectangleShape2D_it7ct")
 
+[node name="BeardMirror" type="Sprite2D" parent="layer2/Minigames"]
+y_sort_enabled = true
+position = Vector2(337, 4.84956)
+scale = Vector2(2.3464, 2.49463)
+texture = ExtResource("17_r34xl")
+script = ExtResource("18_4eu8v")
+
+[node name="Point" type="Sprite2D" parent="layer2/Minigames/BeardMirror"]
+top_level = true
+position = Vector2(347.23, -98.69)
+scale = Vector2(3, 3)
+texture = ExtResource("19_k8tlb")
+
+[node name="Area2D" type="Area2D" parent="layer2/Minigames/BeardMirror"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="layer2/Minigames/BeardMirror/Area2D"]
+position = Vector2(-3.83567, 23.3103)
+rotation = 0.523599
+shape = SubResource("RectangleShape2D_68jg1")
+
+[node name="Sprite2D" type="Sprite2D" parent="layer2/Minigames/BeardMirror"]
+z_index = 1
+texture = ExtResource("20_s6ltw")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(3.107, 3.107)
 
@@ -354,7 +381,6 @@ shape = SubResource("RectangleShape2D_fl7jp")
 position = Vector2(519, -266)
 
 [node name="Muzyka" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("17_68jg1")
 autoplay = true
 
 [node name="Bubble1" type="GPUParticles2D" parent="."]
@@ -410,6 +436,7 @@ animation = &"start"
 script = ExtResource("21_pe2fm")
 
 [connection signal="shark_needs_barber" from="." to="layer2/Minigames/BarberTable" method="_on_tilemap_shark_needs_barber"]
+[connection signal="shark_needs_beard" from="." to="layer2/Minigames/BeardMirror" method="_on_tilemap_shark_needs_beard"]
 [connection signal="shark_needs_denstist" from="." to="layer2/Minigames/DentistTable" method="_on_tilemap_shark_needs_denstist"]
 [connection signal="shark_needs_drink" from="." to="layer2/Minigames/DrinkTable" method="_on_tilemap_shark_needs_drink"]
 [connection signal="fish_interact" from="layer2/Minigames/Player" to="." method="_on_player_fish_interact"]
@@ -417,5 +444,6 @@ script = ExtResource("21_pe2fm")
 [connection signal="body_entered" from="layer2/Minigames/DrinkTable/Area2D" to="layer2/Minigames/Player" method="_on_barman_area_entered"]
 [connection signal="body_entered" from="layer2/Minigames/DentistTable/Area2D" to="layer2/Minigames/Player" method="_on_denstist_area_entered"]
 [connection signal="body_entered" from="layer2/Minigames/BarberTable/Area2D" to="layer2/Minigames/Player" method="_on_barber_area_entered"]
+[connection signal="body_entered" from="layer2/Minigames/BeardMirror/Area2D" to="layer2/Minigames/Player" method="_on_beard_area_entered"]
 [connection signal="body_entered" from="Area2D" to="layer2/Minigames/Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="layer2/Minigames/Player" method="_on_area_2d_body_exited"]

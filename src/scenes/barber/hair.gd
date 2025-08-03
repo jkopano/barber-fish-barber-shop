@@ -264,7 +264,7 @@ func _process(delta):
 
 func _draw():
 	for circle in reference_circles:
-		draw_circle(hair_center + circle.offset, circle.radius, Color.GREEN)
+		draw_circle(hair_center + circle.offset, circle.radius, Color(.3, .3, .6))
 
 	for strand in hair_strands:
 		draw_line(
@@ -278,10 +278,3 @@ func _draw():
 		var dir = strand["direction"].rotated(strand["angle"])
 		var length = strand["length"]
 		draw_line(pos, pos + dir * length, strand["hair_color"] + Color(0.3, 0.3, 0.3) * Color(1., 1., 1., 0.5), 3)
-
-	if show_green:
-		for circle in reference_circles:
-			draw_circle(hair_center + circle.offset, circle.radius, Color.SEA_GREEN)
-	elif show_red:
-		for circle in reference_circles:
-			draw_circle(hair_center + circle.offset, circle.radius, Color.INDIAN_RED)
