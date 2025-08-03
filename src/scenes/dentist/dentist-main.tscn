@@ -19,10 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="17_2c2yr"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="18_do2e0"]
 [ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="19_2c2yr"]
-[ext_resource type="Script" uid="uid://bb8gcsip44fe6" path="res://src/scenes/trans.gd" id="20_v8two"]
+[ext_resource type="Script" path="res://src/scenes/trans.gd" id="20_v8two"]
 [ext_resource type="Texture2D" uid="uid://dhqialq1rty6v" path="res://sprites/trans-without-sition.png" id="21_85q2w"]
-[ext_resource type="Script" uid="uid://dlk2bher6dlfy" path="res://src/scenes/szark.gd" id="22_rpfcq"]
-[ext_resource type="Script" uid="uid://duhrlq1dtchl0" path="res://src/scenes/LvL1/transIn.gd" id="23_85q2w"]
+[ext_resource type="Script" path="res://src/scenes/szark.gd" id="22_rpfcq"]
+[ext_resource type="Script" path="res://src/scenes/LvL1/transIn.gd" id="23_85q2w"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vmhag"]
 particle_flag_disable_z = true

@@ -17,13 +17,13 @@
 [ext_resource type="AudioStream" uid="uid://dtj760f3ofavk" path="res://Sounds/SOUND DESIGN/Cały projekt/Bubbels.wav" id="13_qfnpb"]
 [ext_resource type="AudioStream" uid="uid://bochrjd8sn8v3" path="res://Sounds/SOUND DESIGN/specific scean/ClickClickGlass.wav" id="14_d8dma"]
 [ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="16_tomei"]
-[ext_resource type="Script" uid="uid://copws60o21pti" path="res://src/scenes/Bar/drink-bar/followingFishDrinkBar.gd" id="17_70v6m"]
+[ext_resource type="Script" path="res://src/scenes/Bar/drink-bar/followingFishDrinkBar.gd" id="17_70v6m"]
 [ext_resource type="Script" path="res://src/scenes/trans-0,0.gd" id="17_fusjo"]
 [ext_resource type="Texture2D" uid="uid://dhqialq1rty6v" path="res://sprites/trans-without-sition.png" id="18_1mj8h"]
 [ext_resource type="SpriteFrames" uid="uid://b7cjttbl7vdbf" path="res://src/scenes/dentist/fish_anim.tres" id="18_fusjo"]
-[ext_resource type="Script" path="res://src/scenes/dentist/fishAnimated.gd" id="19_1mj8h"]
-[ext_resource type="Script" uid="uid://bto5joserwpu4" path="res://src/scenes/szark-0,0.gd" id="19_alcfe"]
-[ext_resource type="Script" uid="uid://cvphr3e4wrr72" path="res://src/scenes/LvL1/transIn-0,0.gd" id="20_fusjo"]
+[ext_resource type="Script" uid="uid://celvaa7dgo1rh" path="res://src/scenes/dentist/fishAnimated.gd" id="19_1mj8h"]
+[ext_resource type="Script" path="res://src/scenes/szark-0,0.gd" id="19_alcfe"]
+[ext_resource type="Script" path="res://src/scenes/LvL1/transIn-0,0.gd" id="20_fusjo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pu02"]
 size = Vector2(760, 709)

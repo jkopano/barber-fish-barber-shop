@@ -49,7 +49,7 @@ func interact_with_shark() -> void:
 	if $Sharks.get_child(0).a_need == "BEARD":
 		shark_needs_beard.emit()
 
-	if $Need:
+	if $Sharks/Need:
 		$Sharks.get_child(0).get_node("Need").queue_free()
 
 

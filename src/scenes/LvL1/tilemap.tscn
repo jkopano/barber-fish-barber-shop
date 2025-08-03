@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="17_4eu8v"]
 [ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="17_it7ct"]
 [ext_resource type="Texture2D" uid="uid://nixkhtvr2c5q" path="res://sprites/levels/mirror_down.png" id="17_r34xl"]
-[ext_resource type="Script" uid="uid://bo5qaf8w66o4o" path="res://src/scenes/LvL1/furniture/beard_mirror.gd" id="18_4eu8v"]
+[ext_resource type="Script" path="res://src/scenes/LvL1/furniture/beard_mirror.gd" id="18_4eu8v"]
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="18_xutvd"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
 [ext_resource type="Texture2D" uid="uid://c28rd7h4ui2ep" path="res://sprites/levels/point-maszynkai.png" id="19_k8tlb"]
@@ -28,9 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://dfy8k84rdg4n6" path="res://src/scenes/firework/firework.tscn" id="24_l0rlb"]
 [ext_resource type="FontFile" uid="uid://dph4pvyp60eri" path="res://fonts/calibri.ttf" id="25_s6ltw"]
 [ext_resource type="Texture2D" uid="uid://dhqialq1rty6v" path="res://sprites/trans-without-sition.png" id="27_smims"]
-[ext_resource type="Script" uid="uid://cvphr3e4wrr72" path="res://src/scenes/LvL1/transIn-0,0.gd" id="28_bpkwy"]
-[ext_resource type="Script" uid="uid://sroiwob6w622" path="res://src/scenes/trans-0,0.gd" id="29_bpkwy"]
-[ext_resource type="Script" uid="uid://bto5joserwpu4" path="res://src/scenes/szark-0,0.gd" id="30_bpkwy"]
+[ext_resource type="Script" path="res://src/scenes/LvL1/transIn-0,0.gd" id="28_bpkwy"]
+[ext_resource type="Script" path="res://src/scenes/trans-0,0.gd" id="29_bpkwy"]
+[ext_resource type="Script" path="res://src/scenes/szark-0,0.gd" id="30_bpkwy"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
 normal = Vector2(-0.469209, 0.883087)
