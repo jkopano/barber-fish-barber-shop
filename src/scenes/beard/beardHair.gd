@@ -26,6 +26,10 @@ var where_to_cut_vines = []
 const POSSIBLE_VERSIONS = 4
 var last_mouse_pos = Vector2()
 
+const offset_from_shark = Vector2(140, -30)
+
+var complete = false
+
 func get_where_to_cut(vineNum, functionType, offsetArg, variationArg):
 	var offset = offsetArg * NUM_EDGES
 	var variation = variationArg * NUM_EDGES
@@ -65,7 +69,7 @@ func _ready():
 			var pos = Vector2(start_x + 2.5 * j, j * one_bone_length)
 			positions.append(pos)
 			prev_positions.append(pos)
-		edge_to_cut = get_where_to_cut(i,1, a, b)
+		edge_to_cut = get_where_to_cut(i,funType, a, b)
 		where_to_cut_vines.append(edge_to_cut)
 		vine.append(positions)
 		vine.append(prev_positions)
@@ -139,6 +143,8 @@ func _physics_process(delta):
 	queue_redraw()
 
 func cut_vines(from_pos, to_pos):
+	if complete:
+		return
 	var new_vines = []
 	for vine in vines:
 		var positions = vine[0]
@@ -247,12 +253,13 @@ func _draw():
 
 			draw_line(rp1, rp2, DefaultColor, hairWidth)
 
-
 func _process(delta: float) -> void:
-	position.x += 10 * delta
+	position = get_parent().get_child(1).position + offset_from_shark
+	
 	var res = check_if_complete()
-	if res == "complete":
-		get_parent().on_finish_game()
+	if res == "complete" and not complete:
+		complete = true
+		get_parent().get_child(1).on_complete()
 	elif res == "impossible":
 		var death_scene = preload("res://src/scenes/death/death-with-animation/death.tscn")
 		get_tree().change_scene_to_packed(death_scene)
