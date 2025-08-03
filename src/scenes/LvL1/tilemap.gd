@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var shrek_amount = 3
+
+@export var shrek_amount = 1
 @export var current_shark = 1
 @export var time = 60
 @export var points = 100
@@ -18,8 +19,40 @@ var shark_leaving = preload("res://src/scenes/LvL1/shark/shark_leaving.tscn")
 
 func _init() -> void:
 	if not Globals.game:
-		Globals.game = Globals.for_bubert(shrek_amount, current_shark, time, null)
+		Globals.game = Globals.GameData.new()
 		Globals.time = time
+		
+	match Globals.game.get_current_run().current_level:
+		0:
+			Globals.time = 60
+			Globals.game.get_current_run().get_current().shrek_amount = 3
+		1:
+			Globals.time = 55
+			Globals.game.get_current_run().get_current().shrek_amount = 3
+		2:
+			Globals.time = 50
+			Globals.game.get_current_run().get_current().shrek_amount = 4
+		3:
+			Globals.time = 45
+			Globals.game.get_current_run().get_current().shrek_amount = 4
+		4:
+			Globals.time = 40
+			Globals.game.get_current_run().get_current().shrek_amount = 5
+		5:
+			Globals.time = 35
+			Globals.game.get_current_run().get_current().shrek_amount = 5
+		6:
+			Globals.time = 30
+			Globals.game.get_current_run().get_current().shrek_amount = 6
+		7:
+			Globals.time = 25
+			Globals.game.get_current_run().get_current().shrek_amount = 6
+		8:
+			Globals.time = 20
+			Globals.game.get_current_run().get_current().shrek_amount = 6
+		9:
+			Globals.time = 15
+			Globals.game.get_current_run().get_current().shrek_amount = 6
 
 func _ready() -> void:
 	print(Globals.game.get_current_run().current_level)
@@ -40,37 +73,6 @@ func _ready() -> void:
 
 	$SharksLeft.text = "Sharks Left " + str( shark_amount - shrek_number + 1 ) + "/" + str( shark_amount )
 	
-	match Globals.game.get_current_run().current_level:
-		1:
-			Globals.time = 60
-			Globals.game.get_current_run().get_current().shrek_amount = 3
-		2:
-			Globals.time = 55
-			Globals.game.get_current_run().get_current().shrek_amount = 3
-		3:
-			Globals.time = 50
-			Globals.game.get_current_run().get_current().shrek_amount = 4
-		4:
-			Globals.time = 45
-			Globals.game.get_current_run().get_current().shrek_amount = 4
-		5:
-			Globals.time = 40
-			Globals.game.get_current_run().get_current().shrek_amount = 5
-		6:
-			Globals.time = 35
-			Globals.game.get_current_run().get_current().shrek_amount = 5
-		7:
-			Globals.time = 30
-			Globals.game.get_current_run().get_current().shrek_amount = 6
-		8:
-			Globals.time = 25
-			Globals.game.get_current_run().get_current().shrek_amount = 6
-		9:
-			Globals.time = 20
-			Globals.game.get_current_run().get_current().shrek_amount = 6
-		10:
-			Globals.time = 15
-			Globals.game.get_current_run().get_current().shrek_amount = 6
 
 
 	if Globals.game.get_current_run().get_current().current_shrek_number == 1:
