@@ -33,6 +33,7 @@ func _ready() -> void:
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
 [ext_resource type="Script" uid="uid://clxyf1mwwpc2n" path="res://src/scenes/LvL1/firework.gd" id="21_pe2fm"]
 [ext_resource type="Texture2D" uid="uid://c7w5ya7sv5kjv" path="res://sprites/fireworks/fireworks.png" id="22_pe2fm"]
+[ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="17_68jg1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
 normal = Vector2(-0.469209, 0.883087)
@@ -75,7 +76,7 @@ size = Vector2(39.9936, 10.301)
 size = Vector2(40.9565, 14.6676)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_it7ct"]
-size = Vector2(11.149, 31.1493)
+size = Vector2(12.3134, 31.7528)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7jp"]
 size = Vector2(86.6245, 31)
@@ -244,6 +245,7 @@ tile_set = SubResource("TileSet_fc11b")
 clip_children = 0
 
 [node name="Player" parent="layer2/Minigames" instance=ExtResource("4_qf6y4")]
+unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(-92.0001, 52)
 scale = Vector2(3.11321, 3.11321)
@@ -334,8 +336,8 @@ texture = ExtResource("15_6hthj")
 [node name="Area2D" type="Area2D" parent="layer2/Minigames/BarberTable"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="layer2/Minigames/BarberTable/Area2D"]
-position = Vector2(9.97749, 22.2079)
-rotation = 1.0472
+position = Vector2(7.72451, 23.4953)
+rotation = 1.0821
 shape = SubResource("RectangleShape2D_it7ct")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -351,6 +353,9 @@ position = Vector2(-1, 0)
 scale = Vector2(3.107, 3.107)
 tile_map_data = PackedByteArray("AAD5////AwAAAAAAAAD5/wAAAwAAAAAAAAD7//3/AwAAAAAAAAD8//z/AwAAAAAAAAD9//z/AwAAAAAAAAD+//z/AwAAAAAAAAABAPz/AwAAAAAAAAACAPz/AwAAAAAAAAADAPz/AwAAAAAAAAAEAPz/AwAAAAAAAAD5//7/AwAAAAAAAAD7//z/AwAAAAAAAAD4////AwAAAAAAAAD4/wAAAwAAAAAAAAD6//7/AwAAAAAAAAD4/wEAAwAAAAAAAAD5/wEAAwAAAAAAAAD5/wIAAwAAAAAAAAD6/wMAAwAAAAAAAAD6/wIAAwAAAAAAAAD7/wMAAwAAAAAAAAD6//3/AwAAAAAAAAAFAPz/AAAAAAAAAAAGAP3/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_fc11b")
+
+[node name="zegar" parent="." instance=ExtResource("17_68jg1")]
+position = Vector2(517, -262)
 
 [node name="Area2D" type="Area2D" parent="."]
 

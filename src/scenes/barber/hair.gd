@@ -1,4 +1,4 @@
-extends Node2D
+extends MiniGame
 
 @onready var sfxplayer = $"../AudioStreamPlayer"
 
@@ -134,8 +134,9 @@ func set_done():
 	play = !play
 
 func complete_game():
-	Globals.serializeData.level += 1
-	get_tree().change_scene_to_packed(load("res://src/scenes/LvL1/tilemap.tscn"))
+	exit_game()
+
+	
 
 func start_movement_tween(callback):
 	var tween = create_tween()

@@ -1,5 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bqrwowtfsjhpb"]
 
+[ext_resource type="Script" uid="uid://dekoh7b5hg5y5" path="res://src/scenes/Bar/drink-bar/drink_bar.gd" id="1_3rrnj"]
 [ext_resource type="Texture2D" uid="uid://bs2rtejtqnxl2" path="res://sprites/bar/bar-background.png" id="1_6x5pp"]
 [ext_resource type="Script" uid="uid://cxxlhtq4fa0ao" path="res://src/scenes/Bar/drink-bar/shark.gd" id="2_blw56"]
 [ext_resource type="Script" uid="uid://b7qfsummkprsa" path="res://src/scenes/Bar/drink-bar/drink.gd" id="3_7xenl"]
@@ -31,6 +32,8 @@ turbulence_enabled = true
 turbulence_noise_speed_random = 1.0
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_3rrnj")
+metadata/_custom_type_script = "uid://1y3hiuakub6l"
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(3.05176e-05, -1.52588e-05)
@@ -125,3 +128,5 @@ autoplay = true
 
 [node name="SFXplayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_d8dma")
+
+[connection signal="end_minigame" from="Shark" to="." method="_on_shark_end_minigame"]

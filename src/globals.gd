@@ -15,6 +15,8 @@ enum State {
 	DENTIST,
 }
 
+var time_elapsed = 0
+
 var serializeData = {
 	pos = Vector2(0, 0),
 	frame = 1,
