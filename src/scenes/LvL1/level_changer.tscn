@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcvcq5k5povy8"]
+[gd_scene load_steps=7 format=3 uid="uid://bcvcq5k5povy8"]
 
 [ext_resource type="Script" uid="uid://b0vwea66jetmg" path="res://src/scenes/LvL1/level_changer.gd" id="1_mmpkp"]
 [ext_resource type="FontFile" uid="uid://dph4pvyp60eri" path="res://fonts/calibri.ttf" id="1_s6wh4"]
@@ -44,10 +44,6 @@ _data = {
 &"lvl_show": SubResource("Animation_s6wh4")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_vma6k"]
-font = ExtResource("1_s6wh4")
-font_size = 35
-
 [node name="LevelChanger" type="Node2D"]
 script = ExtResource("1_mmpkp")
 
@@ -71,12 +67,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_5lqt0")
 }
 autoplay = "RESET"
-
-[node name="SharksLeft" type="Label" parent="."]
-offset_left = -567.0
-offset_top = -310.0
-offset_right = -353.0
-offset_bottom = -259.0
-text = "Sharks left: 3/3"
-label_settings = SubResource("LabelSettings_vma6k")
-horizontal_alignment = 1

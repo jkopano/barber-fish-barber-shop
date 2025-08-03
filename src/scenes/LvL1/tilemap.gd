@@ -14,6 +14,7 @@ signal shark_needs_beard()
 
 var shark = preload("res://src/scenes/LvL1/shark/shark.tscn")
 var level_popup = preload("res://src/scenes/LvL1/level_changer.tscn")
+var shark_leaving = preload("res://src/scenes/LvL1/shark/shark_leaving.tscn")
 
 func _init() -> void:
 	if not Globals.game:
@@ -21,11 +22,23 @@ func _init() -> void:
 		Globals.time = time
 
 func _ready() -> void:
+	print(Globals.game.get_current_run().current_level)
+	print(Globals.game.get_current_run().get_current().current_shrek_number)
+
+	var shrek_number = Globals.game.get_current_run().get_current().current_shrek_number
+	var shark_amount = Globals.game.get_current_run().get_current().shrek_amount
 	var shark_instance = shark.instantiate()
+
 	$Sharks.add_child(shark_instance)
 	if Globals.game.get_current_run().get_current().current_shrek_number == 1:
 		add_child(level_popup.instantiate())
+
+	if Globals.game.get_current_run().get_current().current_shrek_number != 1:
+		add_child(shark_leaving.instantiate())
+
 	Globals.has_ever_visited_main_room = true
+
+	$SharksLeft.text = "Sharks Left " + str( shark_amount - shrek_number + 1 ) + "/" + str( shark_amount )
 
 
 func interact_with_shark() -> void:
