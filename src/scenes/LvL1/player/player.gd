@@ -7,7 +7,7 @@ signal fish_interact_furniture(scene: PackedScene)
 signal fish_interact
 
 func _ready() -> void:
-	if Globals.player_data.pos:
+	if Globals.player_data and Globals.player_data.pos:
 		position  = Globals.player_data.pos
 
 func _process(dt: float) -> void:

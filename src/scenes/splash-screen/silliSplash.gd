@@ -9,4 +9,5 @@ func _on_quit_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
+	Globals.new_run()
 	get_tree().change_scene_to_file("res://src/scenes/LvL1/tilemap.tscn")

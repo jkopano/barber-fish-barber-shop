@@ -69,6 +69,9 @@ var player_data = {
 	frame = 1,
 }
 
-var has_ever_visited_after_death_scene := false
+func new_run():
+	player_data = null
+	game.new_run()
 
+var has_ever_visited_after_death_scene := false
 var has_ever_visited_main_room := false
