@@ -8,6 +8,7 @@ var chosen_drink = null
 @export var drink_indicator_scene : PackedScene
 
 @onready var sfxplayer = $"../SFXplayer2"
+@onready var shark = $shark
 
 var drink_indicator_instance = null
 
@@ -60,6 +61,7 @@ func start_moving():
 		
 func _on_drink_dropped(drink):
 	if drink == chosen_drink:
+		shark.play("happi")
 		if drink_indicator_instance:
 			drink_indicator_instance.queue_free()
 			sfxplayer.play()
