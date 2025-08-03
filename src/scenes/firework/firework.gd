@@ -2,6 +2,7 @@ extends AnimatedSprite2D
 
 var fireworks = []
 var base = self
+var rng = RandomNumberGenerator.new()
 
 func _ready():
 	for i in range(1,7):
@@ -12,8 +13,6 @@ func _ready():
 			print("no node for Firework%d" % i)
 
 func start(position: Vector2):
-	print("got signal in firework")
-	
 	for firework in fireworks:
 		firework.visible = false
 		firework.scale = Vector2(2,2)
@@ -22,19 +21,19 @@ func start(position: Vector2):
 	self.play("start")
 	self.position = position
 	var tween = create_tween()
-	tween.tween_property(self,"position:y",-200,0.75)
+	tween.tween_property(self,"position:y",position.y - 250,0.75)
 	tween.connect("finished", Callable(self, "_on_fireworkbase_tween_finished"))
 		
 func _on_fireworkbase_tween_finished():
-	print("got explosion signal")
 	self.visible = false
-	var radius = 100.0  # jak daleko leci fajerwerk
-	var angle_step = 60  # co ile stopni
+	var radius = rng.randf_range(75.0,125.0)
+	var angle_step = 60
 	var center = Vector2(position.x + 5,position.y)
+	var move = rng.randi_range(0,60)
 
 	for i in range(fireworks.size()):
 		var firework = fireworks[i]
-		var angle_deg = i * angle_step
+		var angle_deg = i * angle_step + move
 		var angle_rad = deg_to_rad(angle_deg)
 
 		var offset = Vector2(cos(angle_rad), sin(angle_rad)) * radius
@@ -46,7 +45,7 @@ func _on_fireworkbase_tween_finished():
 		firework.play("fire")
 
 		var tween = create_tween()
-		tween.tween_property(firework, "position", target_position, 1.0)
+		tween.tween_property(firework, "position", target_position, 2.0)
 		tween.connect("finished", Callable(self, "_on_firework_tween_finished").bind(firework))
 		
 func _on_firework_tween_finished(firework):

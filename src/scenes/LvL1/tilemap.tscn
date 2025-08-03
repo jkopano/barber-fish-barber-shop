@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://balwn7nail4e1"]
+[gd_scene load_steps=37 format=4 uid="uid://balwn7nail4e1"]
 
 [ext_resource type="Texture2D" uid="uid://q23tukwwopu" path="res://sprites/levels/background.png" id="1_4ifww"]
 [ext_resource type="Script" uid="uid://c8p32tfh8fgfh" path="res://src/scenes/LvL1/tilemap.gd" id="1_qf6y4"]
@@ -22,12 +22,10 @@
 [ext_resource type="Script" path="res://src/scenes/LvL1/furniture/beard_mirror.gd" id="18_4eu8v"]
 [ext_resource type="Texture2D" uid="uid://dx1qlvdtfos7n" path="res://sprites/particles/bombel2.png" id="18_xutvd"]
 [ext_resource type="Texture2D" uid="uid://wio66vdqbsnl" path="res://sprites/particles/bombel3.png" id="19_b0ig0"]
-[ext_resource type="Script" uid="uid://dpomkr6hjtakb" path="res://src/scenes/LvL1/fireworkManager.gd" id="23_4eu8v"]
-[ext_resource type="PackedScene" uid="uid://dfy8k84rdg4n6" path="res://src/scenes/firework/firework.tscn" id="24_l0rlb"]
 [ext_resource type="Texture2D" uid="uid://c28rd7h4ui2ep" path="res://sprites/levels/point-maszynkai.png" id="19_k8tlb"]
 [ext_resource type="Texture2D" uid="uid://dk6lc5p2fmonk" path="res://sprites/levels/mirror_up.png" id="20_s6ltw"]
-[ext_resource type="Script" path="res://src/scenes/LvL1/firework.gd" id="21_pe2fm"]
-[ext_resource type="Texture2D" uid="uid://c7w5ya7sv5kjv" path="res://sprites/fireworks/fireworks.png" id="22_pe2fm"]
+[ext_resource type="Script" uid="uid://dpomkr6hjtakb" path="res://src/scenes/LvL1/fireworkManager.gd" id="23_4eu8v"]
+[ext_resource type="PackedScene" uid="uid://dfy8k84rdg4n6" path="res://src/scenes/firework/firework.tscn" id="24_l0rlb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1kat"]
 normal = Vector2(-0.469209, 0.883087)
