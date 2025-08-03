@@ -32,7 +32,6 @@ var move_x = 0
 var play = false
 
 func getNumCircles():
-	return 1
 	if Globals.game.get_current_run().current_level < 2:
 		numCircles = 1
 	elif Globals.game.get_current_run().current_level<4:
