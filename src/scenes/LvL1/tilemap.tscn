@@ -62,7 +62,7 @@ sources/0 = SubResource("TileSetAtlasSource_ge684")
 sources/3 = SubResource("TileSetAtlasSource_u1kat")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68jg1"]
-size = Vector2(39.9936, 10.301)
+size = Vector2(39.9936, 13.3841)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6hthj"]
 size = Vector2(40.9565, 14.6676)
@@ -334,26 +334,28 @@ shape = SubResource("RectangleShape2D_it7ct")
 
 [node name="BeardMirror" type="Sprite2D" parent="layer2/Minigames"]
 y_sort_enabled = true
-position = Vector2(337, 4.84956)
-scale = Vector2(2.3464, 2.49463)
+position = Vector2(314, -13)
+scale = Vector2(2.3464, 2.33928)
 texture = ExtResource("17_r34xl")
 script = ExtResource("18_4eu8v")
 
 [node name="Point" type="Sprite2D" parent="layer2/Minigames/BeardMirror"]
 top_level = true
-position = Vector2(347.23, -98.69)
+position = Vector2(324, -102)
 scale = Vector2(3, 3)
 texture = ExtResource("19_k8tlb")
 
 [node name="Area2D" type="Area2D" parent="layer2/Minigames/BeardMirror"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="layer2/Minigames/BeardMirror/Area2D"]
-position = Vector2(-3.83567, 23.3103)
+position = Vector2(-3.40948, 30.9924)
 rotation = 0.523599
 shape = SubResource("RectangleShape2D_68jg1")
 
 [node name="Sprite2D" type="Sprite2D" parent="layer2/Minigames/BeardMirror"]
 z_index = 1
+position = Vector2(0, 2.99237)
+scale = Vector2(1, 0.89313)
 texture = ExtResource("20_s6ltw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
