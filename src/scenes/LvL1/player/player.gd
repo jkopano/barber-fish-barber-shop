@@ -4,8 +4,11 @@ extends CharacterBody2D
 var is_interactable = false
 
 signal fish_interact_furniture(scene: PackedScene)
-
 signal fish_interact
+
+func _ready() -> void:
+	if Globals.player_data and Globals.player_data.pos:
+		position  = Globals.player_data.pos
 
 func _process(dt: float) -> void:
 	move(dt)

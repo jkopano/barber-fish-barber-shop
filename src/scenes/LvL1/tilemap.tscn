@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://m3qbvtd31lem" path="res://sprites/levels/winko-point.png" id="13_68jg1"]
 [ext_resource type="Texture2D" uid="uid://s46x68lh0u5k" path="res://sprites/levels/nozycki-point.png" id="15_6hthj"]
 [ext_resource type="Texture2D" uid="uid://cwsmpfky4csqc" path="res://sprites/fryzjer/komoda-lustro.png" id="15_it7ct"]
+[ext_resource type="PackedScene" uid="uid://denucgk2m3s66" path="res://src/scenes/clock/clock.tscn" id="17_4eu8v"]
+[ext_resource type="AudioStream" uid="uid://dtomdsxlxrm2t" path="res://Sounds/SOUND DESIGN/Cały projekt/SzantaLoop.wav" id="17_68jg1"]
 [ext_resource type="Texture2D" uid="uid://ielx4lasn6fd" path="res://sprites/particles/bombel1.png" id="17_it7ct"]
 [ext_resource type="Texture2D" uid="uid://d25cin7ocs06e" path="res://sprites/beard/mirror.png" id="17_pe2fm"]
 [ext_resource type="Script" uid="uid://bo5qaf8w66o4o" path="res://src/scenes/LvL1/furniture/beard_mirror.gd" id="18_4eu8v"]
@@ -238,7 +240,7 @@ unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(-92.0001, 52)
 scale = Vector2(3.11321, 3.11321)
-speed = 60000
+speed = 30000
 
 [node name="DrinkTable" type="Sprite2D" parent="layer2/Minigames"]
 clip_children = 2
@@ -370,6 +372,9 @@ tile_set = SubResource("TileSet_fc11b")
 position = Vector2(193, -11)
 rotation = 0.521853
 shape = SubResource("RectangleShape2D_fl7jp")
+
+[node name="zegar" parent="." instance=ExtResource("17_4eu8v")]
+position = Vector2(519, -266)
 
 [node name="Muzyka" type="AudioStreamPlayer2D" parent="."]
 autoplay = true

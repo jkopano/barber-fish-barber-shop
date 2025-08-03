@@ -32,9 +32,9 @@ var move_x = 0
 var play = false
 
 func getNumCircles():
-	if Globals.serializeData.level<2:
+	if Globals.game.get_current_run().current_level < 2:
 		numCircles = 1
-	elif Globals.serializeData.level<4:
+	elif Globals.game.get_current_run().current_level<4:
 		numCircles = 2
 	else:
 		numCircles = 3
