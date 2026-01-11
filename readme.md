@@ -3,7 +3,7 @@
 slavic game jam 2025 submission.\
 play minigames and serve sharks!
 
-# [>> play here <<]("https://lunar-lunaru.itch.io/barberfish-barbershop")
+[>> play here <<]("https://lunar-lunaru.itch.io/barberfish-barbershop")
 
 | ![beard minigame](screenshots/beard.png) | ![drinks minigame](screenshots/drinks.png) |
 | ---------------------------------------- | ------------------------------------------ |
